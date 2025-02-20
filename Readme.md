@@ -117,5 +117,5 @@ Ce projet est sous licence MIT - voir le fichier [LICENSE](LICENSE) pour plus d�
 
 ## 📬  Contact
 
-Si vous avez des questions, vous pouvez me contacter à [abaqqilmouad@gmail.com](mailto:abaqqilmouad@gmail.com).
+Si vous avez des questions, vous pouvez me contacter à [abaaqilmouad@gmail.com](mailto:abaaqilmouad@gmail.com).
 
