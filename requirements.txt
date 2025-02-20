@@ -1,5 +1,9 @@
 pandas
-geopy
-haversine
+numpy
 networkx
-dotenv
+haversine
+geopy
+flask
+python-dotenv
+smtplib
+email
