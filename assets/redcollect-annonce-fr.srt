@@ -1,0 +1,23 @@
+1
+00:00:00,000 --> 00:00:06,547
+Voici Red Collect. Une application open source pour organiser les collectes simplement, sur le terrain comme au bureau.
+
+2
+00:00:06,897 --> 00:00:13,595
+En un coup d’œil, le coordinateur repère les relais, les niveaux de stock et les urgences, directement sur la carte.
+
+3
+00:00:13,945 --> 00:00:20,176
+Pour ajouter un relais, il suffit de chercher une adresse ou de poser un repère. Les coordonnées se placent toutes seules.
+
+4
+00:00:20,526 --> 00:00:25,644
+Red Collect prépare une tournée sur le réseau routier et ordonne les arrêts pour faciliter le parcours.
+
+5
+00:00:25,994 --> 00:00:31,995
+Le coordinateur suit les missions, répartit les visites et gère les comptes bénévoles depuis la même interface.
+
+6
+00:00:32,345 --> 00:00:39,228
+L’interface existe en français et en anglais. Clonez le projet depuis GitHub, lancez-le en local et adaptez-le à votre équipe.

@@ -11,6 +11,12 @@
 </div>
 
 <p align="center">
+  <a href="assets/redcollect-annonce.mp4"><img src="assets/redcollect-annonce-poster.png" alt="Voir l’annonce vidéo de Red Collect" width="100%"></a>
+</p>
+
+<p align="center"><a href="assets/redcollect-annonce.mp4">▶ Voir l’annonce vidéo (40 s)</a> · <a href="assets/redcollect-annonce-fr.srt">Sous-titres français</a></p>
+
+<p align="center">
   <img src="assets/redcollect-demo.gif" alt="Démonstration de Red Collect : tableau de bord, recherche d’adresse et itinéraire" width="100%">
 </p>
 
@@ -109,6 +115,8 @@ Projet distribué sous licence [MIT](LICENSE). Les marques et emblèmes de la Cr
 Red Collect is an open-source collection planning app for teams coordinating donation drop-off points. Its French/English interface helps coordinators and volunteers track stock levels, add a relay by searching for an address on the map, plan collection routes, and follow each mission.
 
 **Run it locally:** clone this repository, install the Python requirements, copy `.env.example` to `.env`, set a random `APP_SECRET_KEY`, then run `python webapp.py init` followed by `python webapp.py`. The first command creates the coordinator account and imports the demo points. Open [http://127.0.0.1:5000](http://127.0.0.1:5000). There is no public hosted demo at this time.
+
+[▶ Watch the 40-second app announcement](assets/redcollect-annonce.mp4).
 
 For road-based distance and duration estimates, configure the optional self-hosted OSRM service with `scripts/setup_routing.sh`. OR-Tools Guided Local Search optimizes the order of multiple stops using OSRM’s travel-time matrix. Travel times do not include live traffic. See the French sections above for complete setup, map-service policies, and demo-data notes.
 
