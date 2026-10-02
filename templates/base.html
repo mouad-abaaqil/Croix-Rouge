@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#b61424">
+  <meta name="csrf-token" content="{{ csrf_token }}">
+  <title>{% block title %}Red Collect{% endblock %} · Croix-Rouge</title>
+  <link rel="icon" href="{{ url_for('static', filename='img/croix_rouge_logo.png') }}">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+  {% block head %}{% endblock %}
+</head>
+<body data-page="{% block page %}dashboard{% endblock %}">
+  <a class="skip-link" href="#main" data-i18n="skip">Aller au contenu</a>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Navigation principale">
+      <a class="brand" href="/" aria-label="Red Collect, accueil">
+        <span class="brand-mark"><img src="{{ url_for('static', filename='img/croix_rouge_logo.png') }}" alt=""></span>
+        <span class="brand-text"><strong>RED COLLECT</strong><small data-i18n="brand_sub">Croix-Rouge</small></span>
+      </a>
+      <div class="nav-caption" data-i18n="workspace">ESPACE DE TRAVAIL</div>
+      <nav class="main-nav" aria-label="Navigation principale">
+        <a href="/" data-nav="dashboard"><span class="nav-icon">◫</span><span data-i18n="nav_dashboard">Vue d’ensemble</span></a>
+        <a href="/points" data-nav="points"><span class="nav-icon">⌖</span><span data-i18n="nav_points">Points de collecte</span></a>
+        <a href="/planner" data-nav="planner"><span class="nav-icon">↗</span><span data-i18n="nav_planner">Préparer une tournée</span></a>
+        <a href="/missions" data-nav="missions"><span class="nav-icon">▤</span><span data-i18n="nav_missions">Missions</span></a>
+        <a href="/settings" data-nav="settings" id="settings-nav"><span class="nav-icon">⚙</span><span data-i18n="nav_settings">Paramètres</span></a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="pilot-note"><span class="pilot-dot"></span><div><strong data-i18n="pilot">Unité de collecte</strong><small data-i18n="pilot_desc">Données de démonstration</small></div></div>
+        <div class="sidebar-user"><span class="avatar" id="user-avatar">B</span><div><strong id="user-name">Bénévole</strong><small id="user-role">—</small></div><a href="/logout" class="logout" data-i18n-title="logout" title="Déconnexion" aria-label="Déconnexion">↪</a></div>
+      </div>
+    </aside>
+    <div class="main-shell">
+      <header class="topbar">
+        <button type="button" class="icon-button mobile-menu" id="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+        <div class="topbar-location"><span class="topbar-dot"></span><span data-i18n="location">Dépôt de collecte</span></div>
+        <div class="topbar-actions"><span class="today" id="today-date"></span><div class="lang-switch" role="group" aria-label="Language"><button type="button" data-lang="fr" aria-pressed="true">FR</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div></div>
+      </header>
+      <main id="main" class="page-content">{% block content %}{% endblock %}</main>
+    </div>
+  </div>
+  <div class="toast-stack" id="toasts" aria-live="polite"></div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script defer src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

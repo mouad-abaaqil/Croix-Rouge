@@ -1,6 +1,13 @@
 .env
+ABQ-SERVER.md
 data/maps_link.txt
 data/collection_history.csv
 data/selected_relay_points.csv
 data/itinerary.csv
 data/threshold.txt
+instance/
+routing-data/
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc

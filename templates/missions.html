@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block title %}Missions{% endblock %}
+{% block page %}missions{% endblock %}
+{% block content %}
+<section class="page-heading heading-with-action"><div><p class="eyebrow" data-i18n="activity">ACTIVITÉ</p><h1 data-i18n="missions_title">Missions</h1><p data-i18n="missions_intro">Retrouvez les tournées en cours et les collectes terminées.</p></div><a class="button primary" href="/planner"><span>＋</span><span data-i18n="new_mission">Nouvelle tournée</span></a></section><div class="surface"><div class="section-head"><h2 data-i18n="all_missions">Toutes les missions</h2><select id="mission-filter" aria-label="Filtrer les missions"><option value="all" data-i18n="all">Tous</option><option value="open" data-i18n="in_progress">En cours</option><option value="completed" data-i18n="completed">Terminées</option></select></div><div id="missions-list" class="missions-list"></div></div>
+{% endblock %}
