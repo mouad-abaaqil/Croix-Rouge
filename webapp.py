@@ -42,7 +42,7 @@ def before_request():
     g.db = data.connect()
     g.user = None
     if session.get("user_id"):
-        row = g.db.execute("SELECT id,username,name,role,session_version FROM users WHERE id=? AND active=1", (session["user_id"],)).fetchone()
+        row = g.db.execute("SELECT id,username,name,role,session_version,email,phone,unit_id FROM users WHERE id=? AND active=1", (session["user_id"],)).fetchone()
         if row and session.get("session_version", 0) == row["session_version"]:
             g.user = dict(row)
         else:
@@ -136,15 +136,18 @@ def mission_dict(row, include_stops=False):
 
 
 def get_mission(mission_id):
-    row = g.db.execute("SELECT * FROM missions WHERE id=?", (mission_id,)).fetchone()
+    row = g.db.execute("SELECT * FROM missions WHERE id=? AND unit_id=?", (mission_id, g.user["unit_id"])).fetchone()
     if row is None:
+        abort(404)
+    if g.user["role"] != "coordinator" and row["assigned_to"] != g.user["id"]:
         abort(404)
     return mission_dict(row, include_stops=True)
 
 
 @app.get("/login")
 def login():
-    return render_template("login.html", error=None)
+    units = [dict(row) for row in g.db.execute("SELECT id,slug,name,source_url,postal_code,city FROM local_units ORDER BY name")]
+    return render_template("login.html", error=None, units=units)
 
 
 @app.post("/login")
@@ -153,11 +156,35 @@ def login_post():
     password = request.form.get("password", "")
     row = g.db.execute("SELECT * FROM users WHERE username=? AND active=1", (username,)).fetchone()
     if row is None or not check_password_hash(row["password_hash"], password):
-        return render_template("login.html", error="invalid"), 401
+        units = [dict(item) for item in g.db.execute("SELECT id,slug,name,source_url,postal_code,city FROM local_units ORDER BY name")]
+        return render_template("login.html", error="invalid", units=units), 401
     session.clear()
     session["user_id"] = row["id"]
     session["session_version"] = row["session_version"]
     session["csrf_token"] = secrets.token_urlsafe(32)
+    return redirect(url_for("dashboard"))
+
+
+@app.post("/signup")
+def signup_coordinator():
+    username=clean_text(request.form.get("username", ""),80)
+    name=clean_text(request.form.get("name", ""),120)
+    email=clean_text(request.form.get("email", ""),254).lower()
+    password=request.form.get("password", "")
+    unit_id=request.form.get("unit_id", "")
+    if not re.fullmatch(r"[A-Za-z0-9._-]{3,80}",username) or not name or not re.fullmatch(r"[^\s@]+@[^\s@]+\.[^\s@]+",email) or len(password)<12:
+        abort(400,"Complete all fields; password must contain at least 12 characters")
+    unit=g.db.execute("SELECT id FROM local_units WHERE id=?",(unit_id,)).fetchone()
+    if not unit:
+        abort(400,"Select a listed local unit")
+    try:
+        with g.db:
+            cur=g.db.execute("INSERT INTO users(username,name,password_hash,role,email,unit_id) VALUES (?,?,?,'coordinator',?,?)",(username,name,generate_password_hash(password),email,unit[0]))
+            for key,value in (("unit_name", g.db.execute("SELECT name FROM local_units WHERE id=?",(unit[0],)).fetchone()[0]),("depot_address",""),("depot_lat","46.6"),("depot_lon","2.4"),("demo_data","1")):
+                g.db.execute("INSERT OR IGNORE INTO unit_settings(unit_id,key,value) VALUES (?,?,?)",(unit[0],key,value))
+    except sqlite3.IntegrityError:
+        return render_template("login.html",error="username_taken",units=[dict(item) for item in g.db.execute("SELECT id,slug,name,source_url,postal_code,city FROM local_units ORDER BY name")]),409
+    session.clear();session["user_id"]=cur.lastrowid;session["session_version"]=0;session["csrf_token"]=secrets.token_urlsafe(32)
     return redirect(url_for("dashboard"))
 
 
@@ -168,9 +195,24 @@ def logout():
 
 
 @app.get("/")
-@login_required
 def dashboard():
+    if not g.user: return redirect(url_for("login"))
     return render_template("dashboard.html", page="dashboard")
+
+
+@app.get("/profile")
+@login_required
+def profile_page():
+    return render_template("profile.html", page="profile")
+
+
+@app.patch("/api/profile")
+@login_required
+def update_profile():
+    body=payload(); name=clean_text(body.get("name",g.user["name"]),120); email=clean_text(body.get("email",g.user["email"]),254).lower(); phone=clean_text(body.get("phone",g.user["phone"]),40)
+    if not name or not re.fullmatch(r"[^\s@]+@[^\s@]+\.[^\s@]+",email): abort(400,"Name and valid email required")
+    with g.db: g.db.execute("UPDATE users SET name=?,email=?,phone=? WHERE id=? AND unit_id=?",(name,email,phone,g.user["id"],g.user["unit_id"]))
+    return jsonify(profile={"name":name,"email":email,"phone":phone})
 
 
 @app.get("/analytics")
@@ -188,7 +230,7 @@ def analytics_api():
         abort(400, "Invalid analysis period")
     if days not in (30, 90, 180, 365):
         abort(400, "Invalid analysis period")
-    return jsonify(build_analytics(g.db, days=days))
+    return jsonify(build_analytics(g.db, days=days, unit_id=g.user["unit_id"]))
 
 
 @app.get("/assets/croix_rouge_logo.png")
@@ -230,10 +272,17 @@ def mission_page(mission_id):
 @app.get("/api/bootstrap")
 @login_required
 def bootstrap():
-    missions = [mission_dict(row, include_stops=True) for row in g.db.execute("SELECT * FROM missions ORDER BY id DESC LIMIT 100")]
-    config = dict(g.db.execute("SELECT key,value FROM settings").fetchall())
-    users = [dict(row) for row in g.db.execute("SELECT id,username,name,role,active FROM users ORDER BY active DESC,name")] if g.user["role"] == "coordinator" else []
-    return jsonify(user=g.user, users=users, points=data.points(g.db), depot=data.depot(g.db), missions=missions, config=config)
+    uid=g.user["unit_id"]
+    mission_sql="SELECT * FROM missions WHERE unit_id=?"
+    mission_args=[uid]
+    if g.user["role"] != "coordinator":
+        mission_sql += " AND assigned_to=?"; mission_args.append(g.user["id"])
+    mission_sql += " ORDER BY id DESC LIMIT 100"
+    missions = [mission_dict(row, include_stops=True) for row in g.db.execute(mission_sql,mission_args)]
+    config = dict(g.db.execute("SELECT key,value FROM unit_settings WHERE unit_id=?",(uid,)).fetchall())
+    users = [dict(row) for row in g.db.execute("SELECT id,username,name,email,phone,role,active FROM users WHERE unit_id=? ORDER BY active DESC,name",(uid,))] if g.user["role"] == "coordinator" else []
+    unit=dict(g.db.execute("SELECT id,slug,name,source_url,postal_code,city FROM local_units WHERE id=?",(uid,)).fetchone())
+    return jsonify(user=g.user, users=users, points=data.points(g.db,unit_id=uid), depot=data.depot(g.db,uid), missions=missions, config=config, unit=unit)
 
 
 @app.post("/api/users")
@@ -243,28 +292,32 @@ def add_user():
     username = clean_text(body.get("username", ""), 80)
     name = clean_text(body.get("name", ""), 120)
     password = body.get("password", "")
-    role = body.get("role", "volunteer")
-    if not re.fullmatch(r"[A-Za-z0-9._-]{3,80}", username) or not name or not isinstance(password, str) or len(password) < 12 or role not in ("volunteer", "coordinator"):
+    email=clean_text(body.get("email", ""),254).lower()
+    if not re.fullmatch(r"[A-Za-z0-9._-]{3,80}", username) or not name or not re.fullmatch(r"[^\s@]+@[^\s@]+\.[^\s@]+",email) or not isinstance(password, str) or len(password) < 12:
         abort(400, "Invalid user details")
     try:
         with g.db:
-            cursor = g.db.execute("INSERT INTO users(username,name,password_hash,role) VALUES (?,?,?,?)",
-                                  (username,name,generate_password_hash(password),role))
+            cursor = g.db.execute("INSERT INTO users(username,name,password_hash,role,email,phone,unit_id) VALUES (?,?,?,'volunteer',?,?,?)",
+                                  (username,name,generate_password_hash(password),email,clean_text(body.get("phone",""),40),g.user["unit_id"]))
     except sqlite3.IntegrityError:
         return jsonify(error="username_taken"), 409
-    return jsonify(user={"id":cursor.lastrowid,"username":username,"name":name,"role":role,"active":1}), 201
+    return jsonify(user={"id":cursor.lastrowid,"username":username,"name":name,"email":email,"role":"volunteer","active":1}), 201
 
 
 @app.patch("/api/users/<int:user_id>")
 @coordinator_required
 def edit_user(user_id):
-    row = g.db.execute("SELECT id,username,name,role,active,session_version FROM users WHERE id=?", (user_id,)).fetchone()
+    row = g.db.execute("SELECT id,username,name,email,phone,role,active,session_version FROM users WHERE id=? AND unit_id=?", (user_id,g.user["unit_id"])).fetchone()
     if row is None:
         abort(404)
     body = payload()
     name = clean_text(body.get("name", row["name"]), 120)
+    email=clean_text(body.get("email",row["email"]),254).lower()
+    phone=clean_text(body.get("phone",row["phone"]),40)
     if not name:
         abort(400, "Name required")
+    if email and not re.fullmatch(r"[^\s@]+@[^\s@]+\.[^\s@]+",email):
+        abort(400,"Invalid email address")
     active = row["active"]
     if "active" in body:
         if not isinstance(body["active"], bool):
@@ -276,18 +329,18 @@ def edit_user(user_id):
     if row["role"] == "coordinator" and (not active or name != row["name"]):
         # Keep at least one active coordinator to administer the unit.
         if not active:
-            active_admins = g.db.execute("SELECT COUNT(*) FROM users WHERE role='coordinator' AND active=1").fetchone()[0]
+            active_admins = g.db.execute("SELECT COUNT(*) FROM users WHERE role='coordinator' AND active=1 AND unit_id=?",(g.user["unit_id"],)).fetchone()[0]
             if active_admins <= 1:
                 abort(400, "The last coordinator cannot be deactivated")
     if user_id == g.user["id"] and not active:
         abort(400, "You cannot deactivate your own account")
     with g.db:
         if password is not None:
-            g.db.execute("UPDATE users SET name=?,active=?,password_hash=?,session_version=session_version+1 WHERE id=?",
-                         (name,active,generate_password_hash(password),user_id))
+            g.db.execute("UPDATE users SET name=?,email=?,phone=?,active=?,password_hash=?,session_version=session_version+1 WHERE id=? AND unit_id=?",
+                         (name,email,phone,active,generate_password_hash(password),user_id,g.user["unit_id"]))
         else:
-            g.db.execute("UPDATE users SET name=?,active=? WHERE id=?", (name,active,user_id))
-    return jsonify(user={"id":user_id,"username":row["username"],"name":name,"role":row["role"],"active":active})
+            g.db.execute("UPDATE users SET name=?,email=?,phone=?,active=? WHERE id=? AND unit_id=?", (name,email,phone,active,user_id,g.user["unit_id"]))
+    return jsonify(user={"id":user_id,"username":row["username"],"name":name,"email":email,"phone":phone,"role":row["role"],"active":active})
 
 
 @app.get("/api/geocode")
@@ -346,8 +399,8 @@ def edit_settings():
             values[key] = value
     with g.db:
         for key, value in values.items():
-            g.db.execute("UPDATE settings SET value=? WHERE key=?", (value, key))
-    return jsonify(depot=data.depot(g.db))
+            g.db.execute("INSERT INTO unit_settings(unit_id,key,value) VALUES (?,?,?) ON CONFLICT(unit_id,key) DO UPDATE SET value=excluded.value", (g.user["unit_id"],key,value))
+    return jsonify(depot=data.depot(g.db,g.user["unit_id"]))
 
 
 @app.post("/api/points")
@@ -364,9 +417,9 @@ def add_point():
     stock = number(body.get("stock_kg", 0), 0, capacity)
     pickup = int(number(body.get("estimated_pickup_min", 10), 0, 1440))
     with g.db:
-        cursor = g.db.execute("""INSERT INTO points(name,address,lat,lon,capacity_kg,stock_kg,
-             estimated_pickup_min,updated_at) VALUES (?,?,?,?,?,?,?,?)""",
-             (name, address, lat, lon, capacity, stock, pickup, data.now()))
+        cursor = g.db.execute("""INSERT INTO points(name,address,unit_id,lat,lon,capacity_kg,stock_kg,
+             estimated_pickup_min,updated_at) VALUES (?,?,?,?,?,?,?,?,?)""",
+             (name, address,g.user["unit_id"],lat, lon, capacity, stock, pickup, data.now()))
         g.db.execute("INSERT INTO stock_history(point_id,stock_kg,recorded_at,user_id) VALUES (?,?,?,?)",
                      (cursor.lastrowid, stock, data.now(), g.user["id"]))
         for category in DONATION_CATEGORIES:
@@ -374,14 +427,14 @@ def add_point():
                          (cursor.lastrowid, category, stock if category == "unclassified" else 0))
             g.db.execute("INSERT INTO donation_stock_history(point_id,category,stock_kg,recorded_at,user_id) VALUES (?,?,?,?,?)",
                          (cursor.lastrowid, category, stock if category == "unclassified" else 0, data.now(), g.user["id"]))
-    return jsonify(point=next(point for point in data.points(g.db) if point["id"] == cursor.lastrowid)), 201
+    return jsonify(point=next(point for point in data.points(g.db,unit_id=g.user["unit_id"]) if point["id"] == cursor.lastrowid)), 201
 
 
 @app.patch("/api/points/<int:point_id>")
 @coordinator_required
 def edit_point(point_id):
     body = payload()
-    row = g.db.execute("SELECT * FROM points WHERE id=?", (point_id,)).fetchone()
+    row = g.db.execute("SELECT * FROM points WHERE id=? AND unit_id=?", (point_id,g.user["unit_id"])).fetchone()
     if row is None:
         abort(404)
     values = dict(row)
@@ -404,13 +457,13 @@ def edit_point(point_id):
              estimated_pickup_min=?,active=? WHERE id=?""",
              (values["name"],values["address"],values["lat"],values["lon"],values["capacity_kg"],
               values["estimated_pickup_min"],values["active"],point_id))
-    return jsonify(point=next(point for point in data.points(g.db) if point["id"] == point_id))
+    return jsonify(point=next(point for point in data.points(g.db,unit_id=g.user["unit_id"]) if point["id"] == point_id))
 
 
 @app.post("/api/points/<int:point_id>/stock")
 @login_required
 def update_stock(point_id):
-    row = g.db.execute("SELECT * FROM points WHERE id=? AND active=1", (point_id,)).fetchone()
+    row = g.db.execute("SELECT * FROM points WHERE id=? AND unit_id=? AND active=1", (point_id,g.user["unit_id"])).fetchone()
     if row is None:
         abort(404)
     body = payload()
@@ -435,21 +488,21 @@ def update_stock(point_id):
                          (point_id, category, amount))
             g.db.execute("INSERT INTO donation_stock_history(point_id,category,stock_kg,recorded_at,user_id) VALUES (?,?,?,?,?)",
                          (point_id, category, amount, timestamp, g.user["id"]))
-    return jsonify(point=next(point for point in data.points(g.db) if point["id"] == point_id))
+    return jsonify(point=next(point for point in data.points(g.db,unit_id=g.user["unit_id"]) if point["id"] == point_id))
 
 
 def planned(body):
     ids = body.get("stop_ids", [])
     if not isinstance(ids, list) or not ids or len(ids) > 50 or any(type(item) is not int for item in ids) or len(ids) != len(set(ids)):
         abort(400, "Select 1 to 50 distinct points")
-    lookup = {point["id"]: point for point in data.points(g.db)}
+    lookup = {point["id"]: point for point in data.points(g.db,unit_id=g.user["unit_id"])}
     if any(item not in lookup for item in ids):
         abort(400, "Unknown or inactive point")
     stops = [lookup[item] for item in ids]
     routing_stops = [{"id": p["id"], "name": p["name"], "lat": p["lat"], "lon": p["lon"],
                       "service_minutes": p["estimated_pickup_min"]} for p in stops]
     try:
-        route = plan_route(data.depot(g.db), routing_stops, os.getenv("ROUTING_URL"), preserve_order=body.get("preserve_order") is True)
+        route = plan_route(data.depot(g.db,g.user["unit_id"]), routing_stops, os.getenv("ROUTING_URL"), preserve_order=body.get("preserve_order") is True)
     except RoutePlanningError as error:
         return None, jsonify(error="routing_error", details=error.errors), 400
     ordered = [lookup[item] for item in route["ordered_stop_ids"]]
@@ -488,14 +541,14 @@ def create_mission():
     title = clean_text(body.get("title", ""), 160) or f"Collecte {data.now()[:10]}"
     assigned_to = body.get("assigned_to")
     if assigned_to is not None:
-        if type(assigned_to) is not int or not g.db.execute("SELECT 1 FROM users WHERE id=? AND active=1", (assigned_to,)).fetchone():
+        if type(assigned_to) is not int or not g.db.execute("SELECT 1 FROM users WHERE id=? AND active=1 AND role='volunteer' AND unit_id=?", (assigned_to,g.user["unit_id"])).fetchone():
             abort(400, "Unknown volunteer")
     with g.db:
         cursor = g.db.execute("""INSERT INTO missions(title,created_at,created_by,routing_mode,
-             distance_km,drive_minutes,total_minutes,geometry_json,algorithm,assigned_to)
-             VALUES (?,?,?,?,?,?,?,?,?,?)""",
+             distance_km,drive_minutes,total_minutes,geometry_json,algorithm,assigned_to,unit_id)
+             VALUES (?,?,?,?,?,?,?,?,?,?,?)""",
              (title,data.now(),g.user["id"],result["routing_mode"],result["distance_km"],
-              result["drive_minutes"],result["total_minutes"],json.dumps(result["geometry"]),result["algorithm"],assigned_to))
+              result["drive_minutes"],result["total_minutes"],json.dumps(result["geometry"]),result["algorithm"],assigned_to,g.user["unit_id"]))
         for position, point in enumerate(result["stops"], 1):
             g.db.execute("""INSERT INTO mission_stops(mission_id,point_id,position,planned_stock_kg)
                  VALUES (?,?,?,?)""", (cursor.lastrowid,point["id"],position,point["stock_kg"]))
@@ -505,14 +558,14 @@ def create_mission():
 @app.get("/api/missions/<int:mission_id>")
 @login_required
 def mission_api(mission_id):
-    return jsonify(mission=get_mission(mission_id), depot=data.depot(g.db))
+    return jsonify(mission=get_mission(mission_id), depot=data.depot(g.db,g.user["unit_id"]))
 
 
 @app.patch("/api/missions/<int:mission_id>/stops/<int:point_id>")
 @login_required
 def update_stop(mission_id, point_id):
     mission = get_mission(mission_id)
-    if g.user["role"] != "coordinator" and mission["assigned_to"] not in (None, g.user["id"]):
+    if g.user["role"] != "coordinator" and mission["assigned_to"] != g.user["id"]:
         return jsonify(error="forbidden"), 403
     body = payload()
     status = body.get("status")

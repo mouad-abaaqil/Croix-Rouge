@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block title %}Mon profil{% endblock %}
+{% block page %}profile{% endblock %}
+{% block content %}
+<section class="page-heading"><p class="eyebrow" data-i18n="profile">MON ESPACE</p><h1 data-i18n="profile_title">Mon profil</h1><p data-i18n="profile_intro">Gardez vos coordonnées à jour pour votre équipe.</p></section>
+<section class="surface profile-card"><form id="profile-form" class="profile-form"><label><span data-i18n="display_name">Nom complet</span><input name="name" maxlength="120" required autocomplete="name"></label><label><span data-i18n="email">Adresse e-mail</span><input type="email" name="email" required autocomplete="email"></label><label><span data-i18n="phone">Téléphone</span><input type="tel" name="phone" maxlength="40" autocomplete="tel"></label><label><span data-i18n="unit_select">Unité locale</span><input id="profile-unit" readonly aria-readonly="true"></label><button type="submit" class="button primary" data-i18n="save_profile">Enregistrer mon profil</button></form></section>
+{% endblock %}

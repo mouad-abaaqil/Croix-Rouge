@@ -1,0 +1,4039 @@
+{
+  "source_url": "https://www.croix-rouge.fr/sitemap-structures.xml",
+  "retrieved_at": "2026-10-03T16:35:15+00:00",
+  "source_note": "Official Croix-Rouge structures sitemap; only /unite-locale- pages included. Display names are derived from URL slugs; verify address/name on source page.",
+  "units": [
+    {
+      "slug": "unite-locale-de-calais",
+      "name": "Unité locale de Calais",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-calais",
+      "postal_code": "",
+      "city": "Calais"
+    },
+    {
+      "slug": "unite-locale-alsace-bossue",
+      "name": "Unité locale de Alsace Bossue",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-alsace-bossue",
+      "postal_code": "",
+      "city": "Alsace Bossue"
+    },
+    {
+      "slug": "unite-locale-beaujolais-vals-de-saone",
+      "name": "Unité locale de Beaujolais Vals De Saone",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-beaujolais-vals-de-saone",
+      "postal_code": "",
+      "city": "Beaujolais Vals De Saone"
+    },
+    {
+      "slug": "unite-locale-boucle-de-la-seine-sud",
+      "name": "Unité locale de Boucle De La Seine Sud",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-boucle-de-la-seine-sud",
+      "postal_code": "",
+      "city": "Boucle De La Seine Sud"
+    },
+    {
+      "slug": "unite-locale-bresle-maritime",
+      "name": "Unité locale de Bresle Maritime",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-bresle-maritime",
+      "postal_code": "",
+      "city": "Bresle Maritime"
+    },
+    {
+      "slug": "unite-locale-caux-vallee-de-seine",
+      "name": "Unité locale de Caux Vallee De Seine",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-caux-vallee-de-seine",
+      "postal_code": "",
+      "city": "Caux Vallee De Seine"
+    },
+    {
+      "slug": "unite-locale-centre-yonne",
+      "name": "Unité locale de Centre Yonne",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-centre-yonne",
+      "postal_code": "",
+      "city": "Centre Yonne"
+    },
+    {
+      "slug": "unite-locale-charente-nord-ouest",
+      "name": "Unité locale de Charente Nord Ouest",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-charente-nord-ouest",
+      "postal_code": "",
+      "city": "Charente Nord Ouest"
+    },
+    {
+      "slug": "unite-locale-chateaurenard-les-alpilles",
+      "name": "Unité locale de Chateaurenard Les Alpilles",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-chateaurenard-les-alpilles",
+      "postal_code": "",
+      "city": "Chateaurenard Les Alpilles"
+    },
+    {
+      "slug": "unite-locale-cote-vermeille",
+      "name": "Unité locale de Cote Vermeille",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-cote-vermeille",
+      "postal_code": "",
+      "city": "Cote Vermeille"
+    },
+    {
+      "slug": "unite-locale-cotes-des-isles-marais",
+      "name": "Unité locale de Cotes Des Isles Marais",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-cotes-des-isles-marais",
+      "postal_code": "",
+      "city": "Cotes Des Isles Marais"
+    },
+    {
+      "slug": "unite-locale-cotiere-dombes",
+      "name": "Unité locale de Cotiere Dombes",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-cotiere-dombes",
+      "postal_code": "",
+      "city": "Cotiere Dombes"
+    },
+    {
+      "slug": "unite-locale-d-agde",
+      "name": "Unité locale de D Agde",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-agde",
+      "postal_code": "",
+      "city": "D Agde"
+    },
+    {
+      "slug": "unite-locale-d-agen",
+      "name": "Unité locale de D Agen",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-agen",
+      "postal_code": "",
+      "city": "D Agen"
+    },
+    {
+      "slug": "unite-locale-d-aigurande",
+      "name": "Unité locale de D Aigurande",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-aigurande",
+      "postal_code": "",
+      "city": "D Aigurande"
+    },
+    {
+      "slug": "unite-locale-d-aix-en-provence",
+      "name": "Unité locale de D Aix En Provence",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-aix-en-provence",
+      "postal_code": "",
+      "city": "D Aix En Provence"
+    },
+    {
+      "slug": "unite-locale-d-ales",
+      "name": "Unité locale de D Ales",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-ales",
+      "postal_code": "",
+      "city": "D Ales"
+    },
+    {
+      "slug": "unite-locale-d-alfortville-bonneuil-creteil",
+      "name": "Unité locale de D Alfortville Bonneuil Creteil",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-alfortville-bonneuil-creteil",
+      "postal_code": "",
+      "city": "D Alfortville Bonneuil Creteil"
+    },
+    {
+      "slug": "unite-locale-d-altkirch",
+      "name": "Unité locale de D Altkirch",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-altkirch",
+      "postal_code": "",
+      "city": "D Altkirch"
+    },
+    {
+      "slug": "unite-locale-d-ambazac",
+      "name": "Unité locale de D Ambazac",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-ambazac",
+      "postal_code": "",
+      "city": "D Ambazac"
+    },
+    {
+      "slug": "unite-locale-d-amboise-vouvrillon",
+      "name": "Unité locale de D Amboise Vouvrillon",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-amboise-vouvrillon",
+      "postal_code": "",
+      "city": "D Amboise Vouvrillon"
+    },
+    {
+      "slug": "unite-locale-d-anduze",
+      "name": "Unité locale de D Anduze",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-anduze",
+      "postal_code": "",
+      "city": "D Anduze"
+    },
+    {
+      "slug": "unite-locale-d-angers",
+      "name": "Unité locale de D Angers",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-angers",
+      "postal_code": "",
+      "city": "D Angers"
+    },
+    {
+      "slug": "unite-locale-d-annecy",
+      "name": "Unité locale de D Annecy",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-annecy",
+      "postal_code": "",
+      "city": "D Annecy"
+    },
+    {
+      "slug": "unite-locale-d-annemasse",
+      "name": "Unité locale de D Annemasse",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-annemasse",
+      "postal_code": "",
+      "city": "D Annemasse"
+    },
+    {
+      "slug": "unite-locale-d-annonay",
+      "name": "Unité locale de D Annonay",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-annonay",
+      "postal_code": "",
+      "city": "D Annonay"
+    },
+    {
+      "slug": "unite-locale-d-antibes-juan-les-pins-vallauris",
+      "name": "Unité locale de D Antibes Juan Les Pins Vallauris",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-antibes-juan-les-pins-vallauris",
+      "postal_code": "",
+      "city": "D Antibes Juan Les Pins Vallauris"
+    },
+    {
+      "slug": "unite-locale-d-antony",
+      "name": "Unité locale de D Antony",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-antony",
+      "postal_code": "",
+      "city": "D Antony"
+    },
+    {
+      "slug": "unite-locale-d-apt",
+      "name": "Unité locale de D Apt",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-apt",
+      "postal_code": "",
+      "city": "D Apt"
+    },
+    {
+      "slug": "unite-locale-d-arcachon-et-du-littoral",
+      "name": "Unité locale de D Arcachon Et Du Littoral",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-arcachon-et-du-littoral",
+      "postal_code": "",
+      "city": "D Arcachon Et Du Littoral"
+    },
+    {
+      "slug": "unite-locale-d-argenton-sur-creuse",
+      "name": "Unité locale de D Argenton Sur Creuse",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-argenton-sur-creuse",
+      "postal_code": "",
+      "city": "D Argenton Sur Creuse"
+    },
+    {
+      "slug": "unite-locale-d-arles",
+      "name": "Unité locale de D Arles",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-arles",
+      "postal_code": "",
+      "city": "D Arles"
+    },
+    {
+      "slug": "unite-locale-d-armor-argoat",
+      "name": "Unité locale de D Armor Argoat",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-armor-argoat",
+      "postal_code": "",
+      "city": "D Armor Argoat"
+    },
+    {
+      "slug": "unite-locale-d-arpajon",
+      "name": "Unité locale de D Arpajon",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-arpajon",
+      "postal_code": "",
+      "city": "D Arpajon"
+    },
+    {
+      "slug": "unite-locale-d-arras",
+      "name": "Unité locale de D Arras",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-arras",
+      "postal_code": "",
+      "city": "D Arras"
+    },
+    {
+      "slug": "unite-locale-d-asnieres",
+      "name": "Unité locale de D Asnieres",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-asnieres",
+      "postal_code": "",
+      "city": "D Asnieres"
+    },
+    {
+      "slug": "unite-locale-d-aubagne",
+      "name": "Unité locale de D Aubagne",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-aubagne",
+      "postal_code": "",
+      "city": "D Aubagne"
+    },
+    {
+      "slug": "unite-locale-d-auch",
+      "name": "Unité locale de D Auch",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-auch",
+      "postal_code": "",
+      "city": "D Auch"
+    },
+    {
+      "slug": "unite-locale-d-aunay-pre-bocage",
+      "name": "Unité locale de D Aunay Pre Bocage",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-aunay-pre-bocage",
+      "postal_code": "",
+      "city": "D Aunay Pre Bocage"
+    },
+    {
+      "slug": "unite-locale-d-avallon",
+      "name": "Unité locale de D Avallon",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-avallon",
+      "postal_code": "",
+      "city": "D Avallon"
+    },
+    {
+      "slug": "unite-locale-d-azay-le-rideau",
+      "name": "Unité locale de D Azay Le Rideau",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-azay-le-rideau",
+      "postal_code": "",
+      "city": "D Azay Le Rideau"
+    },
+    {
+      "slug": "unite-locale-d-eauze",
+      "name": "Unité locale de D Eauze",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-eauze",
+      "postal_code": "",
+      "city": "D Eauze"
+    },
+    {
+      "slug": "unite-locale-d-echirolles-sud-isere",
+      "name": "Unité locale de D Echirolles Sud Isere",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-echirolles-sud-isere",
+      "postal_code": "",
+      "city": "D Echirolles Sud Isere"
+    },
+    {
+      "slug": "unite-locale-d-embrun",
+      "name": "Unité locale de D Embrun",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-embrun",
+      "postal_code": "",
+      "city": "D Embrun"
+    },
+    {
+      "slug": "unite-locale-d-epernay",
+      "name": "Unité locale de D Epernay",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-epernay",
+      "postal_code": "",
+      "city": "D Epernay"
+    },
+    {
+      "slug": "unite-locale-d-erstein-benfeld",
+      "name": "Unité locale de D Erstein Benfeld",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-erstein-benfeld",
+      "postal_code": "",
+      "city": "D Erstein Benfeld"
+    },
+    {
+      "slug": "unite-locale-d-etampes",
+      "name": "Unité locale de D Etampes",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-etampes",
+      "postal_code": "",
+      "city": "D Etampes"
+    },
+    {
+      "slug": "unite-locale-d-evreux",
+      "name": "Unité locale de D Evreux",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-evreux",
+      "postal_code": "",
+      "city": "D Evreux"
+    },
+    {
+      "slug": "unite-locale-d-evry-centre-essonne",
+      "name": "Unité locale de D Evry Centre Essonne",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-evry-centre-essonne",
+      "postal_code": "",
+      "city": "D Evry Centre Essonne"
+    },
+    {
+      "slug": "unite-locale-d-hagondange",
+      "name": "Unité locale de D Hagondange",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-hagondange",
+      "postal_code": "",
+      "city": "D Hagondange"
+    },
+    {
+      "slug": "unite-locale-d-hautmont",
+      "name": "Unité locale de D Hautmont",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-hautmont",
+      "postal_code": "",
+      "city": "D Hautmont"
+    },
+    {
+      "slug": "unite-locale-d-hazebrouck",
+      "name": "Unité locale de D Hazebrouck",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-hazebrouck",
+      "postal_code": "",
+      "city": "D Hazebrouck"
+    },
+    {
+      "slug": "unite-locale-d-hendaye",
+      "name": "Unité locale de D Hendaye",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-hendaye",
+      "postal_code": "",
+      "city": "D Hendaye"
+    },
+    {
+      "slug": "unite-locale-d-illkirch-graffenstaden",
+      "name": "Unité locale de D Illkirch Graffenstaden",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-illkirch-graffenstaden",
+      "postal_code": "",
+      "city": "D Illkirch Graffenstaden"
+    },
+    {
+      "slug": "unite-locale-d-issoire",
+      "name": "Unité locale de D Issoire",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-issoire",
+      "postal_code": "",
+      "city": "D Issoire"
+    },
+    {
+      "slug": "unite-locale-d-issoudun",
+      "name": "Unité locale de D Issoudun",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-issoudun",
+      "postal_code": "",
+      "city": "D Issoudun"
+    },
+    {
+      "slug": "unite-locale-d-issy-les-moulineaux",
+      "name": "Unité locale de D Issy Les Moulineaux",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-issy-les-moulineaux",
+      "postal_code": "",
+      "city": "D Issy Les Moulineaux"
+    },
+    {
+      "slug": "unite-locale-d-istres",
+      "name": "Unité locale de D Istres",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-istres",
+      "postal_code": "",
+      "city": "D Istres"
+    },
+    {
+      "slug": "unite-locale-d-ivry-sur-seine",
+      "name": "Unité locale de D Ivry Sur Seine",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-ivry-sur-seine",
+      "postal_code": "",
+      "city": "D Ivry Sur Seine"
+    },
+    {
+      "slug": "unite-locale-d-obernai",
+      "name": "Unité locale de D Obernai",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-obernai",
+      "postal_code": "",
+      "city": "D Obernai"
+    },
+    {
+      "slug": "unite-locale-d-oloron-sainte-marie",
+      "name": "Unité locale de D Oloron Sainte Marie",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-oloron-sainte-marie",
+      "postal_code": "",
+      "city": "D Oloron Sainte Marie"
+    },
+    {
+      "slug": "unite-locale-d-orange",
+      "name": "Unité locale de D Orange",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-orange",
+      "postal_code": "",
+      "city": "D Orange"
+    },
+    {
+      "slug": "unite-locale-d-uzes",
+      "name": "Unité locale de D Uzes",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-d-uzes",
+      "postal_code": "",
+      "city": "D Uzes"
+    },
+    {
+      "slug": "unite-locale-de-bagneres-de-luchon",
+      "name": "Unité locale de De Bagneres De Luchon",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-bagneres-de-luchon",
+      "postal_code": "",
+      "city": "De Bagneres De Luchon"
+    },
+    {
+      "slug": "unite-locale-de-bagneux",
+      "name": "Unité locale de De Bagneux",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-bagneux",
+      "postal_code": "",
+      "city": "De Bagneux"
+    },
+    {
+      "slug": "unite-locale-de-ballan-mire",
+      "name": "Unité locale de De Ballan Mire",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-ballan-mire",
+      "postal_code": "",
+      "city": "De Ballan Mire"
+    },
+    {
+      "slug": "unite-locale-de-bar-sur-seine",
+      "name": "Unité locale de De Bar Sur Seine",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-bar-sur-seine",
+      "postal_code": "",
+      "city": "De Bar Sur Seine"
+    },
+    {
+      "slug": "unite-locale-de-barr",
+      "name": "Unité locale de De Barr",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-barr",
+      "postal_code": "",
+      "city": "De Barr"
+    },
+    {
+      "slug": "unite-locale-de-baume-les-dames",
+      "name": "Unité locale de De Baume Les Dames",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-baume-les-dames",
+      "postal_code": "",
+      "city": "De Baume Les Dames"
+    },
+    {
+      "slug": "unite-locale-de-bayonne",
+      "name": "Unité locale de De Bayonne",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-bayonne",
+      "postal_code": "",
+      "city": "De Bayonne"
+    },
+    {
+      "slug": "unite-locale-de-beaumont-de-lomagne",
+      "name": "Unité locale de De Beaumont De Lomagne",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-beaumont-de-lomagne",
+      "postal_code": "",
+      "city": "De Beaumont De Lomagne"
+    },
+    {
+      "slug": "unite-locale-de-beaune",
+      "name": "Unité locale de De Beaune",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-beaune",
+      "postal_code": "",
+      "city": "De Beaune"
+    },
+    {
+      "slug": "unite-locale-de-beausoleil-cap-d-ail-la-turbie",
+      "name": "Unité locale de De Beausoleil Cap D Ail La Turbie",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-beausoleil-cap-d-ail-la-turbie",
+      "postal_code": "",
+      "city": "De Beausoleil Cap D Ail La Turbie"
+    },
+    {
+      "slug": "unite-locale-de-berce",
+      "name": "Unité locale de De Berce",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-berce",
+      "postal_code": "",
+      "city": "De Berce"
+    },
+    {
+      "slug": "unite-locale-de-berck-montreuil",
+      "name": "Unité locale de De Berck Montreuil",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-berck-montreuil",
+      "postal_code": "",
+      "city": "De Berck Montreuil"
+    },
+    {
+      "slug": "unite-locale-de-bernay",
+      "name": "Unité locale de De Bernay",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-bernay",
+      "postal_code": "",
+      "city": "De Bernay"
+    },
+    {
+      "slug": "unite-locale-de-besancon",
+      "name": "Unité locale de De Besancon",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-besancon",
+      "postal_code": "",
+      "city": "De Besancon"
+    },
+    {
+      "slug": "unite-locale-de-biot-vsa-pays-de-la-brague",
+      "name": "Unité locale de De Biot Vsa Pays De La Brague",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-biot-vsa-pays-de-la-brague",
+      "postal_code": "",
+      "city": "De Biot Vsa Pays De La Brague"
+    },
+    {
+      "slug": "unite-locale-de-bischwiller",
+      "name": "Unité locale de De Bischwiller",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-bischwiller",
+      "postal_code": "",
+      "city": "De Bischwiller"
+    },
+    {
+      "slug": "unite-locale-de-blere-est-tourangeau",
+      "name": "Unité locale de De Blere Est Tourangeau",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-blere-est-tourangeau",
+      "postal_code": "",
+      "city": "De Blere Est Tourangeau"
+    },
+    {
+      "slug": "unite-locale-de-bletterans-chaumergy",
+      "name": "Unité locale de De Bletterans Chaumergy",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-bletterans-chaumergy",
+      "postal_code": "",
+      "city": "De Bletterans Chaumergy"
+    },
+    {
+      "slug": "unite-locale-de-blois",
+      "name": "Unité locale de De Blois",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-blois",
+      "postal_code": "",
+      "city": "De Blois"
+    },
+    {
+      "slug": "unite-locale-de-bois-colombes",
+      "name": "Unité locale de De Bois Colombes",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-bois-colombes",
+      "postal_code": "",
+      "city": "De Bois Colombes"
+    },
+    {
+      "slug": "unite-locale-de-bonneville",
+      "name": "Unité locale de De Bonneville",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-bonneville",
+      "postal_code": "",
+      "city": "De Bonneville"
+    },
+    {
+      "slug": "unite-locale-de-bordeaux",
+      "name": "Unité locale de De Bordeaux",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-bordeaux",
+      "postal_code": "",
+      "city": "De Bordeaux"
+    },
+    {
+      "slug": "unite-locale-de-boulogne-billancourt",
+      "name": "Unité locale de De Boulogne Billancourt",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-boulogne-billancourt",
+      "postal_code": "",
+      "city": "De Boulogne Billancourt"
+    },
+    {
+      "slug": "unite-locale-de-boulogne-sur-mer",
+      "name": "Unité locale de De Boulogne Sur Mer",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-boulogne-sur-mer",
+      "postal_code": "",
+      "city": "De Boulogne Sur Mer"
+    },
+    {
+      "slug": "unite-locale-de-bourg-la-reine",
+      "name": "Unité locale de De Bourg La Reine",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-bourg-la-reine",
+      "postal_code": "",
+      "city": "De Bourg La Reine"
+    },
+    {
+      "slug": "unite-locale-de-bresse-revermont",
+      "name": "Unité locale de De Bresse Revermont",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-bresse-revermont",
+      "postal_code": "",
+      "city": "De Bresse Revermont"
+    },
+    {
+      "slug": "unite-locale-de-brest-metropole",
+      "name": "Unité locale de De Brest Metropole",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-brest-metropole",
+      "postal_code": "",
+      "city": "De Brest Metropole"
+    },
+    {
+      "slug": "unite-locale-de-briancon",
+      "name": "Unité locale de De Briancon",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-briancon",
+      "postal_code": "",
+      "city": "De Briancon"
+    },
+    {
+      "slug": "unite-locale-de-brie-et-chantereine",
+      "name": "Unité locale de De Brie Et Chantereine",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-brie-et-chantereine",
+      "postal_code": "",
+      "city": "De Brie Et Chantereine"
+    },
+    {
+      "slug": "unite-locale-de-brie-senart",
+      "name": "Unité locale de De Brie Senart",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-brie-senart",
+      "postal_code": "",
+      "city": "De Brie Senart"
+    },
+    {
+      "slug": "unite-locale-de-briere-atlantique",
+      "name": "Unité locale de De Briere Atlantique",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-briere-atlantique",
+      "postal_code": "",
+      "city": "De Briere Atlantique"
+    },
+    {
+      "slug": "unite-locale-de-brive-la-gaillarde",
+      "name": "Unité locale de De Brive La Gaillarde",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-brive-la-gaillarde",
+      "postal_code": "",
+      "city": "De Brive La Gaillarde"
+    },
+    {
+      "slug": "unite-locale-de-broceliande",
+      "name": "Unité locale de De Broceliande",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-broceliande",
+      "postal_code": "",
+      "city": "De Broceliande"
+    },
+    {
+      "slug": "unite-locale-de-bruay-bethune-auchel",
+      "name": "Unité locale de De Bruay Bethune Auchel",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-bruay-bethune-auchel",
+      "postal_code": "",
+      "city": "De Bruay Bethune Auchel"
+    },
+    {
+      "slug": "unite-locale-de-brumath",
+      "name": "Unité locale de De Brumath",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-brumath",
+      "postal_code": "",
+      "city": "De Brumath"
+    },
+    {
+      "slug": "unite-locale-de-bry-villiers-champigny-le-plessis",
+      "name": "Unité locale de De Bry Villiers Champigny Le Plessis",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-bry-villiers-champigny-le-plessis",
+      "postal_code": "",
+      "city": "De Bry Villiers Champigny Le Plessis"
+    },
+    {
+      "slug": "unite-locale-de-bugey",
+      "name": "Unité locale de De Bugey",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-bugey",
+      "postal_code": "",
+      "city": "De Bugey"
+    },
+    {
+      "slug": "unite-locale-de-caen",
+      "name": "Unité locale de De Caen",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-caen",
+      "postal_code": "",
+      "city": "De Caen"
+    },
+    {
+      "slug": "unite-locale-de-cagnes-rives-du-loup",
+      "name": "Unité locale de De Cagnes Rives Du Loup",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-cagnes-rives-du-loup",
+      "postal_code": "",
+      "city": "De Cagnes Rives Du Loup"
+    },
+    {
+      "slug": "unite-locale-de-cambrai",
+      "name": "Unité locale de De Cambrai",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-cambrai",
+      "postal_code": "",
+      "city": "De Cambrai"
+    },
+    {
+      "slug": "unite-locale-de-cannes-pays-de-lerins-et-grasse",
+      "name": "Unité locale de De Cannes Pays De Lerins Et Grasse",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-cannes-pays-de-lerins-et-grasse",
+      "postal_code": "",
+      "city": "De Cannes Pays De Lerins Et Grasse"
+    },
+    {
+      "slug": "unite-locale-de-carbonne-cazeres",
+      "name": "Unité locale de De Carbonne Cazeres",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-carbonne-cazeres",
+      "postal_code": "",
+      "city": "De Carbonne Cazeres"
+    },
+    {
+      "slug": "unite-locale-de-carcassonne",
+      "name": "Unité locale de De Carcassonne",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-carcassonne",
+      "postal_code": "",
+      "city": "De Carcassonne"
+    },
+    {
+      "slug": "unite-locale-de-carmaux",
+      "name": "Unité locale de De Carmaux",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-carmaux",
+      "postal_code": "",
+      "city": "De Carmaux"
+    },
+    {
+      "slug": "unite-locale-de-carros-gattieres",
+      "name": "Unité locale de De Carros Gattieres",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-carros-gattieres",
+      "postal_code": "",
+      "city": "De Carros Gattieres"
+    },
+    {
+      "slug": "unite-locale-de-casteljaloux",
+      "name": "Unité locale de De Casteljaloux",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-casteljaloux",
+      "postal_code": "",
+      "city": "De Casteljaloux"
+    },
+    {
+      "slug": "unite-locale-de-castelnaudary",
+      "name": "Unité locale de De Castelnaudary",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-castelnaudary",
+      "postal_code": "",
+      "city": "De Castelnaudary"
+    },
+    {
+      "slug": "unite-locale-de-castelsarrasin",
+      "name": "Unité locale de De Castelsarrasin",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-castelsarrasin",
+      "postal_code": "",
+      "city": "De Castelsarrasin"
+    },
+    {
+      "slug": "unite-locale-de-caudry",
+      "name": "Unité locale de De Caudry",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-caudry",
+      "postal_code": "",
+      "city": "De Caudry"
+    },
+    {
+      "slug": "unite-locale-de-caussade",
+      "name": "Unité locale de De Caussade",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-caussade",
+      "postal_code": "",
+      "city": "De Caussade"
+    },
+    {
+      "slug": "unite-locale-de-cazaubon",
+      "name": "Unité locale de De Cazaubon",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-cazaubon",
+      "postal_code": "",
+      "city": "De Cazaubon"
+    },
+    {
+      "slug": "unite-locale-de-centre-ardeche",
+      "name": "Unité locale de De Centre Ardeche",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-centre-ardeche",
+      "postal_code": "",
+      "city": "De Centre Ardeche"
+    },
+    {
+      "slug": "unite-locale-de-centre-brie",
+      "name": "Unité locale de De Centre Brie",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-centre-brie",
+      "postal_code": "",
+      "city": "De Centre Brie"
+    },
+    {
+      "slug": "unite-locale-de-cercy-la-tour",
+      "name": "Unité locale de De Cercy La Tour",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-cercy-la-tour",
+      "postal_code": "",
+      "city": "De Cercy La Tour"
+    },
+    {
+      "slug": "unite-locale-de-cernay",
+      "name": "Unité locale de De Cernay",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-cernay",
+      "postal_code": "",
+      "city": "De Cernay"
+    },
+    {
+      "slug": "unite-locale-de-cevennes-vidourle",
+      "name": "Unité locale de De Cevennes Vidourle",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-cevennes-vidourle",
+      "postal_code": "",
+      "city": "De Cevennes Vidourle"
+    },
+    {
+      "slug": "unite-locale-de-ceze-auzonnet",
+      "name": "Unité locale de De Ceze Auzonnet",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-ceze-auzonnet",
+      "postal_code": "",
+      "city": "De Ceze Auzonnet"
+    },
+    {
+      "slug": "unite-locale-de-challans",
+      "name": "Unité locale de De Challans",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-challans",
+      "postal_code": "",
+      "city": "De Challans"
+    },
+    {
+      "slug": "unite-locale-de-chalon-sur-saone",
+      "name": "Unité locale de De Chalon Sur Saone",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-chalon-sur-saone",
+      "postal_code": "",
+      "city": "De Chalon Sur Saone"
+    },
+    {
+      "slug": "unite-locale-de-chalons-en-champagne",
+      "name": "Unité locale de De Chalons En Champagne",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-chalons-en-champagne",
+      "postal_code": "",
+      "city": "De Chalons En Champagne"
+    },
+    {
+      "slug": "unite-locale-de-champagnole",
+      "name": "Unité locale de De Champagnole",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-champagnole",
+      "postal_code": "",
+      "city": "De Champagnole"
+    },
+    {
+      "slug": "unite-locale-de-charenton-le-pont-st-maurice",
+      "name": "Unité locale de De Charenton Le Pont St Maurice",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-charenton-le-pont-st-maurice",
+      "postal_code": "",
+      "city": "De Charenton Le Pont St Maurice"
+    },
+    {
+      "slug": "unite-locale-de-charleville-mezieres",
+      "name": "Unité locale de De Charleville Mezieres",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-charleville-mezieres",
+      "postal_code": "",
+      "city": "De Charleville Mezieres"
+    },
+    {
+      "slug": "unite-locale-de-chartres",
+      "name": "Unité locale de De Chartres",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-chartres",
+      "postal_code": "",
+      "city": "De Chartres"
+    },
+    {
+      "slug": "unite-locale-de-chateau-gontier",
+      "name": "Unité locale de De Chateau Gontier",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-chateau-gontier",
+      "postal_code": "",
+      "city": "De Chateau Gontier"
+    },
+    {
+      "slug": "unite-locale-de-chateau-landon",
+      "name": "Unité locale de De Chateau Landon",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-chateau-landon",
+      "postal_code": "",
+      "city": "De Chateau Landon"
+    },
+    {
+      "slug": "unite-locale-de-chateau-renault",
+      "name": "Unité locale de De Chateau Renault",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-chateau-renault",
+      "postal_code": "",
+      "city": "De Chateau Renault"
+    },
+    {
+      "slug": "unite-locale-de-chateau-thierry",
+      "name": "Unité locale de De Chateau Thierry",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-chateau-thierry",
+      "postal_code": "",
+      "city": "De Chateau Thierry"
+    },
+    {
+      "slug": "unite-locale-de-chateaubriant",
+      "name": "Unité locale de De Chateaubriant",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-chateaubriant",
+      "postal_code": "",
+      "city": "De Chateaubriant"
+    },
+    {
+      "slug": "unite-locale-de-chateaudun",
+      "name": "Unité locale de De Chateaudun",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-chateaudun",
+      "postal_code": "",
+      "city": "De Chateaudun"
+    },
+    {
+      "slug": "unite-locale-de-chateauroux",
+      "name": "Unité locale de De Chateauroux",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-chateauroux",
+      "postal_code": "",
+      "city": "De Chateauroux"
+    },
+    {
+      "slug": "unite-locale-de-chatenay-malabry-le-plessis-robinson",
+      "name": "Unité locale de De Chatenay Malabry Le Plessis Robinson",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-chatenay-malabry-le-plessis-robinson",
+      "postal_code": "",
+      "city": "De Chatenay Malabry Le Plessis Robinson"
+    },
+    {
+      "slug": "unite-locale-de-chatillon",
+      "name": "Unité locale de De Chatillon",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-chatillon",
+      "postal_code": "",
+      "city": "De Chatillon"
+    },
+    {
+      "slug": "unite-locale-de-chatillon-sur-seine",
+      "name": "Unité locale de De Chatillon Sur Seine",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-chatillon-sur-seine",
+      "postal_code": "",
+      "city": "De Chatillon Sur Seine"
+    },
+    {
+      "slug": "unite-locale-de-chauny-laon-tergnier-la-fere",
+      "name": "Unité locale de De Chauny Laon Tergnier La Fere",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-chauny-laon-tergnier-la-fere",
+      "postal_code": "",
+      "city": "De Chauny Laon Tergnier La Fere"
+    },
+    {
+      "slug": "unite-locale-de-chaville",
+      "name": "Unité locale de De Chaville",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-chaville",
+      "postal_code": "",
+      "city": "De Chaville"
+    },
+    {
+      "slug": "unite-locale-de-chevreuse",
+      "name": "Unité locale de De Chevreuse",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-chevreuse",
+      "postal_code": "",
+      "city": "De Chevreuse"
+    },
+    {
+      "slug": "unite-locale-de-chinon-ste-maure",
+      "name": "Unité locale de De Chinon Ste Maure",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-chinon-ste-maure",
+      "postal_code": "",
+      "city": "De Chinon Ste Maure"
+    },
+    {
+      "slug": "unite-locale-de-choisy-le-roi-thiais",
+      "name": "Unité locale de De Choisy Le Roi Thiais",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-choisy-le-roi-thiais",
+      "postal_code": "",
+      "city": "De Choisy Le Roi Thiais"
+    },
+    {
+      "slug": "unite-locale-de-cholet",
+      "name": "Unité locale de De Cholet",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-cholet",
+      "postal_code": "",
+      "city": "De Cholet"
+    },
+    {
+      "slug": "unite-locale-de-clamart",
+      "name": "Unité locale de De Clamart",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-clamart",
+      "postal_code": "",
+      "city": "De Clamart"
+    },
+    {
+      "slug": "unite-locale-de-clermont-ferrand",
+      "name": "Unité locale de De Clermont Ferrand",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-clermont-ferrand",
+      "postal_code": "",
+      "city": "De Clermont Ferrand"
+    },
+    {
+      "slug": "unite-locale-de-clichy-la-garenne",
+      "name": "Unité locale de De Clichy La Garenne",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-clichy-la-garenne",
+      "postal_code": "",
+      "city": "De Clichy La Garenne"
+    },
+    {
+      "slug": "unite-locale-de-cluny",
+      "name": "Unité locale de De Cluny",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-cluny",
+      "postal_code": "",
+      "city": "De Cluny"
+    },
+    {
+      "slug": "unite-locale-de-coeur-de-mauldre",
+      "name": "Unité locale de De Coeur De Mauldre",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-coeur-de-mauldre",
+      "postal_code": "",
+      "city": "De Coeur De Mauldre"
+    },
+    {
+      "slug": "unite-locale-de-coeur-entre-deux-mers",
+      "name": "Unité locale de De Coeur Entre Deux Mers",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-coeur-entre-deux-mers",
+      "postal_code": "",
+      "city": "De Coeur Entre Deux Mers"
+    },
+    {
+      "slug": "unite-locale-de-colmar",
+      "name": "Unité locale de De Colmar",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-colmar",
+      "postal_code": "",
+      "city": "De Colmar"
+    },
+    {
+      "slug": "unite-locale-de-colombes",
+      "name": "Unité locale de De Colombes",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-colombes",
+      "postal_code": "",
+      "city": "De Colombes"
+    },
+    {
+      "slug": "unite-locale-de-colomiers",
+      "name": "Unité locale de De Colomiers",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-colomiers",
+      "postal_code": "",
+      "city": "De Colomiers"
+    },
+    {
+      "slug": "unite-locale-de-concarneau",
+      "name": "Unité locale de De Concarneau",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-concarneau",
+      "postal_code": "",
+      "city": "De Concarneau"
+    },
+    {
+      "slug": "unite-locale-de-conde-suisse-normande",
+      "name": "Unité locale de De Conde Suisse Normande",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-conde-suisse-normande",
+      "postal_code": "",
+      "city": "De Conde Suisse Normande"
+    },
+    {
+      "slug": "unite-locale-de-condom",
+      "name": "Unité locale de De Condom",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-condom",
+      "postal_code": "",
+      "city": "De Condom"
+    },
+    {
+      "slug": "unite-locale-de-conflent-cerdagne-capcir",
+      "name": "Unité locale de De Conflent Cerdagne Capcir",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-conflent-cerdagne-capcir",
+      "postal_code": "",
+      "city": "De Conflent Cerdagne Capcir"
+    },
+    {
+      "slug": "unite-locale-de-corbeil-essonnes",
+      "name": "Unité locale de De Corbeil Essonnes",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-corbeil-essonnes",
+      "postal_code": "",
+      "city": "De Corbeil Essonnes"
+    },
+    {
+      "slug": "unite-locale-de-cosne-sur-loire",
+      "name": "Unité locale de De Cosne Sur Loire",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-cosne-sur-loire",
+      "postal_code": "",
+      "city": "De Cosne Sur Loire"
+    },
+    {
+      "slug": "unite-locale-de-coulommiers",
+      "name": "Unité locale de De Coulommiers",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-coulommiers",
+      "postal_code": "",
+      "city": "De Coulommiers"
+    },
+    {
+      "slug": "unite-locale-de-courbevoie",
+      "name": "Unité locale de De Courbevoie",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-courbevoie",
+      "postal_code": "",
+      "city": "De Courbevoie"
+    },
+    {
+      "slug": "unite-locale-de-coutances",
+      "name": "Unité locale de De Coutances",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-coutances",
+      "postal_code": "",
+      "city": "De Coutances"
+    },
+    {
+      "slug": "unite-locale-de-coutras",
+      "name": "Unité locale de De Coutras",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-coutras",
+      "postal_code": "",
+      "city": "De Coutras"
+    },
+    {
+      "slug": "unite-locale-de-dax",
+      "name": "Unité locale de De Dax",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-dax",
+      "postal_code": "",
+      "city": "De Dax"
+    },
+    {
+      "slug": "unite-locale-de-deauville-trouville-coeur-cote-fleurie",
+      "name": "Unité locale de De Deauville Trouville Coeur Cote Fleurie",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-deauville-trouville-coeur-cote-fleurie",
+      "postal_code": "",
+      "city": "De Deauville Trouville Coeur Cote Fleurie"
+    },
+    {
+      "slug": "unite-locale-de-decize",
+      "name": "Unité locale de De Decize",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-decize",
+      "postal_code": "",
+      "city": "De Decize"
+    },
+    {
+      "slug": "unite-locale-de-die",
+      "name": "Unité locale de De Die",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-die",
+      "postal_code": "",
+      "city": "De Die"
+    },
+    {
+      "slug": "unite-locale-de-dieppe-terre-et-mer",
+      "name": "Unité locale de De Dieppe Terre Et Mer",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-dieppe-terre-et-mer",
+      "postal_code": "",
+      "city": "De Dieppe Terre Et Mer"
+    },
+    {
+      "slug": "unite-locale-de-dieuze",
+      "name": "Unité locale de De Dieuze",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-dieuze",
+      "postal_code": "",
+      "city": "De Dieuze"
+    },
+    {
+      "slug": "unite-locale-de-dijon",
+      "name": "Unité locale de De Dijon",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-dijon",
+      "postal_code": "",
+      "city": "De Dijon"
+    },
+    {
+      "slug": "unite-locale-de-dombasle-st-nicolas-baccarat",
+      "name": "Unité locale de De Dombasle St Nicolas Baccarat",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-dombasle-st-nicolas-baccarat",
+      "postal_code": "",
+      "city": "De Dombasle St Nicolas Baccarat"
+    },
+    {
+      "slug": "unite-locale-de-donnemarie-dontilly",
+      "name": "Unité locale de De Donnemarie Dontilly",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-donnemarie-dontilly",
+      "postal_code": "",
+      "city": "De Donnemarie Dontilly"
+    },
+    {
+      "slug": "unite-locale-de-douai",
+      "name": "Unité locale de De Douai",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-douai",
+      "postal_code": "",
+      "city": "De Douai"
+    },
+    {
+      "slug": "unite-locale-de-doullennais",
+      "name": "Unité locale de De Doullennais",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-doullennais",
+      "postal_code": "",
+      "city": "De Doullennais"
+    },
+    {
+      "slug": "unite-locale-de-draveil-montgeron-vigneux",
+      "name": "Unité locale de De Draveil Montgeron Vigneux",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-draveil-montgeron-vigneux",
+      "postal_code": "",
+      "city": "De Draveil Montgeron Vigneux"
+    },
+    {
+      "slug": "unite-locale-de-dreux",
+      "name": "Unité locale de De Dreux",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-dreux",
+      "postal_code": "",
+      "city": "De Dreux"
+    },
+    {
+      "slug": "unite-locale-de-dunkerque",
+      "name": "Unité locale de De Dunkerque",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-dunkerque",
+      "postal_code": "",
+      "city": "De Dunkerque"
+    },
+    {
+      "slug": "unite-locale-de-feurs",
+      "name": "Unité locale de De Feurs",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-feurs",
+      "postal_code": "",
+      "city": "De Feurs"
+    },
+    {
+      "slug": "unite-locale-de-florac-trois-rivieres",
+      "name": "Unité locale de De Florac Trois Rivieres",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-florac-trois-rivieres",
+      "postal_code": "",
+      "city": "De Florac Trois Rivieres"
+    },
+    {
+      "slug": "unite-locale-de-fontainebleau",
+      "name": "Unité locale de De Fontainebleau",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-fontainebleau",
+      "postal_code": "",
+      "city": "De Fontainebleau"
+    },
+    {
+      "slug": "unite-locale-de-fontenay-aux-roses",
+      "name": "Unité locale de De Fontenay Aux Roses",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-fontenay-aux-roses",
+      "postal_code": "",
+      "city": "De Fontenay Aux Roses"
+    },
+    {
+      "slug": "unite-locale-de-fontenay-le-comte",
+      "name": "Unité locale de De Fontenay Le Comte",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-fontenay-le-comte",
+      "postal_code": "",
+      "city": "De Fontenay Le Comte"
+    },
+    {
+      "slug": "unite-locale-de-fontenay-sous-bois",
+      "name": "Unité locale de De Fontenay Sous Bois",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-fontenay-sous-bois",
+      "postal_code": "",
+      "city": "De Fontenay Sous Bois"
+    },
+    {
+      "slug": "unite-locale-de-fourmies",
+      "name": "Unité locale de De Fourmies",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-fourmies",
+      "postal_code": "",
+      "city": "De Fourmies"
+    },
+    {
+      "slug": "unite-locale-de-fresnes-rungis",
+      "name": "Unité locale de De Fresnes Rungis",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-fresnes-rungis",
+      "postal_code": "",
+      "city": "De Fresnes Rungis"
+    },
+    {
+      "slug": "unite-locale-de-gaillon-vernon",
+      "name": "Unité locale de De Gaillon Vernon",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-gaillon-vernon",
+      "postal_code": "",
+      "city": "De Gaillon Vernon"
+    },
+    {
+      "slug": "unite-locale-de-gap",
+      "name": "Unité locale de De Gap",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-gap",
+      "postal_code": "",
+      "city": "De Gap"
+    },
+    {
+      "slug": "unite-locale-de-garches",
+      "name": "Unité locale de De Garches",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-garches",
+      "postal_code": "",
+      "city": "De Garches"
+    },
+    {
+      "slug": "unite-locale-de-gaves",
+      "name": "Unité locale de De Gaves",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-gaves",
+      "postal_code": "",
+      "city": "De Gaves"
+    },
+    {
+      "slug": "unite-locale-de-gentilly-le-kremlin-villejuif",
+      "name": "Unité locale de De Gentilly Le Kremlin Villejuif",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-gentilly-le-kremlin-villejuif",
+      "postal_code": "",
+      "city": "De Gentilly Le Kremlin Villejuif"
+    },
+    {
+      "slug": "unite-locale-de-grenoble-vercors-gresivaudan",
+      "name": "Unité locale de De Grenoble Vercors Gresivaudan",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-grenoble-vercors-gresivaudan",
+      "postal_code": "",
+      "city": "De Grenoble Vercors Gresivaudan"
+    },
+    {
+      "slug": "unite-locale-de-guebwiller",
+      "name": "Unité locale de De Guebwiller",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-guebwiller",
+      "postal_code": "",
+      "city": "De Guebwiller"
+    },
+    {
+      "slug": "unite-locale-de-gueugnon",
+      "name": "Unité locale de De Gueugnon",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-gueugnon",
+      "postal_code": "",
+      "city": "De Gueugnon"
+    },
+    {
+      "slug": "unite-locale-de-haguenau",
+      "name": "Unité locale de De Haguenau",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-haguenau",
+      "postal_code": "",
+      "city": "De Haguenau"
+    },
+    {
+      "slug": "unite-locale-de-haute-correze",
+      "name": "Unité locale de De Haute Correze",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-haute-correze",
+      "postal_code": "",
+      "city": "De Haute Correze"
+    },
+    {
+      "slug": "unite-locale-de-haute-picardie",
+      "name": "Unité locale de De Haute Picardie",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-haute-picardie",
+      "postal_code": "",
+      "city": "De Haute Picardie"
+    },
+    {
+      "slug": "unite-locale-de-haute-somme",
+      "name": "Unité locale de De Haute Somme",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-haute-somme",
+      "postal_code": "",
+      "city": "De Haute Somme"
+    },
+    {
+      "slug": "unite-locale-de-haute-touraine",
+      "name": "Unité locale de De Haute Touraine",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-haute-touraine",
+      "postal_code": "",
+      "city": "De Haute Touraine"
+    },
+    {
+      "slug": "unite-locale-de-houilles-carrieres",
+      "name": "Unité locale de De Houilles Carrieres",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-houilles-carrieres",
+      "postal_code": "",
+      "city": "De Houilles Carrieres"
+    },
+    {
+      "slug": "unite-locale-de-jarny",
+      "name": "Unité locale de De Jarny",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-jarny",
+      "postal_code": "",
+      "city": "De Jarny"
+    },
+    {
+      "slug": "unite-locale-de-jeumont",
+      "name": "Unité locale de De Jeumont",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-jeumont",
+      "postal_code": "",
+      "city": "De Jeumont"
+    },
+    {
+      "slug": "unite-locale-de-joinville-le-pont",
+      "name": "Unité locale de De Joinville Le Pont",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-joinville-le-pont",
+      "postal_code": "",
+      "city": "De Joinville Le Pont"
+    },
+    {
+      "slug": "unite-locale-de-jura-centre",
+      "name": "Unité locale de De Jura Centre",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-jura-centre",
+      "postal_code": "",
+      "city": "De Jura Centre"
+    },
+    {
+      "slug": "unite-locale-de-l-abbevillois",
+      "name": "Unité locale de De L Abbevillois",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-l-abbevillois",
+      "postal_code": "",
+      "city": "De L Abbevillois"
+    },
+    {
+      "slug": "unite-locale-de-l-albret",
+      "name": "Unité locale de De L Albret",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-l-albret",
+      "postal_code": "",
+      "city": "De L Albret"
+    },
+    {
+      "slug": "unite-locale-de-l-autunois-morvan",
+      "name": "Unité locale de De L Autunois Morvan",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-l-autunois-morvan",
+      "postal_code": "",
+      "city": "De L Autunois Morvan"
+    },
+    {
+      "slug": "unite-locale-de-l-auxerrois",
+      "name": "Unité locale de De L Auxerrois",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-l-auxerrois",
+      "postal_code": "",
+      "city": "De L Auxerrois"
+    },
+    {
+      "slug": "unite-locale-de-l-est-francilien",
+      "name": "Unité locale de De L Est Francilien",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-l-est-francilien",
+      "postal_code": "",
+      "city": "De L Est Francilien"
+    },
+    {
+      "slug": "unite-locale-de-l-isle-jourdain",
+      "name": "Unité locale de De L Isle Jourdain",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-l-isle-jourdain",
+      "postal_code": "",
+      "city": "De L Isle Jourdain"
+    },
+    {
+      "slug": "unite-locale-de-l-ouest-lyonnais",
+      "name": "Unité locale de De L Ouest Lyonnais",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-l-ouest-lyonnais",
+      "postal_code": "",
+      "city": "De L Ouest Lyonnais"
+    },
+    {
+      "slug": "unite-locale-de-la-boucle-nord",
+      "name": "Unité locale de De La Boucle Nord",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-la-boucle-nord",
+      "postal_code": "",
+      "city": "De La Boucle Nord"
+    },
+    {
+      "slug": "unite-locale-de-la-bresse-bourguignonne",
+      "name": "Unité locale de De La Bresse Bourguignonne",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-la-bresse-bourguignonne",
+      "postal_code": "",
+      "city": "De La Bresse Bourguignonne"
+    },
+    {
+      "slug": "unite-locale-de-la-celle-st-cloud",
+      "name": "Unité locale de De La Celle St Cloud",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-la-celle-st-cloud",
+      "postal_code": "",
+      "city": "De La Celle St Cloud"
+    },
+    {
+      "slug": "unite-locale-de-la-chatre",
+      "name": "Unité locale de De La Chatre",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-la-chatre",
+      "postal_code": "",
+      "city": "De La Chatre"
+    },
+    {
+      "slug": "unite-locale-de-la-ciotat",
+      "name": "Unité locale de De La Ciotat",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-la-ciotat",
+      "postal_code": "",
+      "city": "De La Ciotat"
+    },
+    {
+      "slug": "unite-locale-de-la-clayette-marcigny",
+      "name": "Unité locale de De La Clayette Marcigny",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-la-clayette-marcigny",
+      "postal_code": "",
+      "city": "De La Clayette Marcigny"
+    },
+    {
+      "slug": "unite-locale-de-la-drome-provencale",
+      "name": "Unité locale de De La Drome Provencale",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-la-drome-provencale",
+      "postal_code": "",
+      "city": "De La Drome Provencale"
+    },
+    {
+      "slug": "unite-locale-de-la-drome-septentrionale",
+      "name": "Unité locale de De La Drome Septentrionale",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-la-drome-septentrionale",
+      "postal_code": "",
+      "city": "De La Drome Septentrionale"
+    },
+    {
+      "slug": "unite-locale-de-la-ferte-bernard",
+      "name": "Unité locale de De La Ferte Bernard",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-la-ferte-bernard",
+      "postal_code": "",
+      "city": "De La Ferte Bernard"
+    },
+    {
+      "slug": "unite-locale-de-la-fleche",
+      "name": "Unité locale de De La Fleche",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-la-fleche",
+      "postal_code": "",
+      "city": "De La Fleche"
+    },
+    {
+      "slug": "unite-locale-de-la-garenne-colombes",
+      "name": "Unité locale de De La Garenne Colombes",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-la-garenne-colombes",
+      "postal_code": "",
+      "city": "De La Garenne Colombes"
+    },
+    {
+      "slug": "unite-locale-de-la-marne-et-les-deux-morins",
+      "name": "Unité locale de De La Marne Et Les Deux Morins",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-la-marne-et-les-deux-morins",
+      "postal_code": "",
+      "city": "De La Marne Et Les Deux Morins"
+    },
+    {
+      "slug": "unite-locale-de-la-pierre-turquaise",
+      "name": "Unité locale de De La Pierre Turquaise",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-la-pierre-turquaise",
+      "postal_code": "",
+      "city": "De La Pierre Turquaise"
+    },
+    {
+      "slug": "unite-locale-de-la-plaine-de-france",
+      "name": "Unité locale de De La Plaine De France",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-la-plaine-de-france",
+      "postal_code": "",
+      "city": "De La Plaine De France"
+    },
+    {
+      "slug": "unite-locale-de-la-pyramide",
+      "name": "Unité locale de De La Pyramide",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-la-pyramide",
+      "postal_code": "",
+      "city": "De La Pyramide"
+    },
+    {
+      "slug": "unite-locale-de-la-roche-sur-foron-reignier",
+      "name": "Unité locale de De La Roche Sur Foron Reignier",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-la-roche-sur-foron-reignier",
+      "postal_code": "",
+      "city": "De La Roche Sur Foron Reignier"
+    },
+    {
+      "slug": "unite-locale-de-la-roche-sur-yon",
+      "name": "Unité locale de De La Roche Sur Yon",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-la-roche-sur-yon",
+      "postal_code": "",
+      "city": "De La Roche Sur Yon"
+    },
+    {
+      "slug": "unite-locale-de-la-rochelle",
+      "name": "Unité locale de De La Rochelle",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-la-rochelle",
+      "postal_code": "",
+      "city": "De La Rochelle"
+    },
+    {
+      "slug": "unite-locale-de-la-vallee-de-l-arz",
+      "name": "Unité locale de De La Vallee De L Arz",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-la-vallee-de-l-arz",
+      "postal_code": "",
+      "city": "De La Vallee De L Arz"
+    },
+    {
+      "slug": "unite-locale-de-la-vallee-de-l-ondaine",
+      "name": "Unité locale de De La Vallee De L Ondaine",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-la-vallee-de-l-ondaine",
+      "postal_code": "",
+      "city": "De La Vallee De L Ondaine"
+    },
+    {
+      "slug": "unite-locale-de-la-vallee-de-la-marne",
+      "name": "Unité locale de De La Vallee De La Marne",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-la-vallee-de-la-marne",
+      "postal_code": "",
+      "city": "De La Vallee De La Marne"
+    },
+    {
+      "slug": "unite-locale-de-la-vallee-du-lot",
+      "name": "Unité locale de De La Vallee Du Lot",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-la-vallee-du-lot",
+      "postal_code": "",
+      "city": "De La Vallee Du Lot"
+    },
+    {
+      "slug": "unite-locale-de-lafrancaise",
+      "name": "Unité locale de De Lafrancaise",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-lafrancaise",
+      "postal_code": "",
+      "city": "De Lafrancaise"
+    },
+    {
+      "slug": "unite-locale-de-lagny-sur-marne",
+      "name": "Unité locale de De Lagny Sur Marne",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-lagny-sur-marne",
+      "postal_code": "",
+      "city": "De Lagny Sur Marne"
+    },
+    {
+      "slug": "unite-locale-de-landerneau",
+      "name": "Unité locale de De Landerneau",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-landerneau",
+      "postal_code": "",
+      "city": "De Landerneau"
+    },
+    {
+      "slug": "unite-locale-de-langeais-nord-ouest",
+      "name": "Unité locale de De Langeais Nord Ouest",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-langeais-nord-ouest",
+      "postal_code": "",
+      "city": "De Langeais Nord Ouest"
+    },
+    {
+      "slug": "unite-locale-de-langogne",
+      "name": "Unité locale de De Langogne",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-langogne",
+      "postal_code": "",
+      "city": "De Langogne"
+    },
+    {
+      "slug": "unite-locale-de-laon",
+      "name": "Unité locale de De Laon",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-laon",
+      "postal_code": "",
+      "city": "De Laon"
+    },
+    {
+      "slug": "unite-locale-de-laroque-et-du-canton-de-mirepoix",
+      "name": "Unité locale de De Laroque Et Du Canton De Mirepoix",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-laroque-et-du-canton-de-mirepoix",
+      "postal_code": "",
+      "city": "De Laroque Et Du Canton De Mirepoix"
+    },
+    {
+      "slug": "unite-locale-de-laval",
+      "name": "Unité locale de De Laval",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-laval",
+      "postal_code": "",
+      "city": "De Laval"
+    },
+    {
+      "slug": "unite-locale-de-lavaur",
+      "name": "Unité locale de De Lavaur",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-lavaur",
+      "postal_code": "",
+      "city": "De Lavaur"
+    },
+    {
+      "slug": "unite-locale-de-lens",
+      "name": "Unité locale de De Lens",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-lens",
+      "postal_code": "",
+      "city": "De Lens"
+    },
+    {
+      "slug": "unite-locale-de-lesneven",
+      "name": "Unité locale de De Lesneven",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-lesneven",
+      "postal_code": "",
+      "city": "De Lesneven"
+    },
+    {
+      "slug": "unite-locale-de-lezignan-corbieres",
+      "name": "Unité locale de De Lezignan Corbieres",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-lezignan-corbieres",
+      "postal_code": "",
+      "city": "De Lezignan Corbieres"
+    },
+    {
+      "slug": "unite-locale-de-libourne",
+      "name": "Unité locale de De Libourne",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-libourne",
+      "postal_code": "",
+      "city": "De Libourne"
+    },
+    {
+      "slug": "unite-locale-de-lille",
+      "name": "Unité locale de De Lille",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-lille",
+      "postal_code": "",
+      "city": "De Lille"
+    },
+    {
+      "slug": "unite-locale-de-limoges",
+      "name": "Unité locale de De Limoges",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-limoges",
+      "postal_code": "",
+      "city": "De Limoges"
+    },
+    {
+      "slug": "unite-locale-de-limours",
+      "name": "Unité locale de De Limours",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-limours",
+      "postal_code": "",
+      "city": "De Limours"
+    },
+    {
+      "slug": "unite-locale-de-limoux",
+      "name": "Unité locale de De Limoux",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-limoux",
+      "postal_code": "",
+      "city": "De Limoux"
+    },
+    {
+      "slug": "unite-locale-de-lisieux-pays-d-auge-sud",
+      "name": "Unité locale de De Lisieux Pays D Auge Sud",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-lisieux-pays-d-auge-sud",
+      "postal_code": "",
+      "city": "De Lisieux Pays D Auge Sud"
+    },
+    {
+      "slug": "unite-locale-de-lizy-sur-ourcq",
+      "name": "Unité locale de De Lizy Sur Ourcq",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-lizy-sur-ourcq",
+      "postal_code": "",
+      "city": "De Lizy Sur Ourcq"
+    },
+    {
+      "slug": "unite-locale-de-lombez-samatan",
+      "name": "Unité locale de De Lombez Samatan",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-lombez-samatan",
+      "postal_code": "",
+      "city": "De Lombez Samatan"
+    },
+    {
+      "slug": "unite-locale-de-longwy",
+      "name": "Unité locale de De Longwy",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-longwy",
+      "postal_code": "",
+      "city": "De Longwy"
+    },
+    {
+      "slug": "unite-locale-de-louviers",
+      "name": "Unité locale de De Louviers",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-louviers",
+      "postal_code": "",
+      "city": "De Louviers"
+    },
+    {
+      "slug": "unite-locale-de-lucon",
+      "name": "Unité locale de De Lucon",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-lucon",
+      "postal_code": "",
+      "city": "De Lucon"
+    },
+    {
+      "slug": "unite-locale-de-luneville",
+      "name": "Unité locale de De Luneville",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-luneville",
+      "postal_code": "",
+      "city": "De Luneville"
+    },
+    {
+      "slug": "unite-locale-de-lyon-8eme",
+      "name": "Unité locale de De Lyon 8Eme",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-lyon-8eme",
+      "postal_code": "",
+      "city": "De Lyon 8Eme"
+    },
+    {
+      "slug": "unite-locale-de-lyon-9eme",
+      "name": "Unité locale de De Lyon 9Eme",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-lyon-9eme",
+      "postal_code": "",
+      "city": "De Lyon 9Eme"
+    },
+    {
+      "slug": "unite-locale-de-maisons-alfort",
+      "name": "Unité locale de De Maisons Alfort",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-maisons-alfort",
+      "postal_code": "",
+      "city": "De Maisons Alfort"
+    },
+    {
+      "slug": "unite-locale-de-marignane",
+      "name": "Unité locale de De Marignane",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-marignane",
+      "postal_code": "",
+      "city": "De Marignane"
+    },
+    {
+      "slug": "unite-locale-de-marmande",
+      "name": "Unité locale de De Marmande",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-marmande",
+      "postal_code": "",
+      "city": "De Marmande"
+    },
+    {
+      "slug": "unite-locale-de-marsan",
+      "name": "Unité locale de De Marsan",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-marsan",
+      "postal_code": "",
+      "city": "De Marsan"
+    },
+    {
+      "slug": "unite-locale-de-marseille",
+      "name": "Unité locale de De Marseille",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-marseille",
+      "postal_code": "",
+      "city": "De Marseille"
+    },
+    {
+      "slug": "unite-locale-de-martigues",
+      "name": "Unité locale de De Martigues",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-martigues",
+      "postal_code": "",
+      "city": "De Martigues"
+    },
+    {
+      "slug": "unite-locale-de-marvejols-la-canourgue-meyrueis",
+      "name": "Unité locale de De Marvejols La Canourgue Meyrueis",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-marvejols-la-canourgue-meyrueis",
+      "postal_code": "",
+      "city": "De Marvejols La Canourgue Meyrueis"
+    },
+    {
+      "slug": "unite-locale-de-masseube",
+      "name": "Unité locale de De Masseube",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-masseube",
+      "postal_code": "",
+      "city": "De Masseube"
+    },
+    {
+      "slug": "unite-locale-de-maubeuge",
+      "name": "Unité locale de De Maubeuge",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-maubeuge",
+      "postal_code": "",
+      "city": "De Maubeuge"
+    },
+    {
+      "slug": "unite-locale-de-mauleon-soule",
+      "name": "Unité locale de De Mauleon Soule",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-mauleon-soule",
+      "postal_code": "",
+      "city": "De Mauleon Soule"
+    },
+    {
+      "slug": "unite-locale-de-mayenne",
+      "name": "Unité locale de De Mayenne",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-mayenne",
+      "postal_code": "",
+      "city": "De Mayenne"
+    },
+    {
+      "slug": "unite-locale-de-melun",
+      "name": "Unité locale de De Melun",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-melun",
+      "postal_code": "",
+      "city": "De Melun"
+    },
+    {
+      "slug": "unite-locale-de-mende",
+      "name": "Unité locale de De Mende",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-mende",
+      "postal_code": "",
+      "city": "De Mende"
+    },
+    {
+      "slug": "unite-locale-de-menton-roquebrune-cap-martin",
+      "name": "Unité locale de De Menton Roquebrune Cap Martin",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-menton-roquebrune-cap-martin",
+      "postal_code": "",
+      "city": "De Menton Roquebrune Cap Martin"
+    },
+    {
+      "slug": "unite-locale-de-merignac",
+      "name": "Unité locale de De Merignac",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-merignac",
+      "postal_code": "",
+      "city": "De Merignac"
+    },
+    {
+      "slug": "unite-locale-de-metz",
+      "name": "Unité locale de De Metz",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-metz",
+      "postal_code": "",
+      "city": "De Metz"
+    },
+    {
+      "slug": "unite-locale-de-meudon",
+      "name": "Unité locale de De Meudon",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-meudon",
+      "postal_code": "",
+      "city": "De Meudon"
+    },
+    {
+      "slug": "unite-locale-de-meulan",
+      "name": "Unité locale de De Meulan",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-meulan",
+      "postal_code": "",
+      "city": "De Meulan"
+    },
+    {
+      "slug": "unite-locale-de-meyrueis",
+      "name": "Unité locale de De Meyrueis",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-meyrueis",
+      "postal_code": "",
+      "city": "De Meyrueis"
+    },
+    {
+      "slug": "unite-locale-de-miramont-de-guyenne",
+      "name": "Unité locale de De Miramont De Guyenne",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-miramont-de-guyenne",
+      "postal_code": "",
+      "city": "De Miramont De Guyenne"
+    },
+    {
+      "slug": "unite-locale-de-mirande",
+      "name": "Unité locale de De Mirande",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-mirande",
+      "postal_code": "",
+      "city": "De Mirande"
+    },
+    {
+      "slug": "unite-locale-de-mitry-mory-villeparisis",
+      "name": "Unité locale de De Mitry Mory Villeparisis",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-mitry-mory-villeparisis",
+      "postal_code": "",
+      "city": "De Mitry Mory Villeparisis"
+    },
+    {
+      "slug": "unite-locale-de-moissac",
+      "name": "Unité locale de De Moissac",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-moissac",
+      "postal_code": "",
+      "city": "De Moissac"
+    },
+    {
+      "slug": "unite-locale-de-molsheim",
+      "name": "Unité locale de De Molsheim",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-molsheim",
+      "postal_code": "",
+      "city": "De Molsheim"
+    },
+    {
+      "slug": "unite-locale-de-montauban",
+      "name": "Unité locale de De Montauban",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-montauban",
+      "postal_code": "",
+      "city": "De Montauban"
+    },
+    {
+      "slug": "unite-locale-de-montbard-semur",
+      "name": "Unité locale de De Montbard Semur",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-montbard-semur",
+      "postal_code": "",
+      "city": "De Montbard Semur"
+    },
+    {
+      "slug": "unite-locale-de-montbrison",
+      "name": "Unité locale de De Montbrison",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-montbrison",
+      "postal_code": "",
+      "city": "De Montbrison"
+    },
+    {
+      "slug": "unite-locale-de-montceau-les-mines",
+      "name": "Unité locale de De Montceau Les Mines",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-montceau-les-mines",
+      "postal_code": "",
+      "city": "De Montceau Les Mines"
+    },
+    {
+      "slug": "unite-locale-de-montech",
+      "name": "Unité locale de De Montech",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-montech",
+      "postal_code": "",
+      "city": "De Montech"
+    },
+    {
+      "slug": "unite-locale-de-montelimar",
+      "name": "Unité locale de De Montelimar",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-montelimar",
+      "postal_code": "",
+      "city": "De Montelimar"
+    },
+    {
+      "slug": "unite-locale-de-montereau",
+      "name": "Unité locale de De Montereau",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-montereau",
+      "postal_code": "",
+      "city": "De Montereau"
+    },
+    {
+      "slug": "unite-locale-de-montlucon",
+      "name": "Unité locale de De Montlucon",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-montlucon",
+      "postal_code": "",
+      "city": "De Montlucon"
+    },
+    {
+      "slug": "unite-locale-de-montpellier-herault",
+      "name": "Unité locale de De Montpellier Herault",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-montpellier-herault",
+      "postal_code": "",
+      "city": "De Montpellier Herault"
+    },
+    {
+      "slug": "unite-locale-de-montrouge",
+      "name": "Unité locale de De Montrouge",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-montrouge",
+      "postal_code": "",
+      "city": "De Montrouge"
+    },
+    {
+      "slug": "unite-locale-de-moret-loing-et-orvanne",
+      "name": "Unité locale de De Moret Loing Et Orvanne",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-moret-loing-et-orvanne",
+      "postal_code": "",
+      "city": "De Moret Loing Et Orvanne"
+    },
+    {
+      "slug": "unite-locale-de-morlaix-saint-pol-de-leon",
+      "name": "Unité locale de De Morlaix Saint Pol De Leon",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-morlaix-saint-pol-de-leon",
+      "postal_code": "",
+      "city": "De Morlaix Saint Pol De Leon"
+    },
+    {
+      "slug": "unite-locale-de-moulins",
+      "name": "Unité locale de De Moulins",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-moulins",
+      "postal_code": "",
+      "city": "De Moulins"
+    },
+    {
+      "slug": "unite-locale-de-mulhouse",
+      "name": "Unité locale de De Mulhouse",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-mulhouse",
+      "postal_code": "",
+      "city": "De Mulhouse"
+    },
+    {
+      "slug": "unite-locale-de-mundolsheim",
+      "name": "Unité locale de De Mundolsheim",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-mundolsheim",
+      "postal_code": "",
+      "city": "De Mundolsheim"
+    },
+    {
+      "slug": "unite-locale-de-muret",
+      "name": "Unité locale de De Muret",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-muret",
+      "postal_code": "",
+      "city": "De Muret"
+    },
+    {
+      "slug": "unite-locale-de-nancy",
+      "name": "Unité locale de De Nancy",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-nancy",
+      "postal_code": "",
+      "city": "De Nancy"
+    },
+    {
+      "slug": "unite-locale-de-nangis",
+      "name": "Unité locale de De Nangis",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-nangis",
+      "postal_code": "",
+      "city": "De Nangis"
+    },
+    {
+      "slug": "unite-locale-de-nanterre",
+      "name": "Unité locale de De Nanterre",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-nanterre",
+      "postal_code": "",
+      "city": "De Nanterre"
+    },
+    {
+      "slug": "unite-locale-de-nantes",
+      "name": "Unité locale de De Nantes",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-nantes",
+      "postal_code": "",
+      "city": "De Nantes"
+    },
+    {
+      "slug": "unite-locale-de-nantiat",
+      "name": "Unité locale de De Nantiat",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-nantiat",
+      "postal_code": "",
+      "city": "De Nantiat"
+    },
+    {
+      "slug": "unite-locale-de-narbonne",
+      "name": "Unité locale de De Narbonne",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-narbonne",
+      "postal_code": "",
+      "city": "De Narbonne"
+    },
+    {
+      "slug": "unite-locale-de-neuilly-levallois-perret",
+      "name": "Unité locale de De Neuilly Levallois Perret",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-neuilly-levallois-perret",
+      "postal_code": "",
+      "city": "De Neuilly Levallois Perret"
+    },
+    {
+      "slug": "unite-locale-de-nevers",
+      "name": "Unité locale de De Nevers",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-nevers",
+      "postal_code": "",
+      "city": "De Nevers"
+    },
+    {
+      "slug": "unite-locale-de-nice",
+      "name": "Unité locale de De Nice",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-nice",
+      "postal_code": "",
+      "city": "De Nice"
+    },
+    {
+      "slug": "unite-locale-de-niederbronn-les-bains",
+      "name": "Unité locale de De Niederbronn Les Bains",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-niederbronn-les-bains",
+      "postal_code": "",
+      "city": "De Niederbronn Les Bains"
+    },
+    {
+      "slug": "unite-locale-de-nimes",
+      "name": "Unité locale de De Nimes",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-nimes",
+      "postal_code": "",
+      "city": "De Nimes"
+    },
+    {
+      "slug": "unite-locale-de-nogent-le-rotrou",
+      "name": "Unité locale de De Nogent Le Rotrou",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-nogent-le-rotrou",
+      "postal_code": "",
+      "city": "De Nogent Le Rotrou"
+    },
+    {
+      "slug": "unite-locale-de-nogent-sur-seine",
+      "name": "Unité locale de De Nogent Sur Seine",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-nogent-sur-seine",
+      "postal_code": "",
+      "city": "De Nogent Sur Seine"
+    },
+    {
+      "slug": "unite-locale-de-nord-est-charente",
+      "name": "Unité locale de De Nord Est Charente",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-nord-est-charente",
+      "postal_code": "",
+      "city": "De Nord Est Charente"
+    },
+    {
+      "slug": "unite-locale-de-ouve-et-saire",
+      "name": "Unité locale de De Ouve Et Saire",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-ouve-et-saire",
+      "postal_code": "",
+      "city": "De Ouve Et Saire"
+    },
+    {
+      "slug": "unite-locale-de-palinges",
+      "name": "Unité locale de De Palinges",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-palinges",
+      "postal_code": "",
+      "city": "De Palinges"
+    },
+    {
+      "slug": "unite-locale-de-pamiers-porte-d-ariege",
+      "name": "Unité locale de De Pamiers Porte D Ariege",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-pamiers-porte-d-ariege",
+      "postal_code": "",
+      "city": "De Pamiers Porte D Ariege"
+    },
+    {
+      "slug": "unite-locale-de-paris-1er-et-2eme",
+      "name": "Unité locale de De Paris 1Er Et 2Eme",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-paris-1er-et-2eme",
+      "postal_code": "",
+      "city": "De Paris 1Er Et 2Eme"
+    },
+    {
+      "slug": "unite-locale-de-paris-iv",
+      "name": "Unité locale de De Paris Iv",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-paris-iv",
+      "postal_code": "",
+      "city": "De Paris Iv"
+    },
+    {
+      "slug": "unite-locale-de-paris-ix",
+      "name": "Unité locale de De Paris Ix",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-paris-ix",
+      "postal_code": "",
+      "city": "De Paris Ix"
+    },
+    {
+      "slug": "unite-locale-de-paris-v",
+      "name": "Unité locale de De Paris V",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-paris-v",
+      "postal_code": "",
+      "city": "De Paris V"
+    },
+    {
+      "slug": "unite-locale-de-paris-vi",
+      "name": "Unité locale de De Paris Vi",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-paris-vi",
+      "postal_code": "",
+      "city": "De Paris Vi"
+    },
+    {
+      "slug": "unite-locale-de-paris-vii",
+      "name": "Unité locale de De Paris Vii",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-paris-vii",
+      "postal_code": "",
+      "city": "De Paris Vii"
+    },
+    {
+      "slug": "unite-locale-de-paris-viii",
+      "name": "Unité locale de De Paris Viii",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-paris-viii",
+      "postal_code": "",
+      "city": "De Paris Viii"
+    },
+    {
+      "slug": "unite-locale-de-paris-x",
+      "name": "Unité locale de De Paris X",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-paris-x",
+      "postal_code": "",
+      "city": "De Paris X"
+    },
+    {
+      "slug": "unite-locale-de-paris-xi",
+      "name": "Unité locale de De Paris Xi",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-paris-xi",
+      "postal_code": "",
+      "city": "De Paris Xi"
+    },
+    {
+      "slug": "unite-locale-de-paris-xii",
+      "name": "Unité locale de De Paris Xii",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-paris-xii",
+      "postal_code": "",
+      "city": "De Paris Xii"
+    },
+    {
+      "slug": "unite-locale-de-paris-xiii",
+      "name": "Unité locale de De Paris Xiii",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-paris-xiii",
+      "postal_code": "",
+      "city": "De Paris Xiii"
+    },
+    {
+      "slug": "unite-locale-de-paris-xiv",
+      "name": "Unité locale de De Paris Xiv",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-paris-xiv",
+      "postal_code": "",
+      "city": "De Paris Xiv"
+    },
+    {
+      "slug": "unite-locale-de-paris-xix",
+      "name": "Unité locale de De Paris Xix",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-paris-xix",
+      "postal_code": "",
+      "city": "De Paris Xix"
+    },
+    {
+      "slug": "unite-locale-de-paris-xv",
+      "name": "Unité locale de De Paris Xv",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-paris-xv",
+      "postal_code": "",
+      "city": "De Paris Xv"
+    },
+    {
+      "slug": "unite-locale-de-paris-xvi",
+      "name": "Unité locale de De Paris Xvi",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-paris-xvi",
+      "postal_code": "",
+      "city": "De Paris Xvi"
+    },
+    {
+      "slug": "unite-locale-de-paris-xvii",
+      "name": "Unité locale de De Paris Xvii",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-paris-xvii",
+      "postal_code": "",
+      "city": "De Paris Xvii"
+    },
+    {
+      "slug": "unite-locale-de-paris-xviii",
+      "name": "Unité locale de De Paris Xviii",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-paris-xviii",
+      "postal_code": "",
+      "city": "De Paris Xviii"
+    },
+    {
+      "slug": "unite-locale-de-paris-xx",
+      "name": "Unité locale de De Paris Xx",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-paris-xx",
+      "postal_code": "",
+      "city": "De Paris Xx"
+    },
+    {
+      "slug": "unite-locale-de-pau",
+      "name": "Unité locale de De Pau",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-pau",
+      "postal_code": "",
+      "city": "De Pau"
+    },
+    {
+      "slug": "unite-locale-de-petite-camargue",
+      "name": "Unité locale de De Petite Camargue",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-petite-camargue",
+      "postal_code": "",
+      "city": "De Petite Camargue"
+    },
+    {
+      "slug": "unite-locale-de-pincevent",
+      "name": "Unité locale de De Pincevent",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-pincevent",
+      "postal_code": "",
+      "city": "De Pincevent"
+    },
+    {
+      "slug": "unite-locale-de-poissy",
+      "name": "Unité locale de De Poissy",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-poissy",
+      "postal_code": "",
+      "city": "De Poissy"
+    },
+    {
+      "slug": "unite-locale-de-pont-a-mousson",
+      "name": "Unité locale de De Pont A Mousson",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-pont-a-mousson",
+      "postal_code": "",
+      "city": "De Pont A Mousson"
+    },
+    {
+      "slug": "unite-locale-de-pont-audemer",
+      "name": "Unité locale de De Pont Audemer",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-pont-audemer",
+      "postal_code": "",
+      "city": "De Pont Audemer"
+    },
+    {
+      "slug": "unite-locale-de-pont-l-abbe-pays-bigouden",
+      "name": "Unité locale de De Pont L Abbe Pays Bigouden",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-pont-l-abbe-pays-bigouden",
+      "postal_code": "",
+      "city": "De Pont L Abbe Pays Bigouden"
+    },
+    {
+      "slug": "unite-locale-de-pont-l-eveque-pays-d-auge",
+      "name": "Unité locale de De Pont L Eveque Pays D Auge",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-pont-l-eveque-pays-d-auge",
+      "postal_code": "",
+      "city": "De Pont L Eveque Pays D Auge"
+    },
+    {
+      "slug": "unite-locale-de-pontarlier",
+      "name": "Unité locale de De Pontarlier",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-pontarlier",
+      "postal_code": "",
+      "city": "De Pontarlier"
+    },
+    {
+      "slug": "unite-locale-de-ponthieu",
+      "name": "Unité locale de De Ponthieu",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-ponthieu",
+      "postal_code": "",
+      "city": "De Ponthieu"
+    },
+    {
+      "slug": "unite-locale-de-porte-de-la-dombes",
+      "name": "Unité locale de De Porte De La Dombes",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-porte-de-la-dombes",
+      "postal_code": "",
+      "city": "De Porte De La Dombes"
+    },
+    {
+      "slug": "unite-locale-de-privas-le-pouzin-rhone-et-vallee",
+      "name": "Unité locale de De Privas Le Pouzin Rhone Et Vallee",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-privas-le-pouzin-rhone-et-vallee",
+      "postal_code": "",
+      "city": "De Privas Le Pouzin Rhone Et Vallee"
+    },
+    {
+      "slug": "unite-locale-de-provins",
+      "name": "Unité locale de De Provins",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-provins",
+      "postal_code": "",
+      "city": "De Provins"
+    },
+    {
+      "slug": "unite-locale-de-puteaux",
+      "name": "Unité locale de De Puteaux",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-puteaux",
+      "postal_code": "",
+      "city": "De Puteaux"
+    },
+    {
+      "slug": "unite-locale-de-quimper",
+      "name": "Unité locale de De Quimper",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-quimper",
+      "postal_code": "",
+      "city": "De Quimper"
+    },
+    {
+      "slug": "unite-locale-de-quimperle-trois-rivieres",
+      "name": "Unité locale de De Quimperle Trois Rivieres",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-quimperle-trois-rivieres",
+      "postal_code": "",
+      "city": "De Quimperle Trois Rivieres"
+    },
+    {
+      "slug": "unite-locale-de-rambouillet",
+      "name": "Unité locale de De Rambouillet",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-rambouillet",
+      "postal_code": "",
+      "city": "De Rambouillet"
+    },
+    {
+      "slug": "unite-locale-de-redon",
+      "name": "Unité locale de De Redon",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-redon",
+      "postal_code": "",
+      "city": "De Redon"
+    },
+    {
+      "slug": "unite-locale-de-reims",
+      "name": "Unité locale de De Reims",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-reims",
+      "postal_code": "",
+      "city": "De Reims"
+    },
+    {
+      "slug": "unite-locale-de-rennes",
+      "name": "Unité locale de De Rennes",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-rennes",
+      "postal_code": "",
+      "city": "De Rennes"
+    },
+    {
+      "slug": "unite-locale-de-rethel",
+      "name": "Unité locale de De Rethel",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-rethel",
+      "postal_code": "",
+      "city": "De Rethel"
+    },
+    {
+      "slug": "unite-locale-de-riom",
+      "name": "Unité locale de De Riom",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-riom",
+      "postal_code": "",
+      "city": "De Riom"
+    },
+    {
+      "slug": "unite-locale-de-rochefort-sur-mer",
+      "name": "Unité locale de De Rochefort Sur Mer",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-rochefort-sur-mer",
+      "postal_code": "",
+      "city": "De Rochefort Sur Mer"
+    },
+    {
+      "slug": "unite-locale-de-romilly-sur-seine",
+      "name": "Unité locale de De Romilly Sur Seine",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-romilly-sur-seine",
+      "postal_code": "",
+      "city": "De Romilly Sur Seine"
+    },
+    {
+      "slug": "unite-locale-de-romorantin",
+      "name": "Unité locale de De Romorantin",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-romorantin",
+      "postal_code": "",
+      "city": "De Romorantin"
+    },
+    {
+      "slug": "unite-locale-de-rouen-agglo",
+      "name": "Unité locale de De Rouen Agglo",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-rouen-agglo",
+      "postal_code": "",
+      "city": "De Rouen Agglo"
+    },
+    {
+      "slug": "unite-locale-de-royan",
+      "name": "Unité locale de De Royan",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-royan",
+      "postal_code": "",
+      "city": "De Royan"
+    },
+    {
+      "slug": "unite-locale-de-royans-vercors",
+      "name": "Unité locale de De Royans Vercors",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-royans-vercors",
+      "postal_code": "",
+      "city": "De Royans Vercors"
+    },
+    {
+      "slug": "unite-locale-de-rueil-malmaison",
+      "name": "Unité locale de De Rueil Malmaison",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-rueil-malmaison",
+      "postal_code": "",
+      "city": "De Rueil Malmaison"
+    },
+    {
+      "slug": "unite-locale-de-sable-sur-sarthe",
+      "name": "Unité locale de De Sable Sur Sarthe",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-sable-sur-sarthe",
+      "postal_code": "",
+      "city": "De Sable Sur Sarthe"
+    },
+    {
+      "slug": "unite-locale-de-saint-antonin-noble-val",
+      "name": "Unité locale de De Saint Antonin Noble Val",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-saint-antonin-noble-val",
+      "postal_code": "",
+      "city": "De Saint Antonin Noble Val"
+    },
+    {
+      "slug": "unite-locale-de-saint-avold",
+      "name": "Unité locale de De Saint Avold",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-saint-avold",
+      "postal_code": "",
+      "city": "De Saint Avold"
+    },
+    {
+      "slug": "unite-locale-de-saint-chely-d-apcher",
+      "name": "Unité locale de De Saint Chely D Apcher",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-saint-chely-d-apcher",
+      "postal_code": "",
+      "city": "De Saint Chely D Apcher"
+    },
+    {
+      "slug": "unite-locale-de-saint-cloud",
+      "name": "Unité locale de De Saint Cloud",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-saint-cloud",
+      "postal_code": "",
+      "city": "De Saint Cloud"
+    },
+    {
+      "slug": "unite-locale-de-saint-etienne",
+      "name": "Unité locale de De Saint Etienne",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-saint-etienne",
+      "postal_code": "",
+      "city": "De Saint Etienne"
+    },
+    {
+      "slug": "unite-locale-de-saint-florentin",
+      "name": "Unité locale de De Saint Florentin",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-saint-florentin",
+      "postal_code": "",
+      "city": "De Saint Florentin"
+    },
+    {
+      "slug": "unite-locale-de-saint-gaudens-montrejeau",
+      "name": "Unité locale de De Saint Gaudens Montrejeau",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-saint-gaudens-montrejeau",
+      "postal_code": "",
+      "city": "De Saint Gaudens Montrejeau"
+    },
+    {
+      "slug": "unite-locale-de-saint-germain-en-laye",
+      "name": "Unité locale de De Saint Germain En Laye",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-saint-germain-en-laye",
+      "postal_code": "",
+      "city": "De Saint Germain En Laye"
+    },
+    {
+      "slug": "unite-locale-de-saint-gilles-generac",
+      "name": "Unité locale de De Saint Gilles Generac",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-saint-gilles-generac",
+      "postal_code": "",
+      "city": "De Saint Gilles Generac"
+    },
+    {
+      "slug": "unite-locale-de-saint-jean-de-luz",
+      "name": "Unité locale de De Saint Jean De Luz",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-saint-jean-de-luz",
+      "postal_code": "",
+      "city": "De Saint Jean De Luz"
+    },
+    {
+      "slug": "unite-locale-de-saint-marcellin",
+      "name": "Unité locale de De Saint Marcellin",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-saint-marcellin",
+      "postal_code": "",
+      "city": "De Saint Marcellin"
+    },
+    {
+      "slug": "unite-locale-de-saint-maur-des-fosses",
+      "name": "Unité locale de De Saint Maur Des Fosses",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-saint-maur-des-fosses",
+      "postal_code": "",
+      "city": "De Saint Maur Des Fosses"
+    },
+    {
+      "slug": "unite-locale-de-saint-omer",
+      "name": "Unité locale de De Saint Omer",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-saint-omer",
+      "postal_code": "",
+      "city": "De Saint Omer"
+    },
+    {
+      "slug": "unite-locale-de-saint-pol-sur-ternoise-hesdin",
+      "name": "Unité locale de De Saint Pol Sur Ternoise Hesdin",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-saint-pol-sur-ternoise-hesdin",
+      "postal_code": "",
+      "city": "De Saint Pol Sur Ternoise Hesdin"
+    },
+    {
+      "slug": "unite-locale-de-saint-pourcain-sur-sioule",
+      "name": "Unité locale de De Saint Pourcain Sur Sioule",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-saint-pourcain-sur-sioule",
+      "postal_code": "",
+      "city": "De Saint Pourcain Sur Sioule"
+    },
+    {
+      "slug": "unite-locale-de-saint-quentin-en-yvelines",
+      "name": "Unité locale de De Saint Quentin En Yvelines",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-saint-quentin-en-yvelines",
+      "postal_code": "",
+      "city": "De Saint Quentin En Yvelines"
+    },
+    {
+      "slug": "unite-locale-de-saint-quentin-guise",
+      "name": "Unité locale de De Saint Quentin Guise",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-saint-quentin-guise",
+      "postal_code": "",
+      "city": "De Saint Quentin Guise"
+    },
+    {
+      "slug": "unite-locale-de-sainte-foy-la-grande",
+      "name": "Unité locale de De Sainte Foy La Grande",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-sainte-foy-la-grande",
+      "postal_code": "",
+      "city": "De Sainte Foy La Grande"
+    },
+    {
+      "slug": "unite-locale-de-saintes",
+      "name": "Unité locale de De Saintes",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-saintes",
+      "postal_code": "",
+      "city": "De Saintes"
+    },
+    {
+      "slug": "unite-locale-de-salon-de-provence",
+      "name": "Unité locale de De Salon De Provence",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-salon-de-provence",
+      "postal_code": "",
+      "city": "De Salon De Provence"
+    },
+    {
+      "slug": "unite-locale-de-sarralbe",
+      "name": "Unité locale de De Sarralbe",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-sarralbe",
+      "postal_code": "",
+      "city": "De Sarralbe"
+    },
+    {
+      "slug": "unite-locale-de-sarrebourg",
+      "name": "Unité locale de De Sarrebourg",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-sarrebourg",
+      "postal_code": "",
+      "city": "De Sarrebourg"
+    },
+    {
+      "slug": "unite-locale-de-sarreguemines",
+      "name": "Unité locale de De Sarreguemines",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-sarreguemines",
+      "postal_code": "",
+      "city": "De Sarreguemines"
+    },
+    {
+      "slug": "unite-locale-de-sartrouville",
+      "name": "Unité locale de De Sartrouville",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-sartrouville",
+      "postal_code": "",
+      "city": "De Sartrouville"
+    },
+    {
+      "slug": "unite-locale-de-saumur",
+      "name": "Unité locale de De Saumur",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-saumur",
+      "postal_code": "",
+      "city": "De Saumur"
+    },
+    {
+      "slug": "unite-locale-de-saverne",
+      "name": "Unité locale de De Saverne",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-saverne",
+      "postal_code": "",
+      "city": "De Saverne"
+    },
+    {
+      "slug": "unite-locale-de-sceaux",
+      "name": "Unité locale de De Sceaux",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-sceaux",
+      "postal_code": "",
+      "city": "De Sceaux"
+    },
+    {
+      "slug": "unite-locale-de-schiltigheim",
+      "name": "Unité locale de De Schiltigheim",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-schiltigheim",
+      "postal_code": "",
+      "city": "De Schiltigheim"
+    },
+    {
+      "slug": "unite-locale-de-schirmeck-saales",
+      "name": "Unité locale de De Schirmeck Saales",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-schirmeck-saales",
+      "postal_code": "",
+      "city": "De Schirmeck Saales"
+    },
+    {
+      "slug": "unite-locale-de-sedan-yvois",
+      "name": "Unité locale de De Sedan Yvois",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-sedan-yvois",
+      "postal_code": "",
+      "city": "De Sedan Yvois"
+    },
+    {
+      "slug": "unite-locale-de-selestat",
+      "name": "Unité locale de De Selestat",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-selestat",
+      "postal_code": "",
+      "city": "De Selestat"
+    },
+    {
+      "slug": "unite-locale-de-sevres-ville-d-avray",
+      "name": "Unité locale de De Sevres Ville D Avray",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-sevres-ville-d-avray",
+      "postal_code": "",
+      "city": "De Sevres Ville D Avray"
+    },
+    {
+      "slug": "unite-locale-de-sezanne-et-du-sud-ouest-marnais",
+      "name": "Unité locale de De Sezanne Et Du Sud Ouest Marnais",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-sezanne-et-du-sud-ouest-marnais",
+      "postal_code": "",
+      "city": "De Sezanne Et Du Sud Ouest Marnais"
+    },
+    {
+      "slug": "unite-locale-de-sillon-les-3-rivieres",
+      "name": "Unité locale de De Sillon Les 3 Rivieres",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-sillon-les-3-rivieres",
+      "postal_code": "",
+      "city": "De Sillon Les 3 Rivieres"
+    },
+    {
+      "slug": "unite-locale-de-soissons",
+      "name": "Unité locale de De Soissons",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-soissons",
+      "postal_code": "",
+      "city": "De Soissons"
+    },
+    {
+      "slug": "unite-locale-de-sommieres",
+      "name": "Unité locale de De Sommieres",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-sommieres",
+      "postal_code": "",
+      "city": "De Sommieres"
+    },
+    {
+      "slug": "unite-locale-de-sorgue-durance",
+      "name": "Unité locale de De Sorgue Durance",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-sorgue-durance",
+      "postal_code": "",
+      "city": "De Sorgue Durance"
+    },
+    {
+      "slug": "unite-locale-de-st-laurent-du-var",
+      "name": "Unité locale de De St Laurent Du Var",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-st-laurent-du-var",
+      "postal_code": "",
+      "city": "De St Laurent Du Var"
+    },
+    {
+      "slug": "unite-locale-de-strasbourg",
+      "name": "Unité locale de De Strasbourg",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-strasbourg",
+      "postal_code": "",
+      "city": "De Strasbourg"
+    },
+    {
+      "slug": "unite-locale-de-sucy-en-brie",
+      "name": "Unité locale de De Sucy En Brie",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-sucy-en-brie",
+      "postal_code": "",
+      "city": "De Sucy En Brie"
+    },
+    {
+      "slug": "unite-locale-de-sud-gironde",
+      "name": "Unité locale de De Sud Gironde",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-sud-gironde",
+      "postal_code": "",
+      "city": "De Sud Gironde"
+    },
+    {
+      "slug": "unite-locale-de-suresnes",
+      "name": "Unité locale de De Suresnes",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-suresnes",
+      "postal_code": "",
+      "city": "De Suresnes"
+    },
+    {
+      "slug": "unite-locale-de-tarare-thizy",
+      "name": "Unité locale de De Tarare Thizy",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-tarare-thizy",
+      "postal_code": "",
+      "city": "De Tarare Thizy"
+    },
+    {
+      "slug": "unite-locale-de-tarascon-haute-ariege",
+      "name": "Unité locale de De Tarascon Haute Ariege",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-tarascon-haute-ariege",
+      "postal_code": "",
+      "city": "De Tarascon Haute Ariege"
+    },
+    {
+      "slug": "unite-locale-de-terre-d-argence",
+      "name": "Unité locale de De Terre D Argence",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-terre-d-argence",
+      "postal_code": "",
+      "city": "De Terre D Argence"
+    },
+    {
+      "slug": "unite-locale-de-thann",
+      "name": "Unité locale de De Thann",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-thann",
+      "postal_code": "",
+      "city": "De Thann"
+    },
+    {
+      "slug": "unite-locale-de-thionville",
+      "name": "Unité locale de De Thionville",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-thionville",
+      "postal_code": "",
+      "city": "De Thionville"
+    },
+    {
+      "slug": "unite-locale-de-tonneins",
+      "name": "Unité locale de De Tonneins",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-tonneins",
+      "postal_code": "",
+      "city": "De Tonneins"
+    },
+    {
+      "slug": "unite-locale-de-toul",
+      "name": "Unité locale de De Toul",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-toul",
+      "postal_code": "",
+      "city": "De Toul"
+    },
+    {
+      "slug": "unite-locale-de-toulouse",
+      "name": "Unité locale de De Toulouse",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-toulouse",
+      "postal_code": "",
+      "city": "De Toulouse"
+    },
+    {
+      "slug": "unite-locale-de-tournon",
+      "name": "Unité locale de De Tournon",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-tournon",
+      "postal_code": "",
+      "city": "De Tournon"
+    },
+    {
+      "slug": "unite-locale-de-tours-plus",
+      "name": "Unité locale de De Tours Plus",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-tours-plus",
+      "postal_code": "",
+      "city": "De Tours Plus"
+    },
+    {
+      "slug": "unite-locale-de-tulle",
+      "name": "Unité locale de De Tulle",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-tulle",
+      "postal_code": "",
+      "city": "De Tulle"
+    },
+    {
+      "slug": "unite-locale-de-tyrosse-sud-landes",
+      "name": "Unité locale de De Tyrosse Sud Landes",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-tyrosse-sud-landes",
+      "postal_code": "",
+      "city": "De Tyrosse Sud Landes"
+    },
+    {
+      "slug": "unite-locale-de-valencay",
+      "name": "Unité locale de De Valencay",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-valencay",
+      "postal_code": "",
+      "city": "De Valencay"
+    },
+    {
+      "slug": "unite-locale-de-valence-d-agen-auvillar",
+      "name": "Unité locale de De Valence D Agen Auvillar",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-valence-d-agen-auvillar",
+      "postal_code": "",
+      "city": "De Valence D Agen Auvillar"
+    },
+    {
+      "slug": "unite-locale-de-valenciennes",
+      "name": "Unité locale de De Valenciennes",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-valenciennes",
+      "postal_code": "",
+      "city": "De Valenciennes"
+    },
+    {
+      "slug": "unite-locale-de-vallespir",
+      "name": "Unité locale de De Vallespir",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-vallespir",
+      "postal_code": "",
+      "city": "De Vallespir"
+    },
+    {
+      "slug": "unite-locale-de-vals-aubenas",
+      "name": "Unité locale de De Vals Aubenas",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-vals-aubenas",
+      "postal_code": "",
+      "city": "De Vals Aubenas"
+    },
+    {
+      "slug": "unite-locale-de-vanves-malakoff",
+      "name": "Unité locale de De Vanves Malakoff",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-vanves-malakoff",
+      "postal_code": "",
+      "city": "De Vanves Malakoff"
+    },
+    {
+      "slug": "unite-locale-de-varzy-clamecy-entrains",
+      "name": "Unité locale de De Varzy Clamecy Entrains",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-varzy-clamecy-entrains",
+      "postal_code": "",
+      "city": "De Varzy Clamecy Entrains"
+    },
+    {
+      "slug": "unite-locale-de-vaucresson-marnes-la-coquette",
+      "name": "Unité locale de De Vaucresson Marnes La Coquette",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-vaucresson-marnes-la-coquette",
+      "postal_code": "",
+      "city": "De Vaucresson Marnes La Coquette"
+    },
+    {
+      "slug": "unite-locale-de-vendome",
+      "name": "Unité locale de De Vendome",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-vendome",
+      "postal_code": "",
+      "city": "De Vendome"
+    },
+    {
+      "slug": "unite-locale-de-verdun-sur-garonne",
+      "name": "Unité locale de De Verdun Sur Garonne",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-verdun-sur-garonne",
+      "postal_code": "",
+      "city": "De Verdun Sur Garonne"
+    },
+    {
+      "slug": "unite-locale-de-vergeze",
+      "name": "Unité locale de De Vergeze",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-vergeze",
+      "postal_code": "",
+      "city": "De Vergeze"
+    },
+    {
+      "slug": "unite-locale-de-versailles",
+      "name": "Unité locale de De Versailles",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-versailles",
+      "postal_code": "",
+      "city": "De Versailles"
+    },
+    {
+      "slug": "unite-locale-de-vervins-hirson",
+      "name": "Unité locale de De Vervins Hirson",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-vervins-hirson",
+      "postal_code": "",
+      "city": "De Vervins Hirson"
+    },
+    {
+      "slug": "unite-locale-de-vichy-cusset-bellerive",
+      "name": "Unité locale de De Vichy Cusset Bellerive",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-vichy-cusset-bellerive",
+      "postal_code": "",
+      "city": "De Vichy Cusset Bellerive"
+    },
+    {
+      "slug": "unite-locale-de-vienne",
+      "name": "Unité locale de De Vienne",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-vienne",
+      "postal_code": "",
+      "city": "De Vienne"
+    },
+    {
+      "slug": "unite-locale-de-villefranche-de-lauragais",
+      "name": "Unité locale de De Villefranche De Lauragais",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-villefranche-de-lauragais",
+      "postal_code": "",
+      "city": "De Villefranche De Lauragais"
+    },
+    {
+      "slug": "unite-locale-de-villereal",
+      "name": "Unité locale de De Villereal",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-villereal",
+      "postal_code": "",
+      "city": "De Villereal"
+    },
+    {
+      "slug": "unite-locale-de-villers-cotterets",
+      "name": "Unité locale de De Villers Cotterets",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-villers-cotterets",
+      "postal_code": "",
+      "city": "De Villers Cotterets"
+    },
+    {
+      "slug": "unite-locale-de-villeurbanne",
+      "name": "Unité locale de De Villeurbanne",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-villeurbanne",
+      "postal_code": "",
+      "city": "De Villeurbanne"
+    },
+    {
+      "slug": "unite-locale-de-viroflay-velizy",
+      "name": "Unité locale de De Viroflay Velizy",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-viroflay-velizy",
+      "postal_code": "",
+      "city": "De Viroflay Velizy"
+    },
+    {
+      "slug": "unite-locale-de-viry-chatillon",
+      "name": "Unité locale de De Viry Chatillon",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-viry-chatillon",
+      "postal_code": "",
+      "city": "De Viry Chatillon"
+    },
+    {
+      "slug": "unite-locale-de-vitry-sur-seine",
+      "name": "Unité locale de De Vitry Sur Seine",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-vitry-sur-seine",
+      "postal_code": "",
+      "city": "De Vitry Sur Seine"
+    },
+    {
+      "slug": "unite-locale-de-voiron-chartreuse",
+      "name": "Unité locale de De Voiron Chartreuse",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-voiron-chartreuse",
+      "postal_code": "",
+      "city": "De Voiron Chartreuse"
+    },
+    {
+      "slug": "unite-locale-de-vouziers",
+      "name": "Unité locale de De Vouziers",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-vouziers",
+      "postal_code": "",
+      "city": "De Vouziers"
+    },
+    {
+      "slug": "unite-locale-de-wasselonne",
+      "name": "Unité locale de De Wasselonne",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-wasselonne",
+      "postal_code": "",
+      "city": "De Wasselonne"
+    },
+    {
+      "slug": "unite-locale-de-wissembourg",
+      "name": "Unité locale de De Wissembourg",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-wissembourg",
+      "postal_code": "",
+      "city": "De Wissembourg"
+    },
+    {
+      "slug": "unite-locale-de-woerth",
+      "name": "Unité locale de De Woerth",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-de-woerth",
+      "postal_code": "",
+      "city": "De Woerth"
+    },
+    {
+      "slug": "unite-locale-des-4-gares",
+      "name": "Unité locale de Des 4 Gares",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-des-4-gares",
+      "postal_code": "",
+      "city": "Des 4 Gares"
+    },
+    {
+      "slug": "unite-locale-des-berges-de-l-oise",
+      "name": "Unité locale de Des Berges De L Oise",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-des-berges-de-l-oise",
+      "postal_code": "",
+      "city": "Des Berges De L Oise"
+    },
+    {
+      "slug": "unite-locale-des-bois-de-la-plaine",
+      "name": "Unité locale de Des Bois De La Plaine",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-des-bois-de-la-plaine",
+      "postal_code": "",
+      "city": "Des Bois De La Plaine"
+    },
+    {
+      "slug": "unite-locale-des-coteaux",
+      "name": "Unité locale de Des Coteaux",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-des-coteaux",
+      "postal_code": "",
+      "city": "Des Coteaux"
+    },
+    {
+      "slug": "unite-locale-des-deux-rivieres",
+      "name": "Unité locale de Des Deux Rivieres",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-des-deux-rivieres",
+      "postal_code": "",
+      "city": "Des Deux Rivieres"
+    },
+    {
+      "slug": "unite-locale-des-hauts-de-sarthe",
+      "name": "Unité locale de Des Hauts De Sarthe",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-des-hauts-de-sarthe",
+      "postal_code": "",
+      "city": "Des Hauts De Sarthe"
+    },
+    {
+      "slug": "unite-locale-des-herbiers",
+      "name": "Unité locale de Des Herbiers",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-des-herbiers",
+      "postal_code": "",
+      "city": "Des Herbiers"
+    },
+    {
+      "slug": "unite-locale-des-marches-de-bretagne",
+      "name": "Unité locale de Des Marches De Bretagne",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-des-marches-de-bretagne",
+      "postal_code": "",
+      "city": "Des Marches De Bretagne"
+    },
+    {
+      "slug": "unite-locale-des-mureaux",
+      "name": "Unité locale de Des Mureaux",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-des-mureaux",
+      "postal_code": "",
+      "city": "Des Mureaux"
+    },
+    {
+      "slug": "unite-locale-des-pays-albigeois",
+      "name": "Unité locale de Des Pays Albigeois",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-des-pays-albigeois",
+      "postal_code": "",
+      "city": "Des Pays Albigeois"
+    },
+    {
+      "slug": "unite-locale-des-pays-de-la-veyle",
+      "name": "Unité locale de Des Pays De La Veyle",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-des-pays-de-la-veyle",
+      "postal_code": "",
+      "city": "Des Pays De La Veyle"
+    },
+    {
+      "slug": "unite-locale-des-pays-du-couserans",
+      "name": "Unité locale de Des Pays Du Couserans",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-des-pays-du-couserans",
+      "postal_code": "",
+      "city": "Des Pays Du Couserans"
+    },
+    {
+      "slug": "unite-locale-des-pays-du-gier",
+      "name": "Unité locale de Des Pays Du Gier",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-des-pays-du-gier",
+      "postal_code": "",
+      "city": "Des Pays Du Gier"
+    },
+    {
+      "slug": "unite-locale-des-pays-du-montmorillonnais-et-lussacois",
+      "name": "Unité locale de Des Pays Du Montmorillonnais Et Lussacois",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-des-pays-du-montmorillonnais-et-lussacois",
+      "postal_code": "",
+      "city": "Des Pays Du Montmorillonnais Et Lussacois"
+    },
+    {
+      "slug": "unite-locale-des-portes-de-france",
+      "name": "Unité locale de Des Portes De France",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-des-portes-de-france",
+      "postal_code": "",
+      "city": "Des Portes De France"
+    },
+    {
+      "slug": "unite-locale-des-portes-de-l-isere",
+      "name": "Unité locale de Des Portes De L Isere",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-des-portes-de-l-isere",
+      "postal_code": "",
+      "city": "Des Portes De L Isere"
+    },
+    {
+      "slug": "unite-locale-des-portes-de-roissy-cdg",
+      "name": "Unité locale de Des Portes De Roissy Cdg",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-des-portes-de-roissy-cdg",
+      "postal_code": "",
+      "city": "Des Portes De Roissy Cdg"
+    },
+    {
+      "slug": "unite-locale-des-portes-du-haut-doubs",
+      "name": "Unité locale de Des Portes Du Haut Doubs",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-des-portes-du-haut-doubs",
+      "postal_code": "",
+      "city": "Des Portes Du Haut Doubs"
+    },
+    {
+      "slug": "unite-locale-des-portes-du-vexin",
+      "name": "Unité locale de Des Portes Du Vexin",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-des-portes-du-vexin",
+      "postal_code": "",
+      "city": "Des Portes Du Vexin"
+    },
+    {
+      "slug": "unite-locale-des-portes-oceanes",
+      "name": "Unité locale de Des Portes Oceanes",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-des-portes-oceanes",
+      "postal_code": "",
+      "city": "Des Portes Oceanes"
+    },
+    {
+      "slug": "unite-locale-des-rives-de-saone-chalaronne",
+      "name": "Unité locale de Des Rives De Saone Chalaronne",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-des-rives-de-saone-chalaronne",
+      "postal_code": "",
+      "city": "Des Rives De Saone Chalaronne"
+    },
+    {
+      "slug": "unite-locale-des-sables-d-olonne",
+      "name": "Unité locale de Des Sables D Olonne",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-des-sables-d-olonne",
+      "postal_code": "",
+      "city": "Des Sables D Olonne"
+    },
+    {
+      "slug": "unite-locale-des-trois-frontieres",
+      "name": "Unité locale de Des Trois Frontieres",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-des-trois-frontieres",
+      "postal_code": "",
+      "city": "Des Trois Frontieres"
+    },
+    {
+      "slug": "unite-locale-des-trois-rivieres",
+      "name": "Unité locale de Des Trois Rivieres",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-des-trois-rivieres",
+      "postal_code": "",
+      "city": "Des Trois Rivieres"
+    },
+    {
+      "slug": "unite-locale-des-vallees-bievres-yvette",
+      "name": "Unité locale de Des Vallees Bievres Yvette",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-des-vallees-bievres-yvette",
+      "postal_code": "",
+      "city": "Des Vallees Bievres Yvette"
+    },
+    {
+      "slug": "unite-locale-du-bar-sur-aubois",
+      "name": "Unité locale de Du Bar Sur Aubois",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-bar-sur-aubois",
+      "postal_code": "",
+      "city": "Du Bar Sur Aubois"
+    },
+    {
+      "slug": "unite-locale-du-bassin-bellegardien",
+      "name": "Unité locale de Du Bassin Bellegardien",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-bassin-bellegardien",
+      "postal_code": "",
+      "city": "Du Bassin Bellegardien"
+    },
+    {
+      "slug": "unite-locale-du-bassin-burgien",
+      "name": "Unité locale de Du Bassin Burgien",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-bassin-burgien",
+      "postal_code": "",
+      "city": "Du Bassin Burgien"
+    },
+    {
+      "slug": "unite-locale-du-bassin-de-pompey",
+      "name": "Unité locale de Du Bassin De Pompey",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-bassin-de-pompey",
+      "postal_code": "",
+      "city": "Du Bassin De Pompey"
+    },
+    {
+      "slug": "unite-locale-du-bassin-de-thau",
+      "name": "Unité locale de Du Bassin De Thau",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-bassin-de-thau",
+      "postal_code": "",
+      "city": "Du Bassin De Thau"
+    },
+    {
+      "slug": "unite-locale-du-bassin-oyonnaxien",
+      "name": "Unité locale de Du Bassin Oyonnaxien",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-bassin-oyonnaxien",
+      "postal_code": "",
+      "city": "Du Bassin Oyonnaxien"
+    },
+    {
+      "slug": "unite-locale-du-bessin-au-virois",
+      "name": "Unité locale de Du Bessin Au Virois",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-bessin-au-virois",
+      "postal_code": "",
+      "city": "Du Bessin Au Virois"
+    },
+    {
+      "slug": "unite-locale-du-blanc",
+      "name": "Unité locale de Du Blanc",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-blanc",
+      "postal_code": "",
+      "city": "Du Blanc"
+    },
+    {
+      "slug": "unite-locale-du-bord-du-rhone",
+      "name": "Unité locale de Du Bord Du Rhone",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-bord-du-rhone",
+      "postal_code": "",
+      "city": "Du Bord Du Rhone"
+    },
+    {
+      "slug": "unite-locale-du-bouscat-bruges",
+      "name": "Unité locale de Du Bouscat Bruges",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-bouscat-bruges",
+      "postal_code": "",
+      "city": "Du Bouscat Bruges"
+    },
+    {
+      "slug": "unite-locale-du-buech",
+      "name": "Unité locale de Du Buech",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-buech",
+      "postal_code": "",
+      "city": "Du Buech"
+    },
+    {
+      "slug": "unite-locale-du-canton-de-gradignan",
+      "name": "Unité locale de Du Canton De Gradignan",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-canton-de-gradignan",
+      "postal_code": "",
+      "city": "Du Canton De Gradignan"
+    },
+    {
+      "slug": "unite-locale-du-chablais",
+      "name": "Unité locale de Du Chablais",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-chablais",
+      "postal_code": "",
+      "city": "Du Chablais"
+    },
+    {
+      "slug": "unite-locale-du-charolais",
+      "name": "Unité locale de Du Charolais",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-charolais",
+      "postal_code": "",
+      "city": "Du Charolais"
+    },
+    {
+      "slug": "unite-locale-du-chauvinois",
+      "name": "Unité locale de Du Chauvinois",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-chauvinois",
+      "postal_code": "",
+      "city": "Du Chauvinois"
+    },
+    {
+      "slug": "unite-locale-du-coeur-d-herault",
+      "name": "Unité locale de Du Coeur D Herault",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-coeur-d-herault",
+      "postal_code": "",
+      "city": "Du Coeur D Herault"
+    },
+    {
+      "slug": "unite-locale-du-creusot",
+      "name": "Unité locale de Du Creusot",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-creusot",
+      "postal_code": "",
+      "city": "Du Creusot"
+    },
+    {
+      "slug": "unite-locale-du-dauphine",
+      "name": "Unité locale de Du Dauphine",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-dauphine",
+      "postal_code": "",
+      "city": "Du Dauphine"
+    },
+    {
+      "slug": "unite-locale-du-gard-rhodanien",
+      "name": "Unité locale de Du Gard Rhodanien",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-gard-rhodanien",
+      "postal_code": "",
+      "city": "Du Gard Rhodanien"
+    },
+    {
+      "slug": "unite-locale-du-grand-amienois",
+      "name": "Unité locale de Du Grand Amienois",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-grand-amienois",
+      "postal_code": "",
+      "city": "Du Grand Amienois"
+    },
+    {
+      "slug": "unite-locale-du-grand-angouleme",
+      "name": "Unité locale de Du Grand Angouleme",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-grand-angouleme",
+      "postal_code": "",
+      "city": "Du Grand Angouleme"
+    },
+    {
+      "slug": "unite-locale-du-grand-gaillacois",
+      "name": "Unité locale de Du Grand Gaillacois",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-grand-gaillacois",
+      "postal_code": "",
+      "city": "Du Grand Gaillacois"
+    },
+    {
+      "slug": "unite-locale-du-grand-poitiers",
+      "name": "Unité locale de Du Grand Poitiers",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-grand-poitiers",
+      "postal_code": "",
+      "city": "Du Grand Poitiers"
+    },
+    {
+      "slug": "unite-locale-du-grand-roye",
+      "name": "Unité locale de Du Grand Roye",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-grand-roye",
+      "postal_code": "",
+      "city": "Du Grand Roye"
+    },
+    {
+      "slug": "unite-locale-du-grand-troyes",
+      "name": "Unité locale de Du Grand Troyes",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-grand-troyes",
+      "postal_code": "",
+      "city": "Du Grand Troyes"
+    },
+    {
+      "slug": "unite-locale-du-haut-jura",
+      "name": "Unité locale de Du Haut Jura",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-haut-jura",
+      "postal_code": "",
+      "city": "Du Haut Jura"
+    },
+    {
+      "slug": "unite-locale-du-haut-vaucluse",
+      "name": "Unité locale de Du Haut Vaucluse",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-haut-vaucluse",
+      "postal_code": "",
+      "city": "Du Haut Vaucluse"
+    },
+    {
+      "slug": "unite-locale-du-havre-pointe-de-caux-estuaire",
+      "name": "Unité locale de Du Havre Pointe De Caux Estuaire",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-havre-pointe-de-caux-estuaire",
+      "postal_code": "",
+      "city": "Du Havre Pointe De Caux Estuaire"
+    },
+    {
+      "slug": "unite-locale-du-lude",
+      "name": "Unité locale de Du Lude",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-lude",
+      "postal_code": "",
+      "city": "Du Lude"
+    },
+    {
+      "slug": "unite-locale-du-maconnais-tournugeois",
+      "name": "Unité locale de Du Maconnais Tournugeois",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-maconnais-tournugeois",
+      "postal_code": "",
+      "city": "Du Maconnais Tournugeois"
+    },
+    {
+      "slug": "unite-locale-du-mans",
+      "name": "Unité locale de Du Mans",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-mans",
+      "postal_code": "",
+      "city": "Du Mans"
+    },
+    {
+      "slug": "unite-locale-du-nord-cotentin",
+      "name": "Unité locale de Du Nord Cotentin",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-nord-cotentin",
+      "postal_code": "",
+      "city": "Du Nord Cotentin"
+    },
+    {
+      "slug": "unite-locale-du-nord-de-l-yonne",
+      "name": "Unité locale de Du Nord De L Yonne",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-nord-de-l-yonne",
+      "postal_code": "",
+      "city": "Du Nord De L Yonne"
+    },
+    {
+      "slug": "unite-locale-du-nord-jura",
+      "name": "Unité locale de Du Nord Jura",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-nord-jura",
+      "postal_code": "",
+      "city": "Du Nord Jura"
+    },
+    {
+      "slug": "unite-locale-du-nord-revermont",
+      "name": "Unité locale de Du Nord Revermont",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-nord-revermont",
+      "postal_code": "",
+      "city": "Du Nord Revermont"
+    },
+    {
+      "slug": "unite-locale-du-parisis",
+      "name": "Unité locale de Du Parisis",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-parisis",
+      "postal_code": "",
+      "city": "Du Parisis"
+    },
+    {
+      "slug": "unite-locale-du-pays-chatelleraudais",
+      "name": "Unité locale de Du Pays Chatelleraudais",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-pays-chatelleraudais",
+      "postal_code": "",
+      "city": "Du Pays Chatelleraudais"
+    },
+    {
+      "slug": "unite-locale-du-pays-civraisien",
+      "name": "Unité locale de Du Pays Civraisien",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-pays-civraisien",
+      "postal_code": "",
+      "city": "Du Pays Civraisien"
+    },
+    {
+      "slug": "unite-locale-du-pays-d-ancenis",
+      "name": "Unité locale de Du Pays D Ancenis",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-pays-d-ancenis",
+      "postal_code": "",
+      "city": "Du Pays D Ancenis"
+    },
+    {
+      "slug": "unite-locale-du-pays-d-armorique",
+      "name": "Unité locale de Du Pays D Armorique",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-pays-d-armorique",
+      "postal_code": "",
+      "city": "Du Pays D Armorique"
+    },
+    {
+      "slug": "unite-locale-du-pays-d-avignon",
+      "name": "Unité locale de Du Pays D Avignon",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-pays-d-avignon",
+      "postal_code": "",
+      "city": "Du Pays D Avignon"
+    },
+    {
+      "slug": "unite-locale-du-pays-d-iroise",
+      "name": "Unité locale de Du Pays D Iroise",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-pays-d-iroise",
+      "postal_code": "",
+      "city": "Du Pays D Iroise"
+    },
+    {
+      "slug": "unite-locale-du-pays-d-olmes",
+      "name": "Unité locale de Du Pays D Olmes",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-pays-d-olmes",
+      "postal_code": "",
+      "city": "Du Pays D Olmes"
+    },
+    {
+      "slug": "unite-locale-du-pays-de-bray",
+      "name": "Unité locale de Du Pays De Bray",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-pays-de-bray",
+      "postal_code": "",
+      "city": "Du Pays De Bray"
+    },
+    {
+      "slug": "unite-locale-du-pays-de-lorient",
+      "name": "Unité locale de Du Pays De Lorient",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-pays-de-lorient",
+      "postal_code": "",
+      "city": "Du Pays De Lorient"
+    },
+    {
+      "slug": "unite-locale-du-pays-de-meaux",
+      "name": "Unité locale de Du Pays De Meaux",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-pays-de-meaux",
+      "postal_code": "",
+      "city": "Du Pays De Meaux"
+    },
+    {
+      "slug": "unite-locale-du-pays-de-montbeliard",
+      "name": "Unité locale de Du Pays De Montbeliard",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-pays-de-montbeliard",
+      "postal_code": "",
+      "city": "Du Pays De Montbeliard"
+    },
+    {
+      "slug": "unite-locale-du-pays-de-phoebus",
+      "name": "Unité locale de Du Pays De Phoebus",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-pays-de-phoebus",
+      "postal_code": "",
+      "city": "Du Pays De Phoebus"
+    },
+    {
+      "slug": "unite-locale-du-pays-de-retz",
+      "name": "Unité locale de Du Pays De Retz",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-pays-de-retz",
+      "postal_code": "",
+      "city": "Du Pays De Retz"
+    },
+    {
+      "slug": "unite-locale-du-pays-de-vannes",
+      "name": "Unité locale de Du Pays De Vannes",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-pays-de-vannes",
+      "postal_code": "",
+      "city": "Du Pays De Vannes"
+    },
+    {
+      "slug": "unite-locale-du-pays-du-born",
+      "name": "Unité locale de Du Pays Du Born",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-pays-du-born",
+      "postal_code": "",
+      "city": "Du Pays Du Born"
+    },
+    {
+      "slug": "unite-locale-du-pays-du-coquelicot",
+      "name": "Unité locale de Du Pays Du Coquelicot",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-pays-du-coquelicot",
+      "postal_code": "",
+      "city": "Du Pays Du Coquelicot"
+    },
+    {
+      "slug": "unite-locale-du-pays-du-mont-blanc",
+      "name": "Unité locale de Du Pays Du Mont Blanc",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-pays-du-mont-blanc",
+      "postal_code": "",
+      "city": "Du Pays Du Mont Blanc"
+    },
+    {
+      "slug": "unite-locale-du-pays-du-roi-morvan",
+      "name": "Unité locale de Du Pays Du Roi Morvan",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-pays-du-roi-morvan",
+      "postal_code": "",
+      "city": "Du Pays Du Roi Morvan"
+    },
+    {
+      "slug": "unite-locale-du-pays-du-vexin-normand",
+      "name": "Unité locale de Du Pays Du Vexin Normand",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-pays-du-vexin-normand",
+      "postal_code": "",
+      "city": "Du Pays Du Vexin Normand"
+    },
+    {
+      "slug": "unite-locale-du-pays-du-vidourle",
+      "name": "Unité locale de Du Pays Du Vidourle",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-pays-du-vidourle",
+      "postal_code": "",
+      "city": "Du Pays Du Vidourle"
+    },
+    {
+      "slug": "unite-locale-du-pays-hamois",
+      "name": "Unité locale de Du Pays Hamois",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-pays-hamois",
+      "postal_code": "",
+      "city": "Du Pays Hamois"
+    },
+    {
+      "slug": "unite-locale-du-pays-horloger-et-de-la-franche-montagne",
+      "name": "Unité locale de Du Pays Horloger Et De La Franche Montagne",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-pays-horloger-et-de-la-franche-montagne",
+      "postal_code": "",
+      "city": "Du Pays Horloger Et De La Franche Montagne"
+    },
+    {
+      "slug": "unite-locale-du-pays-houdanais",
+      "name": "Unité locale de Du Pays Houdanais",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-pays-houdanais",
+      "postal_code": "",
+      "city": "Du Pays Houdanais"
+    },
+    {
+      "slug": "unite-locale-du-pays-malouin",
+      "name": "Unité locale de Du Pays Malouin",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-pays-malouin",
+      "postal_code": "",
+      "city": "Du Pays Malouin"
+    },
+    {
+      "slug": "unite-locale-du-pays-mantais",
+      "name": "Unité locale de Du Pays Mantais",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-pays-mantais",
+      "postal_code": "",
+      "city": "Du Pays Mantais"
+    },
+    {
+      "slug": "unite-locale-du-pays-neslois",
+      "name": "Unité locale de Du Pays Neslois",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-pays-neslois",
+      "postal_code": "",
+      "city": "Du Pays Neslois"
+    },
+    {
+      "slug": "unite-locale-du-pays-saint-lois",
+      "name": "Unité locale de Du Pays Saint Lois",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-pays-saint-lois",
+      "postal_code": "",
+      "city": "Du Pays Saint Lois"
+    },
+    {
+      "slug": "unite-locale-du-roannais",
+      "name": "Unité locale de Du Roannais",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-roannais",
+      "postal_code": "",
+      "city": "Du Roannais"
+    },
+    {
+      "slug": "unite-locale-du-santerre",
+      "name": "Unité locale de Du Santerre",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-santerre",
+      "postal_code": "",
+      "city": "Du Santerre"
+    },
+    {
+      "slug": "unite-locale-du-sud-charente",
+      "name": "Unité locale de Du Sud Charente",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-sud-charente",
+      "postal_code": "",
+      "city": "Du Sud Charente"
+    },
+    {
+      "slug": "unite-locale-du-sud-de-l-eure",
+      "name": "Unité locale de Du Sud De L Eure",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-sud-de-l-eure",
+      "postal_code": "",
+      "city": "Du Sud De L Eure"
+    },
+    {
+      "slug": "unite-locale-du-val-d-avre",
+      "name": "Unité locale de Du Val D Avre",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-val-d-avre",
+      "postal_code": "",
+      "city": "Du Val D Avre"
+    },
+    {
+      "slug": "unite-locale-du-val-d-orge",
+      "name": "Unité locale de Du Val D Orge",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-val-d-orge",
+      "postal_code": "",
+      "city": "Du Val D Orge"
+    },
+    {
+      "slug": "unite-locale-du-val-d-yerres",
+      "name": "Unité locale de Du Val D Yerres",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-val-d-yerres",
+      "postal_code": "",
+      "city": "Du Val D Yerres"
+    },
+    {
+      "slug": "unite-locale-du-val-de-france",
+      "name": "Unité locale de Du Val De France",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-val-de-france",
+      "postal_code": "",
+      "city": "Du Val De France"
+    },
+    {
+      "slug": "unite-locale-du-val-de-saone",
+      "name": "Unité locale de Du Val De Saone",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-val-de-saone",
+      "postal_code": "",
+      "city": "Du Val De Saone"
+    },
+    {
+      "slug": "unite-locale-du-val-de-seine",
+      "name": "Unité locale de Du Val De Seine",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-val-de-seine",
+      "postal_code": "",
+      "city": "Du Val De Seine"
+    },
+    {
+      "slug": "unite-locale-du-vexin-francais",
+      "name": "Unité locale de Du Vexin Francais",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-du-vexin-francais",
+      "postal_code": "",
+      "city": "Du Vexin Francais"
+    },
+    {
+      "slug": "unite-locale-grand-lochois",
+      "name": "Unité locale de Grand Lochois",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-grand-lochois",
+      "postal_code": "",
+      "city": "Grand Lochois"
+    },
+    {
+      "slug": "unite-locale-grand-valence",
+      "name": "Unité locale de Grand Valence",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-grand-valence",
+      "postal_code": "",
+      "city": "Grand Valence"
+    },
+    {
+      "slug": "unite-locale-haut-limousin",
+      "name": "Unité locale de Haut Limousin",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-haut-limousin",
+      "postal_code": "",
+      "city": "Haut Limousin"
+    },
+    {
+      "slug": "unite-locale-le-fossat-leze-arize",
+      "name": "Unité locale de Le Fossat Leze Arize",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-le-fossat-leze-arize",
+      "postal_code": "",
+      "city": "Le Fossat Leze Arize"
+    },
+    {
+      "slug": "unite-locale-le-houga",
+      "name": "Unité locale de Le Houga",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-le-houga",
+      "postal_code": "",
+      "city": "Le Houga"
+    },
+    {
+      "slug": "unite-locale-les-trois-vallees",
+      "name": "Unité locale de Les Trois Vallees",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-les-trois-vallees",
+      "postal_code": "",
+      "city": "Les Trois Vallees"
+    },
+    {
+      "slug": "unite-locale-les-vallons-de-l-isere",
+      "name": "Unité locale de Les Vallons De L Isere",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-les-vallons-de-l-isere",
+      "postal_code": "",
+      "city": "Les Vallons De L Isere"
+    },
+    {
+      "slug": "unite-locale-lodevois-et-larzac",
+      "name": "Unité locale de Lodevois Et Larzac",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-lodevois-et-larzac",
+      "postal_code": "",
+      "city": "Lodevois Et Larzac"
+    },
+    {
+      "slug": "unite-locale-midi-correzien",
+      "name": "Unité locale de Midi Correzien",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-midi-correzien",
+      "postal_code": "",
+      "city": "Midi Correzien"
+    },
+    {
+      "slug": "unite-locale-mont-saint-michel-sud-manche",
+      "name": "Unité locale de Mont Saint Michel Sud Manche",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-mont-saint-michel-sud-manche",
+      "postal_code": "",
+      "city": "Mont Saint Michel Sud Manche"
+    },
+    {
+      "slug": "unite-locale-nivernais-morvan",
+      "name": "Unité locale de Nivernais Morvan",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-nivernais-morvan",
+      "postal_code": "",
+      "city": "Nivernais Morvan"
+    },
+    {
+      "slug": "unite-locale-nord-ardennes",
+      "name": "Unité locale de Nord Ardennes",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-nord-ardennes",
+      "postal_code": "",
+      "city": "Nord Ardennes"
+    },
+    {
+      "slug": "unite-locale-nord-isere-bourgoin-jallieu",
+      "name": "Unité locale de Nord Isere Bourgoin Jallieu",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-nord-isere-bourgoin-jallieu",
+      "postal_code": "",
+      "city": "Nord Isere Bourgoin Jallieu"
+    },
+    {
+      "slug": "unite-locale-ouest-charente",
+      "name": "Unité locale de Ouest Charente",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-ouest-charente",
+      "postal_code": "",
+      "city": "Ouest Charente"
+    },
+    {
+      "slug": "unite-locale-ouest-herault",
+      "name": "Unité locale de Ouest Herault",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-ouest-herault",
+      "postal_code": "",
+      "city": "Ouest Herault"
+    },
+    {
+      "slug": "unite-locale-pays-d-autan",
+      "name": "Unité locale de Pays D Autan",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-pays-d-autan",
+      "postal_code": "",
+      "city": "Pays D Autan"
+    },
+    {
+      "slug": "unite-locale-pays-de-gex",
+      "name": "Unité locale de Pays De Gex",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-pays-de-gex",
+      "postal_code": "",
+      "city": "Pays De Gex"
+    },
+    {
+      "slug": "unite-locale-pays-des-hautes-falaises",
+      "name": "Unité locale de Pays Des Hautes Falaises",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-pays-des-hautes-falaises",
+      "postal_code": "",
+      "city": "Pays Des Hautes Falaises"
+    },
+    {
+      "slug": "unite-locale-plaine-de-l-ain",
+      "name": "Unité locale de Plaine De L Ain",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-plaine-de-l-ain",
+      "postal_code": "",
+      "city": "Plaine De L Ain"
+    },
+    {
+      "slug": "unite-locale-plaine-du-roussillon",
+      "name": "Unité locale de Plaine Du Roussillon",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-plaine-du-roussillon",
+      "postal_code": "",
+      "city": "Plaine Du Roussillon"
+    },
+    {
+      "slug": "unite-locale-plateau-de-caux-maritime",
+      "name": "Unité locale de Plateau De Caux Maritime",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-plateau-de-caux-maritime",
+      "postal_code": "",
+      "city": "Plateau De Caux Maritime"
+    },
+    {
+      "slug": "unite-locale-porte-du-forez",
+      "name": "Unité locale de Porte Du Forez",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-porte-du-forez",
+      "postal_code": "",
+      "city": "Porte Du Forez"
+    },
+    {
+      "slug": "unite-locale-sud-ardeche",
+      "name": "Unité locale de Sud Ardeche",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-sud-ardeche",
+      "postal_code": "",
+      "city": "Sud Ardeche"
+    },
+    {
+      "slug": "unite-locale-sud-est-charente",
+      "name": "Unité locale de Sud Est Charente",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-sud-est-charente",
+      "postal_code": "",
+      "city": "Sud Est Charente"
+    },
+    {
+      "slug": "unite-locale-sud-haute-vienne",
+      "name": "Unité locale de Sud Haute Vienne",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-sud-haute-vienne",
+      "postal_code": "",
+      "city": "Sud Haute Vienne"
+    },
+    {
+      "slug": "unite-locale-sud-luberon",
+      "name": "Unité locale de Sud Luberon",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-sud-luberon",
+      "postal_code": "",
+      "city": "Sud Luberon"
+    },
+    {
+      "slug": "unite-locale-sud-ventoux",
+      "name": "Unité locale de Sud Ventoux",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-sud-ventoux",
+      "postal_code": "",
+      "city": "Sud Ventoux"
+    },
+    {
+      "slug": "unite-locale-terres-de-caux",
+      "name": "Unité locale de Terres De Caux",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-terres-de-caux",
+      "postal_code": "",
+      "city": "Terres De Caux"
+    },
+    {
+      "slug": "unite-locale-terres-de-montesquieu",
+      "name": "Unité locale de Terres De Montesquieu",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-terres-de-montesquieu",
+      "postal_code": "",
+      "city": "Terres De Montesquieu"
+    },
+    {
+      "slug": "unite-locale-terres-du-medoc",
+      "name": "Unité locale de Terres Du Medoc",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-terres-du-medoc",
+      "postal_code": "",
+      "city": "Terres Du Medoc"
+    },
+    {
+      "slug": "unite-locale-val-de-bievre",
+      "name": "Unité locale de Val De Bievre",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-val-de-bievre",
+      "postal_code": "",
+      "city": "Val De Bievre"
+    },
+    {
+      "slug": "unite-locale-vallee-du-dadou-graulhet-realmont",
+      "name": "Unité locale de Vallee Du Dadou Graulhet Realmont",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-vallee-du-dadou-graulhet-realmont",
+      "postal_code": "",
+      "city": "Vallee Du Dadou Graulhet Realmont"
+    },
+    {
+      "slug": "unite-locale-villeneuve-le-roi-ablon-orly",
+      "name": "Unité locale de Villeneuve Le Roi Ablon Orly",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-villeneuve-le-roi-ablon-orly",
+      "postal_code": "",
+      "city": "Villeneuve Le Roi Ablon Orly"
+    },
+    {
+      "slug": "unite-locale-vincennes-st-mande",
+      "name": "Unité locale de Vincennes St Mande",
+      "source_url": "https://www.croix-rouge.fr/unite-locale-vincennes-st-mande",
+      "postal_code": "",
+      "city": "Vincennes St Mande"
+    }
+  ]
+}

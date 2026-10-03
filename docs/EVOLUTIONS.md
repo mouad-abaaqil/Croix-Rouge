@@ -18,15 +18,17 @@ Ce document décrit le code actuel et propose un chemin de développement pour l
 | `docker-compose.yml`, `Dockerfile` | Services conteneurisés pour une installation auto-hébergée ultérieure |
 | `tests/` | Tests unitaires d’analyse/routage et tests Flask/API sur des bases temporaires |
 
-La base SQLite par défaut se trouve dans `instance/redcollect.sqlite3`. Tables principales : `users`, `settings`, `points`, `stock_history`, `geocode_cache`, `missions` et `mission_stops`. Les migrations actuelles ajoutent des colonnes/tables manquantes; elles ne remplacent pas un mécanisme de migration versionné si le schéma évolue beaucoup.
+La base SQLite par défaut se trouve dans `instance/redcollect.sqlite3`. Tables principales : `local_units`, `unit_settings`, `users`, `settings`, `points`, `stock_history`, `geocode_cache`, `missions` et `mission_stops`. Les utilisateurs, points et missions portent un `unit_id`; les lectures et écritures applicatives sont filtrées par unité. Les migrations actuelles ajoutent des colonnes/tables manquantes; elles ne remplacent pas un mécanisme de migration versionné si le schéma évolue beaucoup.
+
+`data/local_units.json` contient l’index des URLs `/unite-locale-` du sitemap officiel, extrait le 3 octobre 2026. Les noms sont générés à partir des slugs, sans adresse postale; utiliser le lien officiel pour vérifier l’intitulé courant. `scripts/update_local_units.py` actualise cette source sur demande. Le site ne fournissant pas de licence ouverte clairement identifiable, vérifier les conditions de réutilisation avant de republier une copie de l’annuaire.
 
 ## Rôles et autorisations actuels
 
-- **Coordinateur** : crée les utilisateurs, change leur nom, réinitialise leur mot de passe ou suspend leur accès; règle le dépôt; ajoute ou modifie des points; crée et affecte les missions; consulte l’aperçu et envoie les emails.
-- **Bénévole** : consulte les points et missions; met à jour les stocks; modifie l’état des arrêts d’une mission sans affectation ou de sa propre mission.
+- **Coordinateur** : s’inscrit depuis l’accueil en choisissant une unité; crée les bénévoles de cette unité, modifie les coordonnées de l’équipe, réinitialise les mots de passe ou suspend l’accès; règle le dépôt; gère les points et missions.
+- **Bénévole** : consulte les données de son unité, modifie son profil, met à jour les stocks et les arrêts des missions affectées à son compte.
 - Les mutations API utilisent un jeton CSRF et les mots de passe sont hachés. Le dernier coordinateur ne peut pas être désactivé.
 - La page d’analyse et son API sont réservées au coordinateur.
-- Les comptes sont créés par le coordinateur et les mots de passe initiaux lui sont transmis hors bande. Il n’y a pas encore de changement de mot de passe personnel ni de procédure de réinitialisation par email.
+- Les coordinateurs s’inscrivent depuis l’accueil; les bénévoles sont créés par un coordinateur et rattachés automatiquement à son unité. Il n’y a pas encore de changement de mot de passe personnel ni de procédure de réinitialisation par email.
 - L’API sait marquer un point inactif, mais l’interface ne propose pas encore de commande pour changer son état.
 
 Une évolution du modèle de droits devrait mettre à jour ensemble les décorateurs Flask, les contrôles visibles dans l’interface et les tests d’accès pour chaque rôle.
@@ -99,7 +101,7 @@ Pour les captures ou essais contrôlés, utiliser `DATABASE_PATH` vers une base 
 ### Changements d’architecture à décider selon le contexte
 
 - Garder SQLite pour une petite équipe ou migrer vers PostgreSQL si l’usage concurrent augmente.
-- Séparer les unités/organisations si plusieurs équipes doivent partager une instance, plutôt que d’utiliser une installation par unité.
+- Remplacer les migrations opportunistes par Alembic ou un mécanisme versionné avant que le schéma multi-unité ne s’étende.
 - Décider si l’envoi email reste une fonctionnalité SMTP simple ou si un service de notifications est nécessaire.
 - Évaluer une application mobile/PWA seulement si le mode hors connexion ou le travail terrain le justifie.
 

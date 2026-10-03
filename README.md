@@ -65,12 +65,14 @@ La boucle silencieuse ci-dessus suit le parcours principal. Les captures individ
 | Chercher une adresse et ajuster le repère directement sur la carte | Oui | — |
 | Préparer et créer une tournée, choisir et réordonner les arrêts | Oui | — |
 | Affecter une mission à un bénévole | Oui | — |
-| Suivre une mission affectée ou non affectée, marquer un arrêt collecté/ignoré | Oui | Oui* |
+| Marquer un arrêt collecté/ignoré sur une mission affectée | Oui | Oui* |
 | Analyser les tendances de remplissage, les jours de pression et les zones à étudier | Oui | — |
-| Gérer les comptes, le dépôt et les paramètres de démonstration | Oui | — |
+| Créer un compte coordinateur et choisir une unité locale | Oui | — |
+| Gérer les comptes bénévoles, le dépôt et les paramètres de démonstration | Oui | — |
+| Modifier le nom, l’email et le téléphone du profil | Oui | Oui |
 | Exporter la mission en CSV et préparer/envoyer un récapitulatif par email | Oui | Export CSV |
 
-\* Un bénévole peut mettre à jour une mission qui lui est affectée ou qui n’est pas affectée. Il ne peut pas modifier une mission attribuée à quelqu’un d’autre. Les liens de navigation ouvrent Google Maps sur l’arrêt sélectionné; le guidage GPS ne se fait pas dans Red Collect.
+\* Un bénévole peut mettre à jour uniquement les missions affectées à son compte. Les utilisateurs, les points, les missions, le dépôt et les analyses sont limités à l’unité locale du compte. Les liens de navigation ouvrent Google Maps sur l’arrêt sélectionné; le guidage GPS ne se fait pas dans Red Collect.
 
 ### Parcours courant
 
@@ -120,7 +122,11 @@ python3 webapp.py init
 python3 webapp.py
 ```
 
-`init` demande un identifiant et un mot de passe d’au moins 12 caractères. Il charge les points d’exemple à la première initialisation. Ouvrez [http://127.0.0.1:5000](http://127.0.0.1:5000). Si le port est occupé, lancez `PORT=5002 python3 webapp.py` puis ouvrez [http://127.0.0.1:5002](http://127.0.0.1:5002).
+`init` demande un identifiant et un mot de passe d’au moins 12 caractères. Il charge les points d’exemple à la première initialisation. Vous pouvez aussi ouvrir la page d’accueil et créer un compte coordinateur, choisir une unité locale, puis gérer les bénévoles de cette unité. Les bénévoles sont automatiquement rattachés à l’unité du coordinateur. Ouvrez [http://127.0.0.1:5000](http://127.0.0.1:5000). Si le port est occupé, lancez `PORT=5002 python3 webapp.py` puis ouvrez [http://127.0.0.1:5002](http://127.0.0.1:5002).
+
+Coordinateurs et bénévoles peuvent modifier leur nom, adresse email et téléphone dans **Mon profil**. Le coordinateur peut également mettre à jour les coordonnées des bénévoles de son unité.
+
+Le menu contient 576 pages « unité locale » indexées par le sitemap officiel au 3 octobre 2026. La liste versionnée est `data/local_units.json`; ses libellés sont dérivés des URLs et les fiches officielles restent la référence. Pour l’actualiser, lancez `python3 scripts/update_local_units.py` manuellement; le script ne tourne pas au démarrage. Le site officiel n’affiche pas clairement de licence ouverte pour ces pages : les sources et la date de collecte sont conservées, et les utilisateurs doivent vérifier les conditions de réutilisation avant de redistribuer l’annuaire.
 
 Le mot de passe n’est jamais affiché ni stocké en clair. Pour réinitialiser celui d’un coordinateur local, arrêtez l’application, lancez `python3 webapp.py reset-password NOM_DU_COORDINATEUR`, puis saisissez un nouveau mot de passe d’au moins 12 caractères.
 
@@ -209,10 +215,12 @@ The project is intended for donations broadly, not clothing alone. It is open so
 | Search an address and adjust its map marker | Yes | — |
 | Plan a route, reorder stops, create and assign a mission | Yes | — |
 | Manage volunteer accounts and depot settings | Yes | — |
-| Update stops on an unassigned mission or their own assignment | Yes | Yes* |
+| Create a coordinator account and select a local unit | Yes | — |
+| Edit personal name, email and phone | Yes | Yes |
+| Update stops on a mission assigned to them | Yes | Yes* |
 | Export a mission as CSV and preview/send its email summary | Yes | CSV export |
 
-\* Volunteers cannot update a mission assigned to another person. Stop navigation opens Google Maps; Red Collect does not provide turn-by-turn GPS navigation.
+\* Volunteers can update only missions assigned to their account. Accounts, points, missions, depots and analyses are scoped to the selected local unit. Stop navigation opens Google Maps; Red Collect does not provide turn-by-turn GPS navigation.
 
 ### Run locally
 
@@ -229,7 +237,7 @@ cp .env.example .env
 
 Set a random `APP_SECRET_KEY` in `.env`, then run `python3 webapp.py init` and `python3 webapp.py`. Initialization creates the coordinator account and imports sample points into a new database. Open [http://127.0.0.1:5000](http://127.0.0.1:5000). See the French section above for the exact secret-generation command and optional OSRM setup.
 
-Passwords are never displayed or stored in plaintext. To reset a local coordinator password, stop the app and run `python3 webapp.py reset-password COORDINATOR_USERNAME`, then enter a new password of at least 12 characters.
+Passwords are never displayed or stored in plaintext. Coordinators can register from the home page, select a local unit and create volunteer accounts in that unit. Both roles can edit their name, email and phone from **My profile**. The 576-entry unit index comes from the official sitemap and can be refreshed manually with `python3 scripts/update_local_units.py`; its labels are derived from source URLs. Verify reuse terms before redistributing this directory, since the official pages do not clearly state an open-data license. To reset a local coordinator password, stop the app and run `python3 webapp.py reset-password COORDINATOR_USERNAME`, then enter a new password of at least 12 characters.
 
 ### Categories, analytics, maps and routing
 

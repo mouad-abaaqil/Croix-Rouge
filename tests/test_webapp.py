@@ -111,7 +111,7 @@ class WebAppTest(unittest.TestCase):
             self.assertEqual(self.client.get(f"/api/analytics?days={days}").status_code, 200)
         self.assertEqual(self.client.get("/api/analytics?days=60").status_code, 400)
         self.client.post("/api/users", json={"username":"volunteer","name":"Volunteer",
-                          "password":"strong-password-123"}, headers=self.headers)
+                          "email":"volunteer@example.org","password":"strong-password-123"}, headers=self.headers)
         with self.client.session_transaction() as session:
             session["user_id"] = 2
         self.assertEqual(self.client.get("/api/analytics").status_code, 403)
@@ -119,10 +119,10 @@ class WebAppTest(unittest.TestCase):
 
     def test_volunteer_cannot_plan_and_can_complete_stop(self):
         point_id = self.client.get("/api/bootstrap").json["points"][0]["id"]
-        created = self.client.post("/api/missions", json={"stop_ids":[point_id]}, headers=self.headers).json["mission"]
         with database.connect() as db:
-            db.execute("INSERT INTO users(username,name,password_hash,role) VALUES (?,?,?,'volunteer')",
+            db.execute("INSERT INTO users(username,name,password_hash,role,email,unit_id) VALUES (?,?,?,'volunteer','helper@example.org',1)",
                        ("volunteer","Volunteer",generate_password_hash("strong-password-123")))
+        created = self.client.post("/api/missions", json={"stop_ids":[point_id],"assigned_to":2}, headers=self.headers).json["mission"]
         with self.client.session_transaction() as session:
             session["user_id"] = 2
         self.assertEqual(self.client.post("/api/missions/plan", json={"stop_ids":[point_id]}, headers=self.headers).status_code, 403)
@@ -149,17 +149,53 @@ class WebAppTest(unittest.TestCase):
             self.assertEqual(logged_in.status_code, 302)
             self.assertEqual(logged_in.headers["Location"], "/")
 
+    def test_signup_assigns_selected_unit_and_profiles_can_be_edited(self):
+        with app.test_client() as client:
+            client.get("/login")
+            with client.session_transaction() as session:
+                token=session["csrf_token"]
+            with database.connect() as db:
+                unit=db.execute("SELECT id FROM local_units WHERE slug='unite-locale-de-calais'").fetchone()[0]
+            response=client.post("/signup",data={"csrf_token":token,"username":"new-coord","name":"New Coordinator","email":"coord@example.org","password":"coordinator-pass-123","unit_id":unit})
+            self.assertEqual(response.status_code,302)
+            with client.session_transaction() as session:
+                token=session["csrf_token"]
+            edited=client.patch("/api/profile",json={"name":"Coordinator A","email":"coord@example.org","phone":"010203"},headers={"X-CSRF-Token":token})
+            self.assertEqual(edited.status_code,200)
+            created=client.post("/api/users",json={"username":"helper-a","name":"Helper A","email":"helper-a@example.org","password":"volunteer-pass-123"},headers={"X-CSRF-Token":token})
+            self.assertEqual(created.status_code,201)
+            with database.connect() as db:
+                self.assertEqual(db.execute("SELECT unit_id FROM users WHERE id=?",(created.json["user"]["id"],)).fetchone()[0],unit)
+
+    def test_homepage_offers_signup_and_login(self):
+        with app.test_client() as client:
+            self.assertEqual(client.get("/").status_code,302)
+            page=client.get("/login")
+            self.assertIn(b"/signup",page.data)
+            self.assertIn("Unité locale de Calais".encode(),page.data)
+
+    def test_unit_data_and_missions_are_not_visible_across_units(self):
+        with database.connect() as db:
+            other=db.execute("SELECT id FROM local_units WHERE id<>1 LIMIT 1").fetchone()[0]
+            db.execute("INSERT INTO points(name,address,unit_id,lat,lon,capacity_kg,stock_kg,updated_at) VALUES ('Private relay','Somewhere',?,48,2,10,5,?)",(other,database.now()))
+            db.execute("INSERT INTO users(username,name,password_hash,role,email,unit_id) VALUES ('other-vol','Other Volunteer','hash','volunteer','other@example.org',?)",(other,))
+            db.execute("INSERT INTO missions(title,created_at,created_by,routing_mode,distance_km,geometry_json,assigned_to,unit_id) VALUES ('Private mission',? ,1,'air',1,'[]',2,?)",(database.now(),other))
+        bootstrap=self.client.get('/api/bootstrap').json
+        self.assertNotIn('Private relay',{point['name'] for point in bootstrap['points']})
+        self.assertNotIn('Private mission',{mission['title'] for mission in bootstrap['missions']})
+        self.assertEqual(self.client.get('/api/missions/1').status_code,404)
+
     def test_coordinator_can_configure_depot_and_add_volunteer(self):
         changed = self.client.patch("/api/settings", json={"unit_name":"Calais Nord", "depot_lat":50.95}, headers=self.headers)
         self.assertEqual(changed.status_code, 200)
         self.assertEqual(changed.json["depot"]["name"], "Calais Nord")
-        created = self.client.post("/api/users", json={"username":"volunteer2", "name":"Volunteer Two", "password":"strong-password-123"}, headers=self.headers)
+        created = self.client.post("/api/users", json={"username":"volunteer2", "name":"Volunteer Two", "email":"volunteer2@example.org", "password":"strong-password-123"}, headers=self.headers)
         self.assertEqual(created.status_code, 201)
         self.assertEqual(created.json["user"]["role"], "volunteer")
-        self.assertEqual(self.client.post("/api/users", json={"username":"volunteer2", "name":"Duplicate", "password":"strong-password-123"}, headers=self.headers).status_code, 409)
+        self.assertEqual(self.client.post("/api/users", json={"username":"volunteer2", "name":"Duplicate", "email":"volunteer2@example.org", "password":"strong-password-123"}, headers=self.headers).status_code, 409)
 
     def test_coordinator_can_manage_volunteer_access(self):
-        created = self.client.post("/api/users", json={"username":"helper", "name":"Helper", "password":"initial-password-123"}, headers=self.headers)
+        created = self.client.post("/api/users", json={"username":"helper", "name":"Helper", "email":"helper@example.org", "password":"initial-password-123"}, headers=self.headers)
         user_id = created.json["user"]["id"]
         changed = self.client.patch(f"/api/users/{user_id}", json={"name":"Helper One"}, headers=self.headers)
         self.assertEqual(changed.json["user"]["name"], "Helper One")

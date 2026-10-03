@@ -3,6 +3,7 @@
 import csv
 import os
 import sqlite3
+import json
 from contextlib import closing
 from datetime import datetime, timezone
 from pathlib import Path
@@ -33,10 +34,19 @@ def connect(path=None):
 
 
 SCHEMA = """
+CREATE TABLE IF NOT EXISTS local_units (
+ id INTEGER PRIMARY KEY, slug TEXT NOT NULL UNIQUE, name TEXT NOT NULL,
+ source_url TEXT NOT NULL, postal_code TEXT NOT NULL DEFAULT '', city TEXT NOT NULL DEFAULT ''
+);
+CREATE TABLE IF NOT EXISTS unit_settings (
+ unit_id INTEGER NOT NULL REFERENCES local_units(id), key TEXT NOT NULL, value TEXT NOT NULL,
+ PRIMARY KEY(unit_id,key)
+);
 CREATE TABLE IF NOT EXISTS users (
  id INTEGER PRIMARY KEY, username TEXT NOT NULL UNIQUE,
  name TEXT NOT NULL, password_hash TEXT NOT NULL,
  role TEXT NOT NULL CHECK(role IN ('coordinator','volunteer')),
+ email TEXT NOT NULL DEFAULT '', phone TEXT NOT NULL DEFAULT '', unit_id INTEGER NOT NULL DEFAULT 1,
  active INTEGER NOT NULL DEFAULT 1, session_version INTEGER NOT NULL DEFAULT 0
 );
 CREATE TABLE IF NOT EXISTS settings (
@@ -44,6 +54,7 @@ CREATE TABLE IF NOT EXISTS settings (
 );
 CREATE TABLE IF NOT EXISTS points (
  id INTEGER PRIMARY KEY, name TEXT NOT NULL, address TEXT NOT NULL,
+ unit_id INTEGER NOT NULL DEFAULT 1,
  lat REAL NOT NULL, lon REAL NOT NULL,
  capacity_kg REAL NOT NULL CHECK(capacity_kg > 0),
  stock_kg REAL NOT NULL CHECK(stock_kg >= 0 AND stock_kg <= capacity_kg),
@@ -65,7 +76,7 @@ CREATE TABLE IF NOT EXISTS missions (
  routing_mode TEXT NOT NULL, distance_km REAL NOT NULL,
  drive_minutes REAL, total_minutes REAL, geometry_json TEXT NOT NULL,
  algorithm TEXT NOT NULL DEFAULT 'nearest-neighbor-2opt',
- assigned_to INTEGER REFERENCES users(id)
+ assigned_to INTEGER REFERENCES users(id), unit_id INTEGER NOT NULL DEFAULT 1
 );
 CREATE TABLE IF NOT EXISTS mission_stops (
  id INTEGER PRIMARY KEY, mission_id INTEGER NOT NULL REFERENCES missions(id) ON DELETE CASCADE,
@@ -100,6 +111,13 @@ CREATE INDEX IF NOT EXISTS idx_mission_stop_donations_category ON mission_stop_d
 def initialize(path=None, admin_username=None, admin_password=None):
     with closing(connect(path)) as db, db:
         db.executescript(SCHEMA)
+        seed_local_units(db)
+        _ensure_column(db, "users", "email", "TEXT NOT NULL DEFAULT ''")
+        _ensure_column(db, "users", "phone", "TEXT NOT NULL DEFAULT ''")
+        _ensure_column(db, "users", "unit_id", "INTEGER NOT NULL DEFAULT 1")
+        _ensure_column(db, "points", "unit_id", "INTEGER NOT NULL DEFAULT 1")
+        _ensure_column(db, "missions", "unit_id", "INTEGER NOT NULL DEFAULT 1")
+        db.execute("CREATE UNIQUE INDEX IF NOT EXISTS idx_users_email_unique ON users(lower(email)) WHERE email<>''")
         _migrate_donation_categories(db)
         mission_columns = {row[1] for row in db.execute("PRAGMA table_info(missions)")}
         if "algorithm" not in mission_columns:
@@ -116,6 +134,7 @@ def initialize(path=None, admin_username=None, admin_password=None):
         }
         for key, value in defaults.items():
             db.execute("INSERT OR IGNORE INTO settings(key,value) VALUES (?,?)", (key, value))
+            db.execute("INSERT OR IGNORE INTO unit_settings(unit_id,key,value) VALUES (1,?,?)", (key, value))
         if admin_username and admin_password:
             db.execute(
                 "INSERT INTO users(username,name,password_hash,role) VALUES (?,?,?,'coordinator')",
@@ -146,6 +165,16 @@ def migrate_existing(path=None):
     with closing(connect(db_path)) as db, db:
         tables = {row[0] for row in db.execute("SELECT name FROM sqlite_master WHERE type='table'")}
         if "points" in tables:
+            db.execute("CREATE TABLE IF NOT EXISTS local_units (id INTEGER PRIMARY KEY, slug TEXT NOT NULL UNIQUE, name TEXT NOT NULL, source_url TEXT NOT NULL, postal_code TEXT NOT NULL DEFAULT '', city TEXT NOT NULL DEFAULT '')")
+            db.execute("CREATE TABLE IF NOT EXISTS unit_settings (unit_id INTEGER NOT NULL REFERENCES local_units(id), key TEXT NOT NULL, value TEXT NOT NULL, PRIMARY KEY(unit_id,key))")
+            seed_local_units(db)
+            for table, column, definition in (("users","email","TEXT NOT NULL DEFAULT ''"),("users","phone","TEXT NOT NULL DEFAULT ''"),("users","unit_id","INTEGER NOT NULL DEFAULT 1"),("points","unit_id","INTEGER NOT NULL DEFAULT 1"),("missions","unit_id","INTEGER NOT NULL DEFAULT 1")):
+                if table in tables:
+                    _ensure_column(db, table, column, definition)
+            if "users" in tables:
+                db.execute("CREATE UNIQUE INDEX IF NOT EXISTS idx_users_email_unique ON users(lower(email)) WHERE email<>''")
+            for key, value in (("unit_name","Croix-Rouge Calais"),("depot_address","57 Rue Magenta, 62100 Calais, France"),("depot_lat","50.946834"),("depot_lon","1.859344"),("demo_data","1")):
+                db.execute("INSERT OR IGNORE INTO unit_settings(unit_id,key,value) SELECT 1,key,value FROM settings WHERE key=?", (key,))
             db.execute("""CREATE TABLE IF NOT EXISTS geocode_cache (
                 query TEXT PRIMARY KEY, result_json TEXT NOT NULL, cached_at TEXT NOT NULL
             )""")
@@ -163,6 +192,21 @@ def migrate_existing(path=None):
         if "mission_stops" in tables:
             db.execute("CREATE INDEX IF NOT EXISTS idx_mission_stops_status_visited ON mission_stops(status,visited_at)")
         _migrate_donation_categories(db)
+
+
+def _ensure_column(db, table, column, definition):
+    columns = {row[1] for row in db.execute(f"PRAGMA table_info({table})")}
+    if column not in columns:
+        db.execute(f"ALTER TABLE {table} ADD COLUMN {column} {definition}")
+
+
+def seed_local_units(db):
+    path = ROOT / "data" / "local_units.json"
+    if path.exists():
+        units = json.loads(path.read_text(encoding="utf-8"))["units"]
+    else:
+        units = [{"slug":"unite-locale-de-calais","name":"Unité locale de Calais", "source_url":"https://www.croix-rouge.fr/unite-locale-de-calais", "postal_code":"62100", "city":"Calais"}]
+    db.executemany("INSERT OR IGNORE INTO local_units(slug,name,source_url,postal_code,city) VALUES (:slug,:name,:source_url,:postal_code,:city)", units)
 
 
 def _migrate_donation_categories(db):
@@ -192,9 +236,9 @@ def point_dict(row):
     return point
 
 
-def points(db, active_only=True):
-    query = "SELECT * FROM points" + (" WHERE active=1" if active_only else "") + " ORDER BY name"
-    result = [point_dict(row) for row in db.execute(query)]
+def points(db, active_only=True, unit_id=1):
+    query = "SELECT * FROM points WHERE unit_id=?" + (" AND active=1" if active_only else "") + " ORDER BY name"
+    result = [point_dict(row) for row in db.execute(query, (unit_id,))]
     for point in result:
         point["donations"] = {row["category"]: row["stock_kg"] for row in db.execute(
             "SELECT category,stock_kg FROM point_donation_stock WHERE point_id=?", (point["id"],)
@@ -202,8 +246,9 @@ def points(db, active_only=True):
     return result
 
 
-def depot(db):
+def depot(db, unit_id=1):
     settings = dict(db.execute("SELECT key,value FROM settings").fetchall())
+    settings.update(dict(db.execute("SELECT key,value FROM unit_settings WHERE unit_id=?", (unit_id,)).fetchall()))
     return {
         "name": settings["unit_name"], "address": settings["depot_address"],
         "lat": float(settings["depot_lat"]), "lon": float(settings["depot_lon"]),

@@ -61,7 +61,7 @@ def _connected_zones(points: list[dict]) -> list[list[dict]]:
     return list(grouped.values())
 
 
-def build_analytics(db, days: int = 90, now: datetime | None = None) -> dict:
+def build_analytics(db, days: int = 90, now: datetime | None = None, unit_id: int = 1) -> dict:
     """Summarize observed stock, collection visits and nearby relay clusters.
 
     A repeat-pressure recommendation requires multiple recorded observations
@@ -79,13 +79,13 @@ def build_analytics(db, days: int = 90, now: datetime | None = None) -> dict:
     previous_start_text = previous_start.isoformat(timespec="seconds")
 
     points = [dict(row) for row in db.execute(
-        "SELECT * FROM points WHERE active=1 ORDER BY id"
+        "SELECT * FROM points WHERE active=1 AND unit_id=? ORDER BY id", (unit_id,)
     )]
     by_id = {point["id"]: point for point in points}
     samples = {point_id: [] for point_id in by_id}
     for row in db.execute(
-        "SELECT point_id,stock_kg,recorded_at FROM stock_history WHERE recorded_at>=? ORDER BY recorded_at",
-        (start_text,),
+        "SELECT sh.point_id,sh.stock_kg,sh.recorded_at FROM stock_history sh JOIN points p ON p.id=sh.point_id WHERE sh.recorded_at>=? AND p.unit_id=? ORDER BY sh.recorded_at",
+        (start_text,unit_id),
     ):
         recorded = _date(row["recorded_at"])
         point = by_id.get(row["point_id"])
@@ -99,8 +99,8 @@ def build_analytics(db, days: int = 90, now: datetime | None = None) -> dict:
     for row in db.execute(
         """SELECT ms.point_id,ms.collected_kg,ms.visited_at
            FROM mission_stops ms JOIN missions m ON m.id=ms.mission_id
-           WHERE ms.status='visited' AND ms.visited_at>=? ORDER BY ms.visited_at""",
-        (start_text,),
+           WHERE ms.status='visited' AND ms.visited_at>=? AND m.unit_id=? ORDER BY ms.visited_at""",
+        (start_text,unit_id),
     ):
         recorded = _date(row["visited_at"])
         point = by_id.get(row["point_id"])
@@ -113,20 +113,20 @@ def build_analytics(db, days: int = 90, now: datetime | None = None) -> dict:
                        for category in DONATION_CATEGORIES}
     for row in db.execute(
         """SELECT pds.category,pds.stock_kg FROM point_donation_stock pds
-           JOIN points p ON p.id=pds.point_id WHERE p.active=1"""
+           JOIN points p ON p.id=pds.point_id WHERE p.active=1 AND p.unit_id=?""", (unit_id,)
     ):
         if row["category"] in category_totals:
             category_totals[row["category"]]["current_stock_kg"] += row["stock_kg"]
     for row in db.execute(
         """SELECT category,COUNT(*) AS readings FROM donation_stock_history
-           WHERE recorded_at>=? GROUP BY category""", (start_text,)
+           JOIN points p ON p.id=donation_stock_history.point_id WHERE recorded_at>=? AND p.unit_id=? GROUP BY category""", (start_text,unit_id)
     ):
         if row["category"] in category_totals:
             category_totals[row["category"]]["stock_readings"] = row["readings"]
     for row in db.execute(
         """SELECT d.category,SUM(d.collected_kg) AS kg FROM mission_stop_donations d
            JOIN mission_stops ms ON ms.id=d.mission_stop_id
-           WHERE ms.status='visited' AND ms.visited_at>=? GROUP BY d.category""", (start_text,)
+           JOIN missions m ON m.id=ms.mission_id WHERE ms.status='visited' AND ms.visited_at>=? AND m.unit_id=? GROUP BY d.category""", (start_text,unit_id)
     ):
         if row["category"] in category_totals:
             category_totals[row["category"]]["collected_kg"] = row["kg"] or 0
@@ -213,14 +213,14 @@ def build_analytics(db, days: int = 90, now: datetime | None = None) -> dict:
     kg_total = round(sum(point["collected_kg"] for point in point_results), 2)
     previous_stops = db.execute(
         """SELECT COUNT(*),COALESCE(SUM(collected_kg),0) FROM mission_stops
-           WHERE status='visited' AND visited_at>=? AND visited_at<?""",
-        (previous_start_text, start_text),
+           WHERE status='visited' AND visited_at>=? AND visited_at<? AND mission_id IN (SELECT id FROM missions WHERE unit_id=?)""",
+        (previous_start_text, start_text,unit_id),
     ).fetchone()
     previous_readings = db.execute(
         """SELECT COUNT(*),COALESCE(SUM(CASE WHEN sh.stock_kg/p.capacity_kg>=0.8 THEN 1 ELSE 0 END),0)
            FROM stock_history sh JOIN points p ON p.id=sh.point_id
-           WHERE sh.recorded_at>=? AND sh.recorded_at<? AND p.active=1""",
-        (previous_start_text, start_text),
+           WHERE sh.recorded_at>=? AND sh.recorded_at<? AND p.active=1 AND p.unit_id=?""",
+        (previous_start_text, start_text,unit_id),
     ).fetchone()
     previous_visits = int(previous_stops[0])
     previous_kg = round(float(previous_stops[1]), 2)
