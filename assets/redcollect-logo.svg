@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="132" viewBox="0 0 620 132" role="img" aria-labelledby="title desc">
+  <title id="title">Red Collect</title>
+  <desc id="desc">Red Collect donation collection and route planning project logo</desc>
+  <g transform="translate(8 8)">
+    <rect width="116" height="116" rx="30" fill="#b91427"/>
+    <path d="M35 82c13-1 18-9 18-21V48c0-8 6-14 14-14h18" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/>
+    <circle cx="35" cy="82" r="9" fill="#fff"/>
+    <circle cx="85" cy="34" r="9" fill="#fff"/>
+    <path d="M81 64h19M90.5 54.5v19" stroke="#fff" stroke-linecap="round" stroke-width="7"/>
+  </g>
+  <text x="148" y="69" fill="#b91427" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="800" letter-spacing="1.4">RED</text>
+  <text x="273" y="69" fill="#253039" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="800" letter-spacing="1.4">COLLECT</text>
+  <text x="151" y="101" fill="#68737a" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="600" letter-spacing="2.2">DONATION COLLECTION · ROUTE PLANNING</text>
+</svg>

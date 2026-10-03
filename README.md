@@ -1,8 +1,8 @@
 <div align="center">
-  <img src="assets/croix_rouge_logo.png" alt="Logo Croix-Rouge" width="112">
+  <img src="assets/redcollect-logo.svg" alt="Logo Red Collect" width="340">
   <h1>Red Collect</h1>
   <p><strong>Des collectes plus simples à organiser, du premier point au retour au dépôt.</strong></p>
-  <p>Application open source de suivi des points de collecte et de préparation de tournées · Calais</p>
+  <p>Application open source de suivi des dons, des points de collecte et des tournées solidaires · Calais</p>
   <p>
     <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-red.svg" alt="Licence MIT"></a>
     <img src="https://img.shields.io/badge/interface-Fran%C3%A7ais%20%7C%20English-29313a" alt="Français et anglais">
@@ -22,17 +22,24 @@
 
 ## Français
 
+### Description
+
 Red Collect est un outil de terrain open source pour organiser les collectes de dons : points relais, stocks, tournées et missions bénévoles réunis dans une même interface. Il s’adresse aux équipes associatives qui ont besoin d’un suivi lisible sans gérer des fichiers CSV ni saisir des coordonnées GPS.
 
-### Pourquoi ce projet
+### Origine du projet
 
-À Calais, des personnes qui tentent de traverser la Manche se retrouvent parfois dans l’eau et sont secourues. Après une hospitalisation, certaines ont besoin de vêtements propres pour retrouver un minimum de dignité. Les associations qui les accompagnent font face à des besoins croissants et à des stocks de vêtements insuffisants. Red Collect part de ce besoin concret : mieux organiser les dons, les points de collecte et les tournées pour aider les équipes à agir au bon moment.
+À Calais, des personnes exilées qui tentent de traverser la Manche se retrouvent parfois dans l’eau et sont secourues. Après une hospitalisation, certaines ont besoin de vêtements propres pour retrouver un minimum de dignité. Les associations qui les accompagnent font face à des besoins croissants alors que les vêtements disponibles restent insuffisants. Red Collect part de ce besoin concret : mieux organiser les dons, les points de collecte et les tournées pour aider les équipes à répondre au bon moment.
 
 Le logiciel est pensé pour la collecte de dons au sens large, et non pour le seul textile. Il est publié en open source afin que d’autres associations puissent l’essayer, l’adapter à leur organisation et contribuer à son évolution. Il s’agit d’un projet indépendant, pas d’un service officiel de la Croix-Rouge.
 
+<p align="center">
+  <img src="assets/red-collect-humanitarian-illustration.png" alt="Illustration réaliste d’un espace associatif où des bénévoles trient des vêtements propres et en remettent un à une personne adulte" width="100%">
+</p>
+<p align="center"><em>Illustration générée pour présenter le besoin auquel le projet souhaite répondre. Elle ne représente pas une intervention réelle ni une photographie documentaire.</em></p>
+
 Il n’y a pas d’instance publique hébergée : l’application se lance localement depuis ce dépôt. Les adresses, stocks et missions montrés dans les captures sont des données d’exemple.
 
-### Démonstrations visuelles
+### Résultats et démonstrations
 
 La boucle silencieuse ci-dessus suit le parcours principal. Les captures individuelles permettent d’examiner les écrans en détail :
 
@@ -54,7 +61,7 @@ La boucle silencieuse ci-dessus suit le parcours principal. Les captures individ
 
 [Voir aussi le tableau de bord en anglais](assets/screenshots/06-dashboard-en.png), [la liste des missions](assets/screenshots/11-missions-list.png) et [l’écran de préparation d’une tournée](assets/screenshots/03-planner.png).
 
-### Fonctionnalités par rôle
+### Fonctionnalités
 
 | Fonction | Coordinateur | Bénévole |
 |:--|:--:|:--:|
@@ -74,7 +81,7 @@ La boucle silencieuse ci-dessus suit le parcours principal. Les captures individ
 
 \* Un bénévole peut mettre à jour uniquement les missions affectées à son compte. Les utilisateurs, les points, les missions, le dépôt et les analyses sont limités à l’unité locale du compte. Les liens de navigation ouvrent Google Maps sur l’arrêt sélectionné; le guidage GPS ne se fait pas dans Red Collect.
 
-### Parcours courant
+### Utilisation
 
 1. Le coordinateur vérifie le dépôt et la carte dans **Paramètres**.
 2. Dans **Points de collecte**, il filtre les relais prioritaires, met à jour les stocks ou ajoute un relais par adresse. Il peut sélectionner un résultat de recherche puis déplacer le repère pour ajuster l’emplacement.
@@ -96,7 +103,7 @@ Le tableau de bord présente également le stock courant par catégorie et le po
 
 Red Collect aide à rendre visibles les stocks enregistrés, les collectes réalisées et les moments de forte sollicitation. Le projet n’a pas encore de référence avant/après vérifiée : il ne permet donc pas d’affirmer qu’il a déjà augmenté les dons, réduit les tournées urgentes ou répondu à l’évolution des besoins. Pour mesurer ces effets lors d’un pilote, une association pourra comparer des périodes équivalentes et consigner le poids collecté, les visites, les arrêts urgents, les ruptures de stock et les dons refusés ou non satisfaits. Les résultats devront préciser la période, la couverture des relevés et les changements d’organisation intervenus.
 
-### Lancer l’application en local
+### Installation et lancement local
 
 Python 3.11 ou plus récent est nécessaire. Docker est facultatif pour démarrer l’interface; sans le service de routage, les distances sont calculées à vol d’oiseau et cette limite est signalée dans l’application.
 
@@ -197,15 +204,26 @@ Projet distribué sous licence [MIT](LICENSE). Les marques et emblèmes de la Cr
 
 ## English
 
+### Description
+
 Red Collect is an open-source tool for coordinating donation collection: relay points, stock, routes and volunteer missions in one interface. It is intended for association teams that need a clear workflow without maintaining spreadsheets or entering GPS coordinates. The interface is available in French and English. There is no hosted public instance; run the app locally from this repository. Screenshots and the silent walkthrough use sample data.
 
 ### Why this project
 
-In Calais, people attempting to cross the Channel sometimes end up in the water and are rescued. After a hospital stay, some need clean clothes to regain a basic measure of dignity. The associations supporting them face growing needs and insufficient clothing supplies. Red Collect starts from this practical need: help teams organize donations, collection points and routes so they can respond at the right time.
+In Calais, people seeking safety who attempt to cross the Channel sometimes end up in the water and are rescued. After a hospital stay, some need clean clothes to regain a basic measure of dignity. The associations supporting them face growing needs while clothing supplies remain insufficient. Red Collect starts from this practical need: help teams organize donations, collection points and routes so they can respond at the right time.
 
 The project is intended for donations broadly, not clothing alone. It is open source so other associations can try it, adapt it to their work and contribute improvements. Red Collect is an independent project, not an official service operated by the Red Cross.
 
-### What each role can do
+<p align="center">
+  <img src="assets/red-collect-humanitarian-illustration.png" alt="Realistic illustration of volunteers sorting clean donated clothes in a community aid room and offering a coat to an adult" width="100%">
+</p>
+<p align="center"><em>Generated illustration to introduce the need behind the project. It does not depict a real intervention or serve as documentary evidence.</em></p>
+
+### Results and demonstrations
+
+The silent walkthrough and screen captures above use sample data to show the dashboard, map, address search, stock updates, route planning, missions, team settings and network analysis. They demonstrate the software workflow; they are not evidence that the project has already increased donations or reduced urgent trips. See the [before-and-after measurement notes](#measuring-effects-without-overstating-them) before interpreting operational outcomes.
+
+### Features
 
 | Feature | Coordinator | Volunteer |
 |:--|:--:|:--:|
@@ -222,7 +240,7 @@ The project is intended for donations broadly, not clothing alone. It is open so
 
 \* Volunteers can update only missions assigned to their account. Accounts, points, missions, depots and analyses are scoped to the selected local unit. Stop navigation opens Google Maps; Red Collect does not provide turn-by-turn GPS navigation.
 
-### Run locally
+### Installation and use
 
 Use Python 3.11 or newer:
 
