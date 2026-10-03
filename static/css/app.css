@@ -20,3 +20,14 @@
 @media(max-width:650px){.analytics-card{padding:15px}.analytics-map{height:300px}.analytics-trend{height:190px}}
 .analytics-weekday-card{margin-bottom:18px}.analytics-weekdays{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:12px;align-items:end;height:176px;padding:18px 8px 0}.weekday-column{display:grid;grid-template-rows:18px 1fr 20px 16px;gap:5px;text-align:center;min-width:0;height:100%}.weekday-value{font-size:10px;font-weight:800;color:var(--ink)}.weekday-track{height:100%;max-width:44px;width:100%;justify-self:center;display:flex;align-items:flex-end;background:#f0f2f1;border-radius:7px;overflow:hidden}.weekday-track i{display:block;width:100%;min-height:2px;background:#92b9aa;border-radius:7px 7px 0 0}.weekday-track i.high{background:var(--red)}.weekday-column strong{font-size:10px;text-transform:capitalize}.weekday-column small{font-size:9px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}@media(max-width:650px){.analytics-weekdays{gap:5px;padding-inline:0}.weekday-column small{font-size:8px}.weekday-track{max-width:32px}}
 .analytics-map-legend{display:flex;flex-wrap:wrap;gap:7px 12px;margin-top:9px}.analytics-map-legend>span{display:inline-flex;align-items:center;gap:5px;color:var(--muted);font-size:9px}.analytics-map-legend i{width:8px;height:8px;border-radius:50%;display:inline-block}.legend-high{background:#b91427}.legend-mid{background:#d89620}.legend-low{background:#23856d}.legend-none{background:#8b9698}
+
+.donation-analytics{margin:0 0 22px}
+.donation-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.donation-fields label{min-width:0}
+.donation-fields input{width:100%}
+.donation-fields .form-help{grid-column:1/-1;color:var(--muted);font-size:12px}
+.donation-total{display:flex;justify-content:space-between;align-items:center;padding:12px 0;font-weight:700;border-top:1px solid var(--line)}
+.point-row .item-copy small{line-height:1.5}
+@media(max-width:560px){.donation-fields{grid-template-columns:1fr}}
+.period-comparison{margin:0 0 22px}.comparison-window{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.analytics-method{max-width:760px;margin-top:8px;color:var(--muted);font-size:13px}

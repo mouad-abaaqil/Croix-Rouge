@@ -21,6 +21,7 @@ from werkzeug.security import check_password_hash, generate_password_hash
 
 import database as data
 from analytics import build_analytics
+from database import DONATION_CATEGORIES
 from routing import RoutePlanningError, plan_route
 
 
@@ -123,6 +124,14 @@ def mission_dict(row, include_stops=False):
                WHERE ms.mission_id=? ORDER BY ms.position""", (mission["id"],)
         )
         mission["stops"] = [dict(stop) for stop in rows]
+        for stop in mission["stops"]:
+            stop["donations"] = {item["category"]: item["stock_kg"] for item in g.db.execute(
+                "SELECT category,stock_kg FROM point_donation_stock WHERE point_id=?", (stop["point_id"],)
+            )}
+            stop["collected_by_category"] = {item["category"]: item["collected_kg"] for item in g.db.execute(
+                "SELECT category,collected_kg FROM mission_stop_donations WHERE mission_stop_id=(SELECT id FROM mission_stops WHERE mission_id=? AND point_id=?)",
+                (mission["id"], stop["point_id"]),
+            )}
     return mission
 
 
@@ -360,7 +369,12 @@ def add_point():
              (name, address, lat, lon, capacity, stock, pickup, data.now()))
         g.db.execute("INSERT INTO stock_history(point_id,stock_kg,recorded_at,user_id) VALUES (?,?,?,?)",
                      (cursor.lastrowid, stock, data.now(), g.user["id"]))
-    return jsonify(point=data.point_dict(g.db.execute("SELECT * FROM points WHERE id=?", (cursor.lastrowid,)).fetchone())), 201
+        for category in DONATION_CATEGORIES:
+            g.db.execute("INSERT INTO point_donation_stock(point_id,category,stock_kg) VALUES (?,?,?)",
+                         (cursor.lastrowid, category, stock if category == "unclassified" else 0))
+            g.db.execute("INSERT INTO donation_stock_history(point_id,category,stock_kg,recorded_at,user_id) VALUES (?,?,?,?,?)",
+                         (cursor.lastrowid, category, stock if category == "unclassified" else 0, data.now(), g.user["id"]))
+    return jsonify(point=next(point for point in data.points(g.db) if point["id"] == cursor.lastrowid)), 201
 
 
 @app.patch("/api/points/<int:point_id>")
@@ -390,7 +404,7 @@ def edit_point(point_id):
              estimated_pickup_min=?,active=? WHERE id=?""",
              (values["name"],values["address"],values["lat"],values["lon"],values["capacity_kg"],
               values["estimated_pickup_min"],values["active"],point_id))
-    return jsonify(point=data.point_dict(g.db.execute("SELECT * FROM points WHERE id=?", (point_id,)).fetchone()))
+    return jsonify(point=next(point for point in data.points(g.db) if point["id"] == point_id))
 
 
 @app.post("/api/points/<int:point_id>/stock")
@@ -399,12 +413,29 @@ def update_stock(point_id):
     row = g.db.execute("SELECT * FROM points WHERE id=? AND active=1", (point_id,)).fetchone()
     if row is None:
         abort(404)
-    stock = number(payload().get("stock_kg"), 0, row["capacity_kg"])
+    body = payload()
+    stock_map = body.get("donations")
+    if stock_map is None:
+        stock = number(body.get("stock_kg"), 0, row["capacity_kg"])
+        stock_map = {category: 0 for category in DONATION_CATEGORIES}
+        stock_map["unclassified"] = stock
+    if not isinstance(stock_map, dict) or set(stock_map) - set(DONATION_CATEGORIES):
+        abort(400, "Invalid donation categories")
+    normalized = {category: number(stock_map.get(category, 0), 0, row["capacity_kg"]) for category in DONATION_CATEGORIES}
+    stock = sum(normalized.values())
+    if stock > row["capacity_kg"]:
+        abort(400, "Donation stock exceeds point capacity")
+    timestamp = data.now()
     with g.db:
         g.db.execute("UPDATE points SET stock_kg=?,updated_at=? WHERE id=?", (stock, data.now(), point_id))
         g.db.execute("INSERT INTO stock_history(point_id,stock_kg,recorded_at,user_id) VALUES (?,?,?,?)",
                      (point_id, stock, data.now(), g.user["id"]))
-    return jsonify(point=data.point_dict(g.db.execute("SELECT * FROM points WHERE id=?", (point_id,)).fetchone()))
+        for category, amount in normalized.items():
+            g.db.execute("INSERT INTO point_donation_stock(point_id,category,stock_kg) VALUES (?,?,?) ON CONFLICT(point_id,category) DO UPDATE SET stock_kg=excluded.stock_kg",
+                         (point_id, category, amount))
+            g.db.execute("INSERT INTO donation_stock_history(point_id,category,stock_kg,recorded_at,user_id) VALUES (?,?,?,?,?)",
+                         (point_id, category, amount, timestamp, g.user["id"]))
+    return jsonify(point=next(point for point in data.points(g.db) if point["id"] == point_id))
 
 
 def planned(body):
@@ -492,10 +523,25 @@ def update_stop(mission_id, point_id):
         abort(404)
     if selected["status"] == "visited" and status != "visited":
         abort(400, "A visited stop cannot be reset")
+    if selected["status"] == "visited" and status == "visited":
+        abort(409, "Stop already completed")
     collected = None
     if status == "visited":
         collected = number(body.get("collected_kg", 0), 0, max(selected["planned_stock_kg"], selected["collected_kg"] or 0))
         previous = selected["collected_kg"] or 0
+        breakdown = body.get("collected_by_category")
+        if breakdown is None:
+            breakdown = {"unclassified": collected}
+        if not isinstance(breakdown, dict) or set(breakdown) - set(DONATION_CATEGORIES):
+            abort(400, "Invalid donation categories")
+        breakdown = {category: number(value, 0, 100000) for category, value in breakdown.items()}
+        if abs(sum(breakdown.values()) - collected) > 0.02:
+            abort(400, "Category quantities must add up to collected kg")
+        available = {row["category"]: row["stock_kg"] for row in g.db.execute(
+            "SELECT category,stock_kg FROM point_donation_stock WHERE point_id=?", (point_id,)
+        )}
+        if any(amount > available.get(category, 0) + 0.01 for category, amount in breakdown.items()):
+            abort(400, "Collected quantity exceeds categorized point stock")
     with g.db:
         changed = g.db.execute("""UPDATE mission_stops SET status=?,collected_kg=?,visited_at=?
              WHERE mission_id=? AND point_id=? AND status=? AND collected_kg IS ?""",
@@ -513,6 +559,22 @@ def update_stop(mission_id, point_id):
             new_stock = g.db.execute("SELECT stock_kg FROM points WHERE id=?", (point_id,)).fetchone()[0]
             g.db.execute("INSERT INTO stock_history(point_id,stock_kg,recorded_at,user_id) VALUES (?,?,?,?)",
                          (point_id,new_stock,data.now(),g.user["id"]))
+        if status == "visited":
+            stop_id = g.db.execute("SELECT id FROM mission_stops WHERE mission_id=? AND point_id=?", (mission_id, point_id)).fetchone()[0]
+            g.db.execute("DELETE FROM mission_stop_donations WHERE mission_stop_id=?", (stop_id,))
+            for category, amount in breakdown.items():
+                if amount:
+                    g.db.execute("INSERT INTO mission_stop_donations(mission_stop_id,category,collected_kg) VALUES (?,?,?)",
+                                 (stop_id, category, amount))
+                    current = g.db.execute("SELECT stock_kg FROM point_donation_stock WHERE point_id=? AND category=?", (point_id, category)).fetchone()
+                    current_stock = current[0] if current else 0
+                    g.db.execute("INSERT INTO point_donation_stock(point_id,category,stock_kg) VALUES (?,?,?) ON CONFLICT(point_id,category) DO UPDATE SET stock_kg=excluded.stock_kg",
+                                 (point_id, category, max(0, current_stock - amount)))
+            timestamp = data.now()
+            for category in DONATION_CATEGORIES:
+                current = g.db.execute("SELECT stock_kg FROM point_donation_stock WHERE point_id=? AND category=?", (point_id, category)).fetchone()
+                g.db.execute("INSERT INTO donation_stock_history(point_id,category,stock_kg,recorded_at,user_id) VALUES (?,?,?,?,?)",
+                             (point_id, category, current[0] if current else 0, timestamp, g.user["id"]))
         statuses = [row[0] for row in g.db.execute("SELECT status FROM mission_stops WHERE mission_id=?", (mission_id,))]
         mission_status = "completed" if all(item != "pending" for item in statuses) else "in_progress" if any(item != "pending" for item in statuses) else "planned"
         g.db.execute("UPDATE missions SET status=? WHERE id=?", (mission_status,mission_id))
@@ -526,11 +588,12 @@ def export_mission(mission_id):
     stream = io.StringIO()
     writer = csv.writer(stream)
     lang = "en" if request.args.get("lang") == "en" else "fr"
-    writer.writerow(["Position", "Point", "Address", "Latitude", "Longitude", "Status", "Planned stock (kg)", "Collected (kg)"]
+    writer.writerow(["Position", "Point", "Address", "Latitude", "Longitude", "Status", "Planned stock (kg)", "Collected (kg)", "Donation breakdown (kg)"]
                     if lang == "en" else
-                    ["Position", "Point", "Adresse", "Latitude", "Longitude", "Statut", "Stock prévu (kg)", "Collecté (kg)"])
+                    ["Position", "Point", "Adresse", "Latitude", "Longitude", "Statut", "Stock prévu (kg)", "Collecté (kg)", "Détail des dons (kg)"])
     for stop in mission["stops"]:
-        writer.writerow([stop["position"],stop["name"],stop["address"],stop["lat"],stop["lon"],stop["status"],stop["planned_stock_kg"],stop["collected_kg"] or ""])
+        breakdown = "; ".join(f"{category}: {amount:g}" for category, amount in stop["collected_by_category"].items())
+        writer.writerow([stop["position"],stop["name"],stop["address"],stop["lat"],stop["lon"],stop["status"],stop["planned_stock_kg"],stop["collected_kg"] or "",breakdown])
     return Response("\ufeff" + stream.getvalue(), mimetype="text/csv", headers={"Content-Disposition": f"attachment; filename=mission-{mission_id}.csv"})
 
 
@@ -540,6 +603,9 @@ def email_content(mission, lang):
     lines = [f"{title}: {mission['title']}", "", f"{len(mission['stops'])} " + ("arrêts" if french else "stops")]
     for stop in mission["stops"]:
         lines.append(f"{stop['position']}. {stop['name']} — {stop['address']}")
+        breakdown = stop.get("collected_by_category") or {}
+        if breakdown:
+            lines.append("   " + ("Dons" if french else "Donations") + ": " + ", ".join(f"{category} {amount:g} kg" for category, amount in breakdown.items()))
     lines.extend(["", ("Distance estimée" if french else "Estimated distance") + f": {mission['distance_km']:.1f} km",
                   ("Ouvrir la mission" if french else "Open mission") + f": {request.host_url.rstrip('/')}/missions/{mission['id']}"])
     if mission["routing_mode"] == "air":
@@ -617,6 +683,19 @@ if __name__ == "__main__":
             db.execute("INSERT INTO users(username,name,password_hash,role) VALUES (?,?,?,?)",
                        (username,name,generate_password_hash(password),role))
         print(f"User {username} added as {role}.")
+    elif len(sys.argv) > 1 and sys.argv[1] == "reset-password":
+        username = sys.argv[2].strip() if len(sys.argv) > 2 else input("Coordinator username: ").strip()
+        password = getpass.getpass("New password (12 characters minimum): ")
+        if len(password) < 12:
+            raise SystemExit("Password must contain at least 12 characters")
+        with data.connect() as db:
+            cursor = db.execute(
+                "UPDATE users SET password_hash=?,session_version=session_version+1 WHERE username=? AND role='coordinator' AND active=1",
+                (generate_password_hash(password), username),
+            )
+            if cursor.rowcount != 1:
+                raise SystemExit("No active coordinator found with that username")
+        print(f"Password reset for coordinator {username}.")
     else:
         if not Path(os.getenv("DATABASE_PATH", data.DEFAULT_DB)).exists():
             raise SystemExit("Initialize the database first: python webapp.py init")

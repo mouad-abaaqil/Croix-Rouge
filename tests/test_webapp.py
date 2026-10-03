@@ -58,6 +58,37 @@ class WebAppTest(unittest.TestCase):
         self.assertEqual(updated.status_code, 200)
         self.assertEqual(updated.json["mission"]["status"], "completed")
 
+    def test_donation_categories_track_point_stock_and_mission_collections(self):
+        point = self.client.get("/api/bootstrap").json["points"][0]
+        point_id = point["id"]
+        stock = {category: 0 for category in database.DONATION_CATEGORIES}
+        stock.update(clothing=5, hygiene=2)
+        saved = self.client.post(f"/api/points/{point_id}/stock", json={"donations": stock}, headers=self.headers)
+        self.assertEqual(saved.status_code, 200)
+        self.assertEqual(saved.json["point"]["stock_kg"], 7)
+        self.assertEqual(saved.json["point"]["donations"]["clothing"], 5)
+        too_much = dict(stock, clothing=point["capacity_kg"] + 1)
+        self.assertEqual(self.client.post(f"/api/points/{point_id}/stock", json={"donations": too_much}, headers=self.headers).status_code, 400)
+
+        mission = self.client.post("/api/missions", json={"stop_ids": [point_id]}, headers=self.headers).json["mission"]
+        collected = self.client.patch(
+            f"/api/missions/{mission['id']}/stops/{point_id}",
+            json={"status": "visited", "collected_kg": 1.5,
+                  "collected_by_category": {"clothing": 1, "hygiene": 0.5}},
+            headers=self.headers,
+        )
+        self.assertEqual(collected.status_code, 200)
+        self.assertEqual(collected.json["mission"]["stops"][0]["collected_by_category"], {"clothing": 1, "hygiene": 0.5})
+        export = self.client.get(f"/api/missions/{mission['id']}/export.csv?lang=en")
+        self.assertIn(b"Donation breakdown (kg)", export.data)
+        self.assertIn(b"clothing: 1; hygiene: 0.5", export.data)
+        preview = self.client.get(f"/api/missions/{mission['id']}/email-preview?lang=en")
+        self.assertIn("clothing 1 kg", preview.json["body"])
+        report = self.client.get("/api/analytics?days=30").json
+        totals = {item["category"]: item for item in report["donation_categories"]}
+        self.assertEqual(totals["clothing"]["collected_kg"], 1)
+        self.assertEqual(totals["hygiene"]["collected_kg"], 0.5)
+
     def test_auth_csrf_and_invalid_stock(self):
         point_id = self.client.get("/api/bootstrap").json["points"][0]["id"]
         self.assertEqual(self.client.post(f"/api/points/{point_id}/stock", json={"stock_kg": 1}).status_code, 403)
@@ -160,12 +191,18 @@ class WebAppTest(unittest.TestCase):
         with database.connect() as db:
             db.execute("DROP TABLE geocode_cache")
             db.execute("DROP INDEX idx_stock_history_recorded_at")
+            db.execute("DROP TABLE mission_stop_donations")
+            db.execute("DROP TABLE donation_stock_history")
+            db.execute("DROP TABLE point_donation_stock")
         database.migrate_existing()
         with database.connect() as db:
             tables = {row[0] for row in db.execute("SELECT name FROM sqlite_master WHERE type='table'")}
             indexes = {row[0] for row in db.execute("SELECT name FROM sqlite_master WHERE type='index'")}
+            old_stock = db.execute("SELECT stock_kg FROM points WHERE id=1").fetchone()[0]
+            migrated_stock = db.execute("SELECT stock_kg FROM point_donation_stock WHERE point_id=1 AND category='unclassified'").fetchone()[0]
         self.assertIn("geocode_cache", tables)
         self.assertIn("idx_stock_history_recorded_at", indexes)
+        self.assertEqual(migrated_stock, old_stock)
 
     def test_route_preview_reports_solver(self):
         point_ids = [item["id"] for item in self.client.get("/api/bootstrap").json["points"][:4]]

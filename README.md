@@ -22,7 +22,13 @@
 
 ## Français
 
-Red Collect est une application web open source pour organiser une équipe de collecte. Elle rassemble sur une carte les points relais, leur niveau de remplissage et les missions à effectuer. Elle est conçue pour des coordinateurs et des bénévoles qui ne souhaitent pas manipuler des fichiers CSV ou saisir des coordonnées GPS.
+Red Collect est un outil de terrain open source pour organiser les collectes de dons : points relais, stocks, tournées et missions bénévoles réunis dans une même interface. Il s’adresse aux équipes associatives qui ont besoin d’un suivi lisible sans gérer des fichiers CSV ni saisir des coordonnées GPS.
+
+### Pourquoi ce projet
+
+À Calais, des personnes qui tentent de traverser la Manche se retrouvent parfois dans l’eau et sont secourues. Après une hospitalisation, certaines ont besoin de vêtements propres pour retrouver un minimum de dignité. Les associations qui les accompagnent font face à des besoins croissants et à des stocks de vêtements insuffisants. Red Collect part de ce besoin concret : mieux organiser les dons, les points de collecte et les tournées pour aider les équipes à agir au bon moment.
+
+Le logiciel est pensé pour la collecte de dons au sens large, et non pour le seul textile. Il est publié en open source afin que d’autres associations puissent l’essayer, l’adapter à leur organisation et contribuer à son évolution. Il s’agit d’un projet indépendant, pas d’un service officiel de la Croix-Rouge.
 
 Il n’y a pas d’instance publique hébergée : l’application se lance localement depuis ce dépôt. Les adresses, stocks et missions montrés dans les captures sont des données d’exemple.
 
@@ -54,6 +60,7 @@ La boucle silencieuse ci-dessus suit le parcours principal. Les captures individ
 |:--|:--:|:--:|
 | Consulter le tableau de bord, la carte, les points et les missions | Oui | Oui |
 | Mettre à jour le stock d’un point et enregistrer les kilos collectés | Oui | Oui |
+| Suivre le stock par catégorie de don et ventiler une collecte par catégorie | Oui | Oui |
 | Ajouter ou modifier un point, ses capacités et son temps de collecte | Oui | — |
 | Chercher une adresse et ajuster le repère directement sur la carte | Oui | — |
 | Préparer et créer une tournée, choisir et réordonner les arrêts | Oui | — |
@@ -69,14 +76,23 @@ La boucle silencieuse ci-dessus suit le parcours principal. Les captures individ
 
 1. Le coordinateur vérifie le dépôt et la carte dans **Paramètres**.
 2. Dans **Points de collecte**, il filtre les relais prioritaires, met à jour les stocks ou ajoute un relais par adresse. Il peut sélectionner un résultat de recherche puis déplacer le repère pour ajuster l’emplacement.
-3. Dans **Préparer une tournée**, il sélectionne les relais, calcule et vérifie le parcours, réordonne les arrêts si nécessaire, nomme la mission et l’attribue à un bénévole.
-4. Le bénévole ouvre **Missions**, consulte sa tournée et lance la navigation vers un arrêt. Après la visite, il indique les kilos collectés ou marque l’arrêt comme ignoré. L’avancement de la mission et le stock du relais sont mis à jour.
-5. Le coordinateur consulte l’avancement, exporte le CSV ou vérifie le récapitulatif email avant de l’envoyer.
-6. Dans **Analyse du réseau**, il compare les relevés sur 30, 90, 180 ou 365 jours et regarde les jours où les points approchent souvent 80 %.
+3. Lors d’une mise à jour, l’équipe répartit le stock estimé entre les catégories : vêtements, chaussures, hygiène, bébé et puériculture, linge de maison, alimentation, autres dons ou non classé. La somme reste plafonnée par la capacité du relais.
+4. Dans **Préparer une tournée**, le coordinateur sélectionne les relais, calcule et vérifie le parcours, réordonne les arrêts si nécessaire, nomme la mission et l’attribue à un bénévole.
+5. Le bénévole ouvre **Missions**, consulte sa tournée et lance la navigation vers un arrêt. Après la visite, il ventile les quantités récupérées par catégorie ou marque l’arrêt comme ignoré. La validation contrôle que le total correspond aux quantités ventilées et ne dépasse pas le stock déclaré pour chaque catégorie; le stock et l’historique sont mis à jour.
+6. Le coordinateur consulte l’avancement, exporte le CSV ou vérifie le récapitulatif email avant de l’envoyer.
+7. Dans **Analyse du réseau**, il compare les relevés sur 30, 90, 180 ou 365 jours, les jours où les points approchent souvent 80 %, le stock disponible par catégorie et les kilos collectés par catégorie sur la période choisie.
+
+Les stocks et les collectes sont exprimés en kilogrammes. Le stock initial d’un nouveau point est classé **Non classé** jusqu’à sa ventilation. Lorsqu’une ancienne base ne comportait que des stocks agrégés, la migration les conserve dans cette même catégorie plutôt que de deviner leur composition. Les historiques catégorisés de collecte ne remontent pas avant l’activation de cette fonction.
 
 Le bouton d’envoi email n’envoie rien sans une configuration SMTP valide. Les captures montrent uniquement l’aperçu : aucun email de démonstration n’a été envoyé.
 
-L’analyse compare les stocks explicitement enregistrés et les collectes terminées. Elle signale un secteur à étudier seulement après au moins 6 relevés sur 14 jours ou plus, avec une moyenne d’au moins 70 % et au moins la moitié des relevés à 80 % ou plus. Chaque point doit avoir au moins 4 relevés répartis sur 14 jours pour être qualifié de pression répétée. Ce seuil rend le signal lisible; il ne remplace pas une décision terrain. Les zones regroupent les points situés à moins de 1,5 km et ne correspondent pas à des quartiers officiels. La capture analytique utilise une série temporelle synthétique pour illustrer l’écran; ta base locale ne contient pas ces données fictives.
+L’analyse est déterministe : elle agrège les relevés de stock et les arrêts de mission terminés, puis applique des seuils documentés. Elle ne prédit pas la demande et n’utilise pas de modèle opaque. Un secteur est proposé pour examen seulement après au moins 6 relevés répartis sur 14 jours ou plus, avec une moyenne d’au moins 70 % et au moins la moitié des relevés à 80 % ou plus. Pour qualifier une pression répétée, un point doit aussi avoir au moins 4 relevés répartis sur 14 jours, avec une moyenne d’au moins 70 % et au moins la moitié des relevés à 80 % ou plus. Les zones regroupent les points proches (moins de 1,5 km) et ne correspondent pas à des quartiers officiels. Ces indicateurs orientent l’examen par l’équipe; ils ne remplacent ni une visite de terrain ni une décision d’implantation. La capture analytique utilise une série temporelle synthétique pour illustrer l’écran; elle n’ajoute pas ces données à la base locale.
+
+Le tableau de bord présente également le stock courant par catégorie et le poids des collectes catégorisées sur la période analysée. Il compare descriptivement cette période à la période précédente de même durée pour trois valeurs : kilos collectés, arrêts de collecte terminés et part des relevés de stock à 80 % ou plus. Une évolution observée ne prouve pas que l’application ou l’ajout d’un point relais en soit la cause. Les collectes catégorisées ne sont disponibles que depuis l’activation de cette fonction; l’absence de données antérieures n’est pas interprétée comme zéro.
+
+### Évaluer les effets sans les inventer
+
+Red Collect aide à rendre visibles les stocks enregistrés, les collectes réalisées et les moments de forte sollicitation. Le projet n’a pas encore de référence avant/après vérifiée : il ne permet donc pas d’affirmer qu’il a déjà augmenté les dons, réduit les tournées urgentes ou répondu à l’évolution des besoins. Pour mesurer ces effets lors d’un pilote, une association pourra comparer des périodes équivalentes et consigner le poids collecté, les visites, les arrêts urgents, les ruptures de stock et les dons refusés ou non satisfaits. Les résultats devront préciser la période, la couverture des relevés et les changements d’organisation intervenus.
 
 ### Lancer l’application en local
 
@@ -105,6 +121,8 @@ python3 webapp.py
 ```
 
 `init` demande un identifiant et un mot de passe d’au moins 12 caractères. Il charge les points d’exemple à la première initialisation. Ouvrez [http://127.0.0.1:5000](http://127.0.0.1:5000). Si le port est occupé, lancez `PORT=5002 python3 webapp.py` puis ouvrez [http://127.0.0.1:5002](http://127.0.0.1:5002).
+
+Le mot de passe n’est jamais affiché ni stocké en clair. Pour réinitialiser celui d’un coordinateur local, arrêtez l’application, lancez `python3 webapp.py reset-password NOM_DU_COORDINATEUR`, puis saisissez un nouveau mot de passe d’au moins 12 caractères.
 
 ### Activer les trajets routiers
 
@@ -173,14 +191,20 @@ Projet distribué sous licence [MIT](LICENSE). Les marques et emblèmes de la Cr
 
 ## English
 
-Red Collect is an open-source web app for coordinating donation collection teams. It puts relay points, stock levels, and collection missions on a map. The interface is available in French and English. There is no hosted public instance; run the app locally from this repository. Screenshots and the silent walkthrough use sample data.
+Red Collect is an open-source tool for coordinating donation collection: relay points, stock, routes and volunteer missions in one interface. It is intended for association teams that need a clear workflow without maintaining spreadsheets or entering GPS coordinates. The interface is available in French and English. There is no hosted public instance; run the app locally from this repository. Screenshots and the silent walkthrough use sample data.
+
+### Why this project
+
+In Calais, people attempting to cross the Channel sometimes end up in the water and are rescued. After a hospital stay, some need clean clothes to regain a basic measure of dignity. The associations supporting them face growing needs and insufficient clothing supplies. Red Collect starts from this practical need: help teams organize donations, collection points and routes so they can respond at the right time.
+
+The project is intended for donations broadly, not clothing alone. It is open source so other associations can try it, adapt it to their work and contribute improvements. Red Collect is an independent project, not an official service operated by the Red Cross.
 
 ### What each role can do
 
 | Feature | Coordinator | Volunteer |
 |:--|:--:|:--:|
 | View the dashboard, map, collection points and missions | Yes | Yes |
-| Update a point’s stock and record collected kilograms | Yes | Yes |
+| Update stock by donation category and record collections by category | Yes | Yes |
 | Add or edit points, capacities and estimated pickup time | Yes | — |
 | Search an address and adjust its map marker | Yes | — |
 | Plan a route, reorder stops, create and assign a mission | Yes | — |
@@ -205,9 +229,17 @@ cp .env.example .env
 
 Set a random `APP_SECRET_KEY` in `.env`, then run `python3 webapp.py init` and `python3 webapp.py`. Initialization creates the coordinator account and imports sample points into a new database. Open [http://127.0.0.1:5000](http://127.0.0.1:5000). See the French section above for the exact secret-generation command and optional OSRM setup.
 
-### Routing, maps and email
+Passwords are never displayed or stored in plaintext. To reset a local coordinator password, stop the app and run `python3 webapp.py reset-password COORDINATOR_USERNAME`, then enter a new password of at least 12 characters.
 
-The coordinator-only **Network analysis** page compares 30, 90, 180 or 365 days of recorded stock observations, completed visits and collected weight. It shows weekly fill trends, the share of recorded readings above 80% by weekday, a map of observed relay pressure and close-by areas to review. The same evidence thresholds and data limitations described in the French section apply.
+### Categories, analytics, maps and routing
+
+The coordinator-only **Network analysis** page uses deterministic aggregation of recorded stock observations and completed mission stops; it does not use an opaque predictive model. It compares 30, 90, 180 or 365 days of recorded stock observations, completed visits and collected weight. It shows weekly fill trends, the share of recorded readings above 80% by weekday, a map of observed relay pressure and nearby areas to review. It also shows current stock and collected weight by donation category, plus a descriptive comparison of the selected period with the previous period of equal length. The comparison covers collected weight, completed collection stops and the share of stock readings at 80% or above. A change does not establish that the software or a new relay caused it. The documented thresholds and data limitations described in the French section apply.
+
+Donation stock can be recorded under **Clothing, Shoes, Hygiene, Baby supplies, Household linen, Food, Other donations** or **Unclassified**. A new point’s starting stock is stored as **Unclassified** until someone allocates it. Volunteers record collected quantities by category when completing a mission stop. The sum is checked against the relay’s capacity; a collection breakdown must match the total and cannot exceed the recorded stock in a category. All quantities are in kilograms. When an older database has only aggregate stock, migration preserves it as **Unclassified** rather than guessing its contents. Category-level collection history only exists from when this feature was enabled.
+
+### Measuring effects without overstating them
+
+Red Collect makes recorded stock, completed collections and periods of high pressure easier to see. The project does not yet have a verified before-and-after baseline, so it cannot claim to have increased donations, reduced urgent tours or met changing needs. An association piloting the software can compare equivalent periods and record collected weight, visits, urgent stops, stockouts, and donations turned away or left unmet. Any reported result should state the period, observation coverage and organizational changes that occurred.
 
 Road routing is optional and uses a local OSRM service with OpenStreetMap data. OR-Tools Guided Local Search optimizes larger tours using OSRM travel times. If OSRM is unavailable, the app labels a straight-line fallback estimate. No live traffic is used. Address search and map tiles use OpenStreetMap services; review their usage policies before running a busy or public instance. Email summaries require SMTP configuration. Preview the message before sending; screenshots never send email.
 

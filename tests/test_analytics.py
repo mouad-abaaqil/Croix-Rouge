@@ -65,6 +65,9 @@ class AnalyticsTests(unittest.TestCase):
     def test_period_excludes_old_observations_and_rejects_unknown_periods(self):
         result = build_analytics(self.db, 30, now=self.now)
         self.assertEqual(result["metrics"]["observations"], 8)
+        self.assertEqual(result["comparison"]["previous_collected_kg"], 0)
+        self.assertEqual(result["comparison"]["current_collected_kg"], 7)
+        self.assertIsNone(result["comparison"]["previous_full_rate_pct"])
         with self.assertRaises(ValueError):
             build_analytics(self.db, 60, now=self.now)
 

@@ -13,6 +13,10 @@ from werkzeug.security import generate_password_hash
 ROOT = Path(__file__).resolve().parent
 DEFAULT_DB = ROOT / "instance" / "redcollect.sqlite3"
 
+DONATION_CATEGORIES = (
+    "clothing", "shoes", "hygiene", "baby", "bedding", "food", "other", "unclassified",
+)
+
 
 def now():
     return datetime.now(timezone.utc).isoformat(timespec="seconds")
@@ -73,12 +77,30 @@ CREATE TABLE IF NOT EXISTS mission_stops (
 CREATE INDEX IF NOT EXISTS idx_stock_history_recorded_at ON stock_history(recorded_at);
 CREATE INDEX IF NOT EXISTS idx_stock_history_point_recorded ON stock_history(point_id,recorded_at);
 CREATE INDEX IF NOT EXISTS idx_mission_stops_status_visited ON mission_stops(status,visited_at);
+CREATE TABLE IF NOT EXISTS point_donation_stock (
+ point_id INTEGER NOT NULL REFERENCES points(id) ON DELETE CASCADE,
+ category TEXT NOT NULL, stock_kg REAL NOT NULL DEFAULT 0 CHECK(stock_kg >= 0),
+ PRIMARY KEY(point_id,category)
+);
+CREATE TABLE IF NOT EXISTS donation_stock_history (
+ id INTEGER PRIMARY KEY, point_id INTEGER NOT NULL REFERENCES points(id),
+ category TEXT NOT NULL, stock_kg REAL NOT NULL CHECK(stock_kg >= 0),
+ recorded_at TEXT NOT NULL, user_id INTEGER REFERENCES users(id)
+);
+CREATE TABLE IF NOT EXISTS mission_stop_donations (
+ id INTEGER PRIMARY KEY, mission_stop_id INTEGER NOT NULL REFERENCES mission_stops(id) ON DELETE CASCADE,
+ category TEXT NOT NULL, collected_kg REAL NOT NULL CHECK(collected_kg >= 0),
+ UNIQUE(mission_stop_id,category)
+);
+CREATE INDEX IF NOT EXISTS idx_donation_stock_history_recorded ON donation_stock_history(recorded_at);
+CREATE INDEX IF NOT EXISTS idx_mission_stop_donations_category ON mission_stop_donations(category);
 """
 
 
 def initialize(path=None, admin_username=None, admin_password=None):
     with closing(connect(path)) as db, db:
         db.executescript(SCHEMA)
+        _migrate_donation_categories(db)
         mission_columns = {row[1] for row in db.execute("PRAGMA table_info(missions)")}
         if "algorithm" not in mission_columns:
             db.execute("ALTER TABLE missions ADD COLUMN algorithm TEXT NOT NULL DEFAULT 'nearest-neighbor-2opt'")
@@ -113,6 +135,7 @@ def initialize(path=None, admin_username=None, admin_password=None):
                         (row["Store_Name"], row["Address"], float(row["Latitude"]),
                          float(row["Longitude"]), capacity, stock, 10, now()),
                     )
+        _migrate_donation_categories(db)
         db.commit()
 
 
@@ -139,6 +162,28 @@ def migrate_existing(path=None):
             db.execute("CREATE INDEX IF NOT EXISTS idx_stock_history_point_recorded ON stock_history(point_id,recorded_at)")
         if "mission_stops" in tables:
             db.execute("CREATE INDEX IF NOT EXISTS idx_mission_stops_status_visited ON mission_stops(status,visited_at)")
+        _migrate_donation_categories(db)
+
+
+def _migrate_donation_categories(db):
+    """Preserve legacy aggregate stock in an explicitly unclassified bucket."""
+    db.executescript("""
+    CREATE TABLE IF NOT EXISTS point_donation_stock (
+      point_id INTEGER NOT NULL REFERENCES points(id) ON DELETE CASCADE,
+      category TEXT NOT NULL, stock_kg REAL NOT NULL DEFAULT 0 CHECK(stock_kg >= 0),
+      PRIMARY KEY(point_id,category));
+    CREATE TABLE IF NOT EXISTS donation_stock_history (
+      id INTEGER PRIMARY KEY, point_id INTEGER NOT NULL REFERENCES points(id), category TEXT NOT NULL,
+      stock_kg REAL NOT NULL CHECK(stock_kg >= 0), recorded_at TEXT NOT NULL, user_id INTEGER REFERENCES users(id));
+    CREATE TABLE IF NOT EXISTS mission_stop_donations (
+      id INTEGER PRIMARY KEY, mission_stop_id INTEGER NOT NULL REFERENCES mission_stops(id) ON DELETE CASCADE,
+      category TEXT NOT NULL, collected_kg REAL NOT NULL CHECK(collected_kg >= 0),
+      UNIQUE(mission_stop_id,category));
+    CREATE INDEX IF NOT EXISTS idx_donation_stock_history_recorded ON donation_stock_history(recorded_at);
+    CREATE INDEX IF NOT EXISTS idx_mission_stop_donations_category ON mission_stop_donations(category);
+    """)
+    db.execute("""INSERT OR IGNORE INTO point_donation_stock(point_id,category,stock_kg)
+                  SELECT id,'unclassified',stock_kg FROM points""")
 
 
 def point_dict(row):
@@ -149,7 +194,12 @@ def point_dict(row):
 
 def points(db, active_only=True):
     query = "SELECT * FROM points" + (" WHERE active=1" if active_only else "") + " ORDER BY name"
-    return [point_dict(row) for row in db.execute(query)]
+    result = [point_dict(row) for row in db.execute(query)]
+    for point in result:
+        point["donations"] = {row["category"]: row["stock_kg"] for row in db.execute(
+            "SELECT category,stock_kg FROM point_donation_stock WHERE point_id=?", (point["id"],)
+        )}
+    return result
 
 
 def depot(db):
