@@ -11,16 +11,10 @@
 </div>
 
 <p align="center">
-  <a href="assets/redcollect-annonce.mp4"><img src="assets/redcollect-annonce-poster.png" alt="Voir l’annonce vidéo de Red Collect" width="100%"></a>
+  <img src="assets/redcollect-demo.gif" alt="Démonstration silencieuse : tableau de bord, carte, ajout par adresse, stocks, planification, missions, bénévoles et interface anglaise" width="100%">
 </p>
 
-<p align="center"><a href="assets/redcollect-annonce.mp4">▶ Voir l’annonce vidéo (40 s)</a> · <a href="assets/redcollect-annonce-fr.srt">Sous-titres français</a></p>
-
-<p align="center">
-  <img src="assets/redcollect-demo.gif" alt="Démonstration de Red Collect : tableau de bord, recherche d’adresse et itinéraire" width="100%">
-</p>
-
-<p align="center"><em>Aucune démo publique hébergée pour le moment : lancez l’application sur votre ordinateur avec les étapes ci-dessous.</em></p>
+<p align="center"><em>Défilement automatique de captures issues d’une base de démonstration, sans voix ni action sur des données réelles.</em></p>
 
 **Français** · [English](#english)
 
@@ -28,29 +22,57 @@
 
 ## Français
 
-Red Collect aide une équipe de collecte à voir quels relais nécessitent une visite, à choisir de nouveaux points sur une carte et à organiser les tournées. L’interface est conçue pour être utilisée par un coordinateur et des bénévoles qui ne souhaitent pas manipuler des fichiers CSV ou des coordonnées GPS.
+Red Collect est une application web open source pour organiser une équipe de collecte. Elle rassemble sur une carte les points relais, leur niveau de remplissage et les missions à effectuer. Elle est conçue pour des coordinateurs et des bénévoles qui ne souhaitent pas manipuler des fichiers CSV ou saisir des coordonnées GPS.
 
-### Aperçu
+Il n’y a pas d’instance publique hébergée : l’application se lance localement depuis ce dépôt. Les adresses, stocks et missions montrés dans les captures sont des données d’exemple.
 
-| Tableau de bord | Points et recherche d’adresse | Préparation d’une tournée |
+### Démonstrations visuelles
+
+La boucle silencieuse ci-dessus suit le parcours principal. Les captures individuelles permettent d’examiner les écrans en détail :
+
+| Tableau de bord | Points et carte | Ajout par adresse |
 |:--:|:--:|:--:|
-| <img src="assets/screenshots/01-dashboard.png" alt="Tableau de bord avec carte, stocks et points prioritaires" width="320"> | <img src="assets/screenshots/07-address-search.png" alt="Ajout d’un point par recherche d’adresse sur une carte" width="320"> | <img src="assets/screenshots/04-route-preview.png" alt="Ordre optimisé et aperçu d’une tournée routière" width="320"> |
+| <img src="assets/screenshots/01-dashboard.png" alt="Tableau de bord avec urgences, stocks, missions et carte" width="320"> | <img src="assets/screenshots/02-points.png" alt="Liste filtrable et carte des points relais" width="320"> | <img src="assets/screenshots/07-address-search.png" alt="Formulaire d’ajout avec recherche d’adresse et repère ajustable" width="320"> |
 
-Une vue du tableau de bord en anglais est disponible dans [`assets/screenshots/06-dashboard-en.png`](assets/screenshots/06-dashboard-en.png). Toutes les vues s’adaptent aux écrans mobiles.
+| Mise à jour du stock | Planification et tournée | Suivi d’une mission |
+|:--:|:--:|:--:|
+| <img src="assets/screenshots/08-stock-update.png" alt="Dialogue de mise à jour d’un stock relais" width="320"> | <img src="assets/screenshots/04-route-preview.png" alt="Aperçu du trajet routier, des arrêts et des estimations" width="320"> | <img src="assets/screenshots/09-mission-progress.png" alt="Mission en cours avec carte, avancement, collecte et export" width="320"> |
 
-### Fonctionnalités
+| Vue bénévole | Partage par email | Équipe et dépôt |
+|:--:|:--:|:--:|
+| <img src="assets/screenshots/13-volunteer-mission.png" alt="Vue bénévole d’une mission qui lui est attribuée" width="320"> | <img src="assets/screenshots/10-email-preview.png" alt="Aperçu du récapitulatif email avant envoi" width="320"> | <img src="assets/screenshots/12-team-settings.png" alt="Paramètres du dépôt et gestion des comptes bénévoles" width="320"> |
 
-- Carte des relais et indicateurs de remplissage, avec filtres et recherche.
-- Ajout d’un relais par recherche d’adresse ou par placement du repère sur la carte ; aucune saisie de latitude ou longitude requise.
-- Historique des mises à jour de stock et saisie des quantités collectées.
-- Préparation d’une tournée avec réorganisation manuelle des arrêts et estimation de la distance et de la durée.
-- Missions attribuables à un bénévole, suivi des arrêts, export CSV et récapitulatif par email facultatif.
-- Comptes bénévoles gérés par le coordinateur : création, changement de nom, réinitialisation du mot de passe et suspension/réactivation de l’accès.
-- Interface français/anglais, base SQLite locale et données de démonstration.
+[Voir aussi le tableau de bord en anglais](assets/screenshots/06-dashboard-en.png), [la liste des missions](assets/screenshots/11-missions-list.png) et [l’écran de préparation d’une tournée](assets/screenshots/03-planner.png).
 
-### Lancer une démo locale
+### Fonctionnalités par rôle
 
-Python 3.11 ou plus récent est nécessaire. Docker est facultatif pour l’interface ; sans moteur routier, l’application affiche une estimation à vol d’oiseau clairement signalée.
+| Fonction | Coordinateur | Bénévole |
+|:--|:--:|:--:|
+| Consulter le tableau de bord, la carte, les points et les missions | Oui | Oui |
+| Mettre à jour le stock d’un point et enregistrer les kilos collectés | Oui | Oui |
+| Ajouter ou modifier un point, ses capacités et son temps de collecte | Oui | — |
+| Chercher une adresse et ajuster le repère directement sur la carte | Oui | — |
+| Préparer et créer une tournée, choisir et réordonner les arrêts | Oui | — |
+| Affecter une mission à un bénévole | Oui | — |
+| Suivre une mission affectée ou non affectée, marquer un arrêt collecté/ignoré | Oui | Oui* |
+| Gérer les comptes, le dépôt et les paramètres de démonstration | Oui | — |
+| Exporter la mission en CSV et préparer/envoyer un récapitulatif par email | Oui | Export CSV |
+
+\* Un bénévole peut mettre à jour une mission qui lui est affectée ou qui n’est pas affectée. Il ne peut pas modifier une mission attribuée à quelqu’un d’autre. Les liens de navigation ouvrent Google Maps sur l’arrêt sélectionné; le guidage GPS ne se fait pas dans Red Collect.
+
+### Parcours courant
+
+1. Le coordinateur vérifie le dépôt et la carte dans **Paramètres**.
+2. Dans **Points de collecte**, il filtre les relais prioritaires, met à jour les stocks ou ajoute un relais par adresse. Il peut sélectionner un résultat de recherche puis déplacer le repère pour ajuster l’emplacement.
+3. Dans **Préparer une tournée**, il sélectionne les relais, calcule et vérifie le parcours, réordonne les arrêts si nécessaire, nomme la mission et l’attribue à un bénévole.
+4. Le bénévole ouvre **Missions**, consulte sa tournée et lance la navigation vers un arrêt. Après la visite, il indique les kilos collectés ou marque l’arrêt comme ignoré. L’avancement de la mission et le stock du relais sont mis à jour.
+5. Le coordinateur consulte l’avancement, exporte le CSV ou vérifie le récapitulatif email avant de l’envoyer.
+
+Le bouton d’envoi email n’envoie rien sans une configuration SMTP valide. Les captures montrent uniquement l’aperçu : aucun email de démonstration n’a été envoyé.
+
+### Lancer l’application en local
+
+Python 3.11 ou plus récent est nécessaire. Docker est facultatif pour démarrer l’interface; sans le service de routage, les distances sont calculées à vol d’oiseau et cette limite est signalée dans l’application.
 
 ```bash
 git clone https://github.com/mouad-abaaqil/Croix-Rouge.git
@@ -61,7 +83,7 @@ pip install -r requirements.txt
 cp .env.example .env
 ```
 
-Créez une clé de session locale dans `.env`, puis initialisez la base et le compte coordinateur :
+Créez une clé secrète locale, puis initialisez la base et le compte coordinateur :
 
 ```bash
 python3 - <<'PY'
@@ -70,54 +92,113 @@ import secrets
 p = Path('.env')
 p.write_text(p.read_text().replace('APP_SECRET_KEY=', f'APP_SECRET_KEY={secrets.token_hex(32)}'))
 PY
-python webapp.py init
-python webapp.py
+python3 webapp.py init
+python3 webapp.py
 ```
 
-Ouvrez [http://127.0.0.1:5000](http://127.0.0.1:5000) et connectez-vous avec l’identifiant et le mot de passe choisis pendant `init`. Si le port 5000 est déjà utilisé, lancez `PORT=5002 python webapp.py` et ouvrez [http://127.0.0.1:5002](http://127.0.0.1:5002).
+`init` demande un identifiant et un mot de passe d’au moins 12 caractères. Il charge les points d’exemple à la première initialisation. Ouvrez [http://127.0.0.1:5000](http://127.0.0.1:5000). Si le port est occupé, lancez `PORT=5002 python3 webapp.py` puis ouvrez [http://127.0.0.1:5002](http://127.0.0.1:5002).
 
 ### Activer les trajets routiers
 
-Pour des distances, durées et géométries sur le réseau routier, installez Docker puis décommentez `ROUTING_URL` dans `.env` :
+Le service OSRM facultatif calcule des distances, durées et tracés à partir du réseau routier. Docker est nécessaire pour cette option. Ajoutez dans `.env` :
 
 ```dotenv
 ROUTING_URL=http://127.0.0.1:5001
 ```
 
-Préparez l’extraction OpenStreetMap du Nord-Pas-de-Calais et démarrez OSRM :
+Puis préparez la carte régionale et démarrez le service :
 
 ```bash
 bash scripts/setup_routing.sh
 docker compose up -d routing
 ```
 
-Le téléchargement initial fait environ 230 Mo ; le graphe préparé occupe davantage de place et le pré-calcul demande environ 2 Gio de mémoire. Cette préparation ne se répète pas à chaque lancement. Redémarrez ensuite `python webapp.py` pour que l’application prenne en compte le service. Les itinéraires routiers restent des estimations : OSRM n’intègre pas le trafic en temps réel. Le projet utilise OR-Tools Guided Local Search pour ordonner plusieurs arrêts à partir de la matrice des durées routières. Si OSRM ne répond pas, l’application conserve un calcul de secours et signale le mode à vol d’oiseau.
+Le téléchargement de la carte fait environ 230 Mo et varie selon la source. Le graphe préparé occupe plusieurs fois cette taille et son pré-calcul peut demander environ 2 Gio de mémoire. Les fichiers restent dans `routing-data/`; le pré-calcul n’est pas répété à chaque lancement. Redémarrez ensuite l’application. OSRM n’intègre pas le trafic en temps réel. OR-Tools Guided Local Search ordonne les arrêts à partir des durées routières; les petites tournées utilisent une optimisation plus légère. Si OSRM est indisponible, l’application revient à une estimation à vol d’oiseau et le signale.
 
-### Données cartographiques et de démonstration
+### Configuration disponible
 
-Les points et stocks fournis servent à illustrer l’application ; vérifiez les informations et les niveaux de stock avant tout usage opérationnel. La recherche d’adresse est déclenchée par une action explicite, limitée à une requête par seconde et mise en cache. L’instance publique Nominatim est adaptée à un usage modéré seulement : consultez sa [politique d’utilisation](https://operations.osmfoundation.org/policies/nominatim/) avant de l’utiliser et configurez un autre service si le trafic augmente. Les cartes affichent l’attribution OpenStreetMap ; les [règles des tuiles](https://operations.osmfoundation.org/policies/tiles/) s’appliquent aussi.
+Les valeurs se configurent dans le fichier local `.env` (ignoré par Git). Les identifiants SMTP sont facultatifs; ne les ajoutez jamais au dépôt.
 
-### Vérification
+| Variable | Usage |
+|:--|:--|
+| `APP_SECRET_KEY` | Clé aléatoire utilisée pour signer les sessions |
+| `APP_HTTPS` | Mettre à `1` derrière un proxy HTTPS afin d’activer le cookie sécurisé |
+| `DATABASE_PATH` | Chemin de la base SQLite; par défaut `instance/redcollect.sqlite3` |
+| `ROUTING_URL` | URL du service OSRM; laisser vide pour le calcul de secours |
+| `ROUTE_SOLVER_SECONDS` | Temps maximal de recherche OR-Tools, plafonné par l’application |
+| `GEOCODER_URL` | Service de recherche d’adresses; Nominatim est utilisé par défaut |
+| `SMTP_SERVER`, `SMTP_PORT`, `SMTP_USERNAME`, `SMTP_PASSWORD`, `SENDER_EMAIL` | Envoi facultatif des récapitulatifs de mission |
+
+### Cartes, services externes et données
+
+Les tuiles de carte et la recherche d’adresse dépendent d’OpenStreetMap. Une recherche d’adresse est déclenchée par l’utilisateur, limitée à une requête par seconde et mise en cache localement. Avec le service Nominatim public, l’adresse recherchée est envoyée à ce service; cette instance est destinée à un usage modéré. Consultez sa [politique d’utilisation](https://operations.osmfoundation.org/policies/nominatim/) et la [politique des tuiles OpenStreetMap](https://operations.osmfoundation.org/policies/tiles/) avant tout usage. L’application affiche l’attribution OpenStreetMap.
+
+Les points fournis sont des exemples de Calais. Vérifiez et remplacez les adresses, les capacités et les niveaux de stock avant tout usage opérationnel. La base SQLite contient les comptes, points, mises à jour de stock, paramètres et missions de l’installation.
+
+### Limites actuelles
+
+- Aucune instance publique ni aucun compte de démonstration hébergé.
+- Pas de trafic routier en direct; les itinéraires sont des estimations.
+- Pas de GPS intégré : la navigation ouvre un service externe.
+- Les mots de passe des bénévoles sont créés ou réinitialisés par un coordinateur; l’application ne propose pas encore de changement de mot de passe personnel.
+- Le journal des stocks est enregistré, mais l’interface ne présente pas encore son historique complet.
+- La recherche d’adresse, les tuiles de carte et l’email dépendent des services externes indiqués plus haut.
+
+Pour l’architecture et les évolutions possibles, voir [docs/EVOLUTIONS.md](docs/EVOLUTIONS.md).
+
+### Tests et développement
 
 ```bash
-python -m unittest discover -s tests -v
+python3 -m unittest discover -s tests -v
 node --check static/js/app.js
 ```
 
-### Licence
+Pour comprendre l’application, utilisez la carte du dépôt des fonctionnalités dans [docs/EVOLUTIONS.md](docs/EVOLUTIONS.md), puis lancez les tests avant toute modification.
 
-Projet distribué sous licence [MIT](LICENSE). Les marques et emblèmes de la Croix-Rouge restent la propriété de leurs détenteurs respectifs.
+### Licence et identité
+
+Projet distribué sous licence [MIT](LICENSE). Les marques et emblèmes de la Croix-Rouge restent la propriété de leurs détenteurs respectifs. Ce dépôt est un projet open source indépendant; ne le présentez pas comme un service officiellement exploité par la Croix-Rouge.
 
 ---
 
 ## English
 
-Red Collect is an open-source collection planning app for teams coordinating donation drop-off points. Its French/English interface helps coordinators and volunteers track stock levels, add a relay by searching for an address on the map, plan collection routes, and follow each mission.
+Red Collect is an open-source web app for coordinating donation collection teams. It puts relay points, stock levels, and collection missions on a map. The interface is available in French and English. There is no hosted public instance; run the app locally from this repository. Screenshots and the silent walkthrough use sample data.
 
-**Run it locally:** clone this repository, install the Python requirements, copy `.env.example` to `.env`, set a random `APP_SECRET_KEY`, then run `python webapp.py init` followed by `python webapp.py`. The first command creates the coordinator account and imports the demo points. Open [http://127.0.0.1:5000](http://127.0.0.1:5000). There is no public hosted demo at this time.
+### What each role can do
 
-[▶ Watch the 40-second app announcement](assets/redcollect-annonce.mp4).
+| Feature | Coordinator | Volunteer |
+|:--|:--:|:--:|
+| View the dashboard, map, collection points and missions | Yes | Yes |
+| Update a point’s stock and record collected kilograms | Yes | Yes |
+| Add or edit points, capacities and estimated pickup time | Yes | — |
+| Search an address and adjust its map marker | Yes | — |
+| Plan a route, reorder stops, create and assign a mission | Yes | — |
+| Manage volunteer accounts and depot settings | Yes | — |
+| Update stops on an unassigned mission or their own assignment | Yes | Yes* |
+| Export a mission as CSV and preview/send its email summary | Yes | CSV export |
 
-For road-based distance and duration estimates, configure the optional self-hosted OSRM service with `scripts/setup_routing.sh`. OR-Tools Guided Local Search optimizes the order of multiple stops using OSRM’s travel-time matrix. Travel times do not include live traffic. See the French sections above for complete setup, map-service policies, and demo-data notes.
+\* Volunteers cannot update a mission assigned to another person. Stop navigation opens Google Maps; Red Collect does not provide turn-by-turn GPS navigation.
 
-The project is released under the [MIT License](LICENSE).
+### Run locally
+
+Use Python 3.11 or newer:
+
+```bash
+git clone https://github.com/mouad-abaaqil/Croix-Rouge.git
+cd Croix-Rouge
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+cp .env.example .env
+```
+
+Set a random `APP_SECRET_KEY` in `.env`, then run `python3 webapp.py init` and `python3 webapp.py`. Initialization creates the coordinator account and imports sample points into a new database. Open [http://127.0.0.1:5000](http://127.0.0.1:5000). See the French section above for the exact secret-generation command and optional OSRM setup.
+
+### Routing, maps and email
+
+Road routing is optional and uses a local OSRM service with OpenStreetMap data. OR-Tools Guided Local Search optimizes larger tours using OSRM travel times. If OSRM is unavailable, the app labels a straight-line fallback estimate. No live traffic is used. Address search and map tiles use OpenStreetMap services; review their usage policies before running a busy or public instance. Email summaries require SMTP configuration. Preview the message before sending; screenshots never send email.
+
+The sample Calais points are for demonstration only. Verify or replace them before operational use. Current limitations include no hosted demo, no built-in GPS navigation, no volunteer password-change flow, and no stock-history screen.
+
+For setup details, tests, architecture, and a suggested roadmap for future contributions, see the French guide and [docs/EVOLUTIONS.md](docs/EVOLUTIONS.md). The project is distributed under the [MIT License](LICENSE).
