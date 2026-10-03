@@ -20,6 +20,7 @@ from flask import Flask, Response, abort, g, jsonify, redirect, render_template,
 from werkzeug.security import check_password_hash, generate_password_hash
 
 import database as data
+from analytics import build_analytics
 from routing import RoutePlanningError, plan_route
 
 
@@ -161,6 +162,24 @@ def logout():
 @login_required
 def dashboard():
     return render_template("dashboard.html", page="dashboard")
+
+
+@app.get("/analytics")
+@coordinator_required
+def analytics_page():
+    return render_template("analytics.html", page="analytics")
+
+
+@app.get("/api/analytics")
+@coordinator_required
+def analytics_api():
+    try:
+        days = int(request.args.get("days", "90"))
+    except ValueError:
+        abort(400, "Invalid analysis period")
+    if days not in (30, 90, 180, 365):
+        abort(400, "Invalid analysis period")
+    return jsonify(build_analytics(g.db, days=days))
 
 
 @app.get("/assets/croix_rouge_logo.png")

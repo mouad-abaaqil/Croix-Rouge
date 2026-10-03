@@ -9,13 +9,14 @@ Ce document décrit le code actuel et propose un chemin de développement pour l
 | `webapp.py` | Routes Flask, sessions, autorisations, validation des entrées, API JSON, génération CSV et envoi email |
 | `database.py` | Schéma SQLite, initialisation, petites migrations, lecture des points et du dépôt |
 | `routing.py` | Validation géographique, matrice des durées, optimisation de séquence, appels OSRM et calcul de secours |
+| `analytics.py` | Agrégats temporels de remplissage, pression récurrente, collectes et clusters de relais proches |
 | `templates/` | Squelettes HTML des pages et des dialogues |
 | `static/js/app.js` | Traductions FR/EN, appels API, interactions, cartes Leaflet et rendu des pages |
 | `static/css/app.css` | Présentation et mise en page de l’interface |
 | `data/collection_points.csv` | Données d’exemple importées à l’initialisation d’une base vide |
 | `scripts/setup_routing.sh` | Téléchargement et pré-calcul du graphe OSRM régional |
 | `docker-compose.yml`, `Dockerfile` | Services conteneurisés pour une installation auto-hébergée ultérieure |
-| `tests/` | Tests unitaires de routage et tests Flask/API sur des bases temporaires |
+| `tests/` | Tests unitaires d’analyse/routage et tests Flask/API sur des bases temporaires |
 
 La base SQLite par défaut se trouve dans `instance/redcollect.sqlite3`. Tables principales : `users`, `settings`, `points`, `stock_history`, `geocode_cache`, `missions` et `mission_stops`. Les migrations actuelles ajoutent des colonnes/tables manquantes; elles ne remplacent pas un mécanisme de migration versionné si le schéma évolue beaucoup.
 
@@ -24,6 +25,7 @@ La base SQLite par défaut se trouve dans `instance/redcollect.sqlite3`. Tables 
 - **Coordinateur** : crée les utilisateurs, change leur nom, réinitialise leur mot de passe ou suspend leur accès; règle le dépôt; ajoute ou modifie des points; crée et affecte les missions; consulte l’aperçu et envoie les emails.
 - **Bénévole** : consulte les points et missions; met à jour les stocks; modifie l’état des arrêts d’une mission sans affectation ou de sa propre mission.
 - Les mutations API utilisent un jeton CSRF et les mots de passe sont hachés. Le dernier coordinateur ne peut pas être désactivé.
+- La page d’analyse et son API sont réservées au coordinateur.
 - Les comptes sont créés par le coordinateur et les mots de passe initiaux lui sont transmis hors bande. Il n’y a pas encore de changement de mot de passe personnel ni de procédure de réinitialisation par email.
 - L’API sait marquer un point inactif, mais l’interface ne propose pas encore de commande pour changer son état.
 
@@ -38,6 +40,14 @@ Une évolution du modèle de droits devrait mettre à jour ensemble les décorat
 5. Les temps n’incluent pas le trafic en direct. La durée totale ajoute le temps estimé passé à chaque point.
 
 Pour remplacer ou améliorer l’optimiseur, conserver les invariants existants : visite de chaque arrêt une fois, départ et retour au dépôt, ordre manuel respecté, gestion des sens uniques avec une matrice dirigée, durée de calcul bornée, et solution explicite de secours. Ajouter des cas de tests sur matrices et petites instances de référence avant de modifier l’algorithme.
+
+## Analyse du réseau
+
+`/api/analytics?days=30|90|180|365` agrège les entrées `stock_history` et les arrêts de mission terminés dans la période. Les séries de remplissage utilisent uniquement les relevés explicitement enregistrés; les stocks de démonstration et les valeurs actuelles non observées ne sont pas traités comme de l’historique. Les arrêts terminés donnent séparément le nombre de visites et les kilos collectés.
+
+Les fenêtres disponibles sont 30, 90, 180 et 365 jours. Une pression répétée au niveau d’un point exige au moins quatre relevés sur une période d’au moins quatorze jours, une moyenne de remplissage d’au moins 70 % et au moins 50 % des relevés au seuil urgent actuel de 80 %. Un secteur à étudier exige au moins six relevés, quatorze jours d’étendue, une moyenne d’au moins 70 % et un taux de relevés urgents d’au moins 50 %. La page montre également une moyenne hebdomadaire, les parts de relevés urgents par jour de semaine, le volume collecté et une carte.
+
+Les secteurs sont des composantes de points séparés par moins de 1,5 km; ils ne sont ni des quartiers officiels, ni une couverture de population. La recommandation signifie « examiner la possibilité d’un relais complémentaire », pas « construire un locker ». Le système ne connaît pas les dépôts manqués, les personnes qui renoncent, les volumes de dons non enregistrés, les coûts ou la capacité de nouveaux emplacements. Le tableau de bord ne peut donc pas encore mesurer la demande dans une zone sans point existant ni prévoir le nombre de tournées évitées.
 
 ## Configuration et exécution
 
@@ -68,6 +78,9 @@ Pour les captures ou essais contrôlés, utiliser `DATABASE_PATH` vers une base 
 ### Prochaines améliorations pour les équipes
 
 - Afficher l’historique des stocks par point avec date, auteur et évolution.
+- Enregistrer des relevés réguliers ou définir un rappel de contrôle, pour rendre les comparaisons par jour de semaine plus représentatives.
+- Ajouter des limites de quartiers configurables, de la densité de population ou des signalements de dépôts/refus pour étudier les zones sans point existant.
+- Mesurer le nombre de tournées urgentes et leur coût, puis comparer ces indicateurs avant/après l’ouverture d’un relais.
 - Permettre au bénévole de changer son propre mot de passe et donner un flux de réinitialisation sûr.
 - Ajouter des notes, pièces jointes légères et consignes par point ou mission, avec horodatage et auteur.
 - Ajouter une vue de planification des missions par date et disponibilité des bénévoles.

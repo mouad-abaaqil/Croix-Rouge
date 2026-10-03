@@ -11,7 +11,7 @@
 </div>
 
 <p align="center">
-  <img src="assets/redcollect-demo.gif" alt="Démonstration silencieuse : tableau de bord, carte, ajout par adresse, stocks, planification, missions, bénévoles et interface anglaise" width="100%">
+  <img src="assets/redcollect-demo.gif" alt="Démonstration silencieuse : tableau de bord, carte, ajout par adresse, stocks, planification, missions, bénévoles, analyse du réseau et interface anglaise" width="100%">
 </p>
 
 <p align="center"><em>Défilement automatique de captures issues d’une base de démonstration, sans voix ni action sur des données réelles.</em></p>
@@ -42,6 +42,10 @@ La boucle silencieuse ci-dessus suit le parcours principal. Les captures individ
 |:--:|:--:|:--:|
 | <img src="assets/screenshots/13-volunteer-mission.png" alt="Vue bénévole d’une mission qui lui est attribuée" width="320"> | <img src="assets/screenshots/10-email-preview.png" alt="Aperçu du récapitulatif email avant envoi" width="320"> | <img src="assets/screenshots/12-team-settings.png" alt="Paramètres du dépôt et gestion des comptes bénévoles" width="320"> |
 
+| Analyse du réseau |
+|:--:|
+| <img src="assets/screenshots/14-network-analysis.png" alt="Tableau analytique avec pression historique, tendance hebdomadaire et secteurs à étudier" width="720"> |
+
 [Voir aussi le tableau de bord en anglais](assets/screenshots/06-dashboard-en.png), [la liste des missions](assets/screenshots/11-missions-list.png) et [l’écran de préparation d’une tournée](assets/screenshots/03-planner.png).
 
 ### Fonctionnalités par rôle
@@ -55,6 +59,7 @@ La boucle silencieuse ci-dessus suit le parcours principal. Les captures individ
 | Préparer et créer une tournée, choisir et réordonner les arrêts | Oui | — |
 | Affecter une mission à un bénévole | Oui | — |
 | Suivre une mission affectée ou non affectée, marquer un arrêt collecté/ignoré | Oui | Oui* |
+| Analyser les tendances de remplissage, les jours de pression et les zones à étudier | Oui | — |
 | Gérer les comptes, le dépôt et les paramètres de démonstration | Oui | — |
 | Exporter la mission en CSV et préparer/envoyer un récapitulatif par email | Oui | Export CSV |
 
@@ -67,8 +72,11 @@ La boucle silencieuse ci-dessus suit le parcours principal. Les captures individ
 3. Dans **Préparer une tournée**, il sélectionne les relais, calcule et vérifie le parcours, réordonne les arrêts si nécessaire, nomme la mission et l’attribue à un bénévole.
 4. Le bénévole ouvre **Missions**, consulte sa tournée et lance la navigation vers un arrêt. Après la visite, il indique les kilos collectés ou marque l’arrêt comme ignoré. L’avancement de la mission et le stock du relais sont mis à jour.
 5. Le coordinateur consulte l’avancement, exporte le CSV ou vérifie le récapitulatif email avant de l’envoyer.
+6. Dans **Analyse du réseau**, il compare les relevés sur 30, 90, 180 ou 365 jours et regarde les jours où les points approchent souvent 80 %.
 
 Le bouton d’envoi email n’envoie rien sans une configuration SMTP valide. Les captures montrent uniquement l’aperçu : aucun email de démonstration n’a été envoyé.
+
+L’analyse compare les stocks explicitement enregistrés et les collectes terminées. Elle signale un secteur à étudier seulement après au moins 6 relevés sur 14 jours ou plus, avec une moyenne d’au moins 70 % et au moins la moitié des relevés à 80 % ou plus. Chaque point doit avoir au moins 4 relevés répartis sur 14 jours pour être qualifié de pression répétée. Ce seuil rend le signal lisible; il ne remplace pas une décision terrain. Les zones regroupent les points situés à moins de 1,5 km et ne correspondent pas à des quartiers officiels. La capture analytique utilise une série temporelle synthétique pour illustrer l’écran; ta base locale ne contient pas ces données fictives.
 
 ### Lancer l’application en local
 
@@ -142,6 +150,8 @@ Les points fournis sont des exemples de Calais. Vérifiez et remplacez les adres
 - Pas de GPS intégré : la navigation ouvre un service externe.
 - Les mots de passe des bénévoles sont créés ou réinitialisés par un coordinateur; l’application ne propose pas encore de changement de mot de passe personnel.
 - Le journal des stocks est enregistré, mais l’interface ne présente pas encore son historique complet.
+- L’analyse de zone ne connaît que les relais déjà enregistrés et leurs relevés. Elle ne mesure pas la population, les dons non déposés, les refus ni les secteurs sans aucun relais.
+- Le découpage en secteurs est calculé par proximité entre relais; il ne représente pas des limites de quartier.
 - La recherche d’adresse, les tuiles de carte et l’email dépendent des services externes indiqués plus haut.
 
 Pour l’architecture et les évolutions possibles, voir [docs/EVOLUTIONS.md](docs/EVOLUTIONS.md).
@@ -196,6 +206,8 @@ cp .env.example .env
 Set a random `APP_SECRET_KEY` in `.env`, then run `python3 webapp.py init` and `python3 webapp.py`. Initialization creates the coordinator account and imports sample points into a new database. Open [http://127.0.0.1:5000](http://127.0.0.1:5000). See the French section above for the exact secret-generation command and optional OSRM setup.
 
 ### Routing, maps and email
+
+The coordinator-only **Network analysis** page compares 30, 90, 180 or 365 days of recorded stock observations, completed visits and collected weight. It shows weekly fill trends, the share of recorded readings above 80% by weekday, a map of observed relay pressure and close-by areas to review. The same evidence thresholds and data limitations described in the French section apply.
 
 Road routing is optional and uses a local OSRM service with OpenStreetMap data. OR-Tools Guided Local Search optimizes larger tours using OSRM travel times. If OSRM is unavailable, the app labels a straight-line fallback estimate. No live traffic is used. Address search and map tiles use OpenStreetMap services; review their usage policies before running a busy or public instance. Email summaries require SMTP configuration. Preview the message before sending; screenshots never send email.
 

@@ -66,10 +66,25 @@ class WebAppTest(unittest.TestCase):
             self.assertEqual(anonymous.get("/api/bootstrap").status_code, 401)
 
     def test_pages_render(self):
-        for path in ("/", "/points", "/planner", "/missions", "/settings"):
+        for path in ("/", "/points", "/planner", "/missions", "/analytics", "/settings"):
             response = self.client.get(path)
             self.assertEqual(response.status_code, 200, path)
             self.assertIn(b"Red Collect", response.data)
+
+    def test_network_analytics_is_available_to_coordinators_only(self):
+        report = self.client.get("/api/analytics?days=90")
+        self.assertEqual(report.status_code, 200)
+        self.assertEqual(report.json["metrics"]["active_points"], 12)
+        self.assertEqual(report.json["metrics"]["observations"], 0)
+        for days in (30, 90, 180, 365):
+            self.assertEqual(self.client.get(f"/api/analytics?days={days}").status_code, 200)
+        self.assertEqual(self.client.get("/api/analytics?days=60").status_code, 400)
+        self.client.post("/api/users", json={"username":"volunteer","name":"Volunteer",
+                          "password":"strong-password-123"}, headers=self.headers)
+        with self.client.session_transaction() as session:
+            session["user_id"] = 2
+        self.assertEqual(self.client.get("/api/analytics").status_code, 403)
+        self.assertEqual(self.client.get("/analytics").status_code, 403)
 
     def test_volunteer_cannot_plan_and_can_complete_stop(self):
         point_id = self.client.get("/api/bootstrap").json["points"][0]["id"]
@@ -144,10 +159,13 @@ class WebAppTest(unittest.TestCase):
     def test_existing_database_migrates_address_cache_table(self):
         with database.connect() as db:
             db.execute("DROP TABLE geocode_cache")
+            db.execute("DROP INDEX idx_stock_history_recorded_at")
         database.migrate_existing()
         with database.connect() as db:
             tables = {row[0] for row in db.execute("SELECT name FROM sqlite_master WHERE type='table'")}
+            indexes = {row[0] for row in db.execute("SELECT name FROM sqlite_master WHERE type='index'")}
         self.assertIn("geocode_cache", tables)
+        self.assertIn("idx_stock_history_recorded_at", indexes)
 
     def test_route_preview_reports_solver(self):
         point_ids = [item["id"] for item in self.client.get("/api/bootstrap").json["points"][:4]]

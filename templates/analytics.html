@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}Analyse du réseau{% endblock %}
+{% block page %}analytics{% endblock %}
+{% block content %}
+<section class="page-heading heading-with-action analytics-heading">
+  <div><p class="eyebrow" data-i18n="analytics_eyebrow">ANALYSE DU RÉSEAU</p><h1 data-i18n="analytics_title">Comprendre la demande.</h1><p data-i18n="analytics_intro">Repérez les relais très sollicités et les secteurs à étudier.</p></div>
+  <label class="analytics-period"><span data-i18n="analysis_period">Période analysée</span><select id="analytics-days" aria-label="Période analysée"><option value="30" data-i18n="last_30_days">30 derniers jours</option><option value="90" selected data-i18n="last_90_days">90 derniers jours</option><option value="180" data-i18n="last_180_days">180 derniers jours</option><option value="365" data-i18n="last_365_days">12 derniers mois</option></select></label>
+</section>
+<section class="analytics-note" id="analytics-quality" role="status"></section>
+<section class="metrics analytics-metrics" aria-label="Indicateurs du réseau">
+  <article class="metric-card"><div class="metric-icon red">⌖</div><span data-i18n="active_points">Points actifs</span><strong id="analysis-active-points">—</strong><small data-i18n="relay_network">dans le réseau</small></article>
+  <article class="metric-card"><div class="metric-icon amber">!</div><span data-i18n="repeat_pressure">Relais souvent proches du plein</span><strong id="analysis-pressure-points">—</strong><small data-i18n="pressure_threshold">au moins 4 observations sur 14 jours</small></article>
+  <article class="metric-card"><div class="metric-icon blue">↗</div><span data-i18n="completed_stops">Arrêts collectés</span><strong id="analysis-visits">—</strong><small data-i18n="period_total">sur la période</small></article>
+  <article class="metric-card"><div class="metric-icon green">＋</div><span data-i18n="kilograms_collected">Kilos collectés</span><strong id="analysis-kg">—</strong><small data-i18n="recorded_missions">d’après les missions enregistrées</small></article>
+</section>
+<section class="analytics-grid">
+  <article class="surface analytics-card analytics-trend-card"><div class="section-head"><div><p class="eyebrow" data-i18n="trend">TENDANCE</p><h2 data-i18n="fill_trend">Niveau de remplissage observé</h2></div><span class="chart-key"><i></i><span data-i18n="average_fill">Moyenne relevée</span></span></div><div id="analytics-trend" class="analytics-trend"></div><p class="analytics-caption" id="analytics-trend-caption"></p></article>
+  <article class="surface analytics-card analytics-map-card"><div class="section-head"><div><p class="eyebrow" data-i18n="geography">GÉOGRAPHIE</p><h2 data-i18n="pressure_map">Pression observée par secteur</h2></div></div><div id="analytics-map" class="map analytics-map" role="application" aria-label="Carte analytique des points relais"></div><div class="analytics-map-legend"><span><i class="legend-high"></i><span data-i18n="legend_high">80 % et plus</span></span><span><i class="legend-mid"></i><span data-i18n="legend_mid">60–79 %</span></span><span><i class="legend-low"></i><span data-i18n="legend_low">Moins de 60 %</span></span><span><i class="legend-none"></i><span data-i18n="legend_no_history">Pas d’historique</span></span></div><p class="analytics-caption" data-i18n="map_analysis_help">Les points colorés indiquent la moyenne des relevés, pas le stock en temps réel.</p></article>
+</section>
+<section class="surface analytics-card analytics-weekday-card"><div class="section-head"><div><p class="eyebrow" data-i18n="weekly_pattern">RYTHME HEBDOMADAIRE</p><h2 data-i18n="weekday_pressure">Quels jours les relais approchent-ils du plein ?</h2></div></div><div id="analytics-weekdays" class="analytics-weekdays"></div><p class="analytics-caption" data-i18n="weekday_pattern_help">Part des relevés enregistrés à 80 % ou plus, par jour. Le résultat dépend de la régularité des mises à jour.</p></section>
+<section class="analytics-grid analytics-lists">
+  <article class="surface analytics-card"><div class="section-head"><div><p class="eyebrow" data-i18n="point_performance">ACTIVITÉ DES RELAIS</p><h2 data-i18n="relay_ranking">Collectes et remplissage</h2></div></div><div id="analytics-points" class="analytics-table-wrap"></div></article>
+  <article class="surface analytics-card"><div class="section-head"><div><p class="eyebrow" data-i18n="area_review">À ÉTUDIER</p><h2 data-i18n="zone_recommendations">Secteurs sous pression</h2></div></div><div id="analytics-zones" class="analytics-zones"></div><p class="analytics-caption" data-i18n="zone_method">Un secteur regroupe les relais distants de moins de 1,5 km. C’est une zone indicative, pas un quartier officiel.</p></article>
+</section>
+{% endblock %}

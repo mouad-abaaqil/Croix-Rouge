@@ -70,6 +70,9 @@ CREATE TABLE IF NOT EXISTS mission_stops (
  planned_stock_kg REAL NOT NULL, collected_kg REAL,
  visited_at TEXT, UNIQUE(mission_id, point_id)
 );
+CREATE INDEX IF NOT EXISTS idx_stock_history_recorded_at ON stock_history(recorded_at);
+CREATE INDEX IF NOT EXISTS idx_stock_history_point_recorded ON stock_history(point_id,recorded_at);
+CREATE INDEX IF NOT EXISTS idx_mission_stops_status_visited ON mission_stops(status,visited_at);
 """
 
 
@@ -131,6 +134,11 @@ def migrate_existing(path=None):
             columns = {row[1] for row in db.execute("PRAGMA table_info(users)")}
             if "session_version" not in columns:
                 db.execute("ALTER TABLE users ADD COLUMN session_version INTEGER NOT NULL DEFAULT 0")
+        if "stock_history" in tables:
+            db.execute("CREATE INDEX IF NOT EXISTS idx_stock_history_recorded_at ON stock_history(recorded_at)")
+            db.execute("CREATE INDEX IF NOT EXISTS idx_stock_history_point_recorded ON stock_history(point_id,recorded_at)")
+        if "mission_stops" in tables:
+            db.execute("CREATE INDEX IF NOT EXISTS idx_mission_stops_status_visited ON mission_stops(status,visited_at)")
 
 
 def point_dict(row):
