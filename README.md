@@ -1,6 +1,7 @@
 <div align="center">
   <img src="assets/redcollect-logo.svg" alt="Logo Red Collect" width="340">
   <h1>Red Collect</h1>
+  <p><strong>RED</strong> signifie <em>Réseau d’Entraide et de Dons</em> ; <strong>Collect</strong> désigne l’organisation des collectes.</p>
   <p><strong>Des collectes plus simples à organiser, du premier point au retour au dépôt.</strong></p>
   <p>Application open source de suivi des dons, des points de collecte et des tournées solidaires · Calais</p>
   <p>
@@ -24,7 +25,7 @@
 
 ### Description
 
-Red Collect est un outil de terrain open source pour organiser les collectes de dons : points relais, stocks, tournées et missions bénévoles réunis dans une même interface. Il s’adresse aux équipes associatives qui ont besoin d’un suivi lisible sans gérer des fichiers CSV ni saisir des coordonnées GPS.
+**RED** signifie **Réseau d’Entraide et de Dons** ; **Collect** décrit le travail d’organisation des collectes. Red Collect est un outil de terrain open source qui réunit points relais, stocks, tournées et missions bénévoles dans une même interface. Il s’adresse aux équipes associatives qui ont besoin d’un suivi lisible sans gérer des fichiers CSV ni saisir des coordonnées GPS.
 
 ### Origine du projet
 
@@ -206,7 +207,7 @@ Projet distribué sous licence [MIT](LICENSE). Les marques et emblèmes de la Cr
 
 ### Description
 
-Red Collect is an open-source tool for coordinating donation collection: relay points, stock, routes and volunteer missions in one interface. It is intended for association teams that need a clear workflow without maintaining spreadsheets or entering GPS coordinates. The interface is available in French and English. There is no hosted public instance; run the app locally from this repository. Screenshots and the silent walkthrough use sample data.
+**RED** stands for **Réseau d’Entraide et de Dons** (Community Network for Donations); **Collect** describes the collection work the software helps organize. Red Collect is an open-source tool that brings relay points, stock, routes and volunteer missions into one interface. It is intended for association teams that need a clear workflow without maintaining spreadsheets or entering GPS coordinates. The interface is available in French and English. There is no hosted public instance; run the app locally from this repository. Screenshots and the silent walkthrough use sample data.
 
 ### Why this project
 
