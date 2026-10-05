@@ -1,14 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="620" height="132" viewBox="0 0 620 132" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="148" viewBox="0 0 700 148" role="img" aria-labelledby="title desc">
   <title id="title">Red Collect</title>
-  <desc id="desc">Red Collect donation collection and route planning project logo</desc>
-  <g transform="translate(8 8)">
-    <rect width="116" height="116" rx="30" fill="#b91427"/>
-    <path d="M35 82c13-1 18-9 18-21V48c0-8 6-14 14-14h18" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/>
-    <circle cx="35" cy="82" r="9" fill="#fff"/>
-    <circle cx="85" cy="34" r="9" fill="#fff"/>
-    <path d="M81 64h19M90.5 54.5v19" stroke="#fff" stroke-linecap="round" stroke-width="7"/>
+  <desc id="desc">A collection point with a donation bag, paired with the Red Collect wordmark.</desc>
+  <g aria-hidden="true">
+    <path d="M68 8C39.3 8 16 31.3 16 60c0 35.7 52 80 52 80s52-44.3 52-80C120 31.3 96.7 8 68 8Z" fill="#B91427"/>
+    <circle cx="68" cy="59" r="31" fill="#fff"/>
+    <path d="M54 53h28v25H54z" fill="none" stroke="#B91427" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+    <path d="m54 54 14-9 14 9M68 54v23M62 45v-3a6 6 0 0 1 12 0v3" fill="none" stroke="#B91427" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
   </g>
-  <text x="148" y="69" fill="#b91427" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="800" letter-spacing="1.4">RED</text>
-  <text x="273" y="69" fill="#253039" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="800" letter-spacing="1.4">COLLECT</text>
-  <text x="151" y="101" fill="#68737a" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="600" letter-spacing="2.2">DONATION COLLECTION · ROUTE PLANNING</text>
+  <text x="150" y="78" fill="#B91427" font-family="Arial, Helvetica, sans-serif" font-size="51" font-weight="800" letter-spacing="1.2">RED</text>
+  <text x="277" y="78" fill="#26323A" font-family="Arial, Helvetica, sans-serif" font-size="51" font-weight="800" letter-spacing="1.2">COLLECT</text>
+  <text x="153" y="112" fill="#66727A" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" letter-spacing="2.1">DONATIONS · RELAYS · ROUTES</text>
 </svg>
