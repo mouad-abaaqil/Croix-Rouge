@@ -1,31 +1,41 @@
 <div align="center">
-  <img src="assets/redcollect-logo.svg" alt="Logo Red Collect" width="340">
-  <h1>Red Collect</h1>
-  <p><strong>RED</strong> signifie <em>Réseau d’Entraide et de Dons</em> ; <strong>Collect</strong> désigne l’organisation des collectes.</p>
-  <p><strong>Des collectes plus simples à organiser, du premier point au retour au dépôt.</strong></p>
-  <p>Application open source de suivi des dons, des points de collecte et des tournées solidaires · Calais</p>
+  <img src="assets/redcollect-logo.svg" alt="Red Collect — Réseau d’Entraide et de Dons" width="420">
+  <h1>Organiser les dons, du relais à la tournée.</h1>
+  <p><strong>RED</strong> signifie <em>Réseau d’Entraide et de Dons</em>. <strong>Collect</strong> aide les équipes à organiser les collectes.</p>
+  <p>Un outil open source de coordination des dons, pensé pour les associations et né à Calais.</p>
   <p>
-    <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-red.svg" alt="Licence MIT"></a>
-    <img src="https://img.shields.io/badge/interface-Fran%C3%A7ais%20%7C%20English-29313a" alt="Français et anglais">
-    <img src="https://img.shields.io/badge/status-prototype%20open%20source-25806a" alt="Prototype open source">
+    <img src="https://img.shields.io/badge/RED-R%C3%A9seau%20d%27Entraide%20et%20de%20Dons-b91427?style=flat-square&labelColor=26323a" alt="RED — Réseau d’Entraide et de Dons">
+    <img src="https://img.shields.io/badge/Interface-FR%20%2B%20EN-16866A?style=flat-square" alt="Interface en français et en anglais">
+    <a href="LICENSE"><img src="https://img.shields.io/badge/Code-MIT-b91427?style=flat-square" alt="Code sous licence MIT"></a>
   </p>
+  <p><a href="#francais">Lire en français</a> · <a href="#english">Read in English</a> · <a href="docs/EVOLUTIONS.md">Architecture et feuille de route</a></p>
 </div>
 
 <p align="center">
-  <img src="assets/redcollect-demo.gif" alt="Démonstration silencieuse : tableau de bord, carte, ajout par adresse, stocks, planification, missions, bénévoles, analyse du réseau et interface anglaise" width="100%">
+  <img src="assets/redcollect-demo.gif" alt="Démo silencieuse de Red Collect : tableau de bord, carte, ajout de points, stocks, tournées, missions, bénévoles et analyse" width="100%">
 </p>
 
-<p align="center"><em>Défilement automatique de captures issues d’une base de démonstration, sans voix ni action sur des données réelles.</em></p>
+<p align="center"><sub>Parcours silencieux sur une base de démonstration · Données fictives · Aucun email envoyé</sub></p>
 
-**Français** · [English](#english)
+<div align="center">
+  <a href="#histoire">Notre point de départ</a> ·
+  <a href="#apercu">Voir l’application</a> ·
+  <a href="#fonctionnalites">Fonctionnalités</a> ·
+  <a href="#installation">Installation locale</a> ·
+  <a href="#contribuer">Contribuer</a>
+</div>
 
 ---
 
+<a id="francais"></a>
+
 ## Français
 
-### Description
+### En bref
 
 **RED** signifie **Réseau d’Entraide et de Dons** ; **Collect** décrit le travail d’organisation des collectes. Red Collect est un outil de terrain open source qui réunit points relais, stocks, tournées et missions bénévoles dans une même interface. Il s’adresse aux équipes associatives qui ont besoin d’un suivi lisible sans gérer des fichiers CSV ni saisir des coordonnées GPS.
+
+<a id="histoire"></a>
 
 ### Origine du projet
 
@@ -40,7 +50,9 @@ Le logiciel est pensé pour la collecte de dons au sens large, et non pour le se
 
 Il n’y a pas d’instance publique hébergée : l’application se lance localement depuis ce dépôt. Les adresses, stocks et missions montrés dans les captures sont des données d’exemple.
 
-### Résultats et démonstrations
+<a id="apercu"></a>
+
+### Aperçu de l’application
 
 La boucle silencieuse ci-dessus suit le parcours principal. Les captures individuelles permettent d’examiner les écrans en détail :
 
@@ -61,6 +73,8 @@ La boucle silencieuse ci-dessus suit le parcours principal. Les captures individ
 | <img src="assets/screenshots/14-network-analysis.png" alt="Tableau analytique avec pression historique, tendance hebdomadaire et secteurs à étudier" width="720"> |
 
 [Voir aussi le tableau de bord en anglais](assets/screenshots/06-dashboard-en.png), [la liste des missions](assets/screenshots/11-missions-list.png) et [l’écran de préparation d’une tournée](assets/screenshots/03-planner.png).
+
+<a id="fonctionnalites"></a>
 
 ### Fonctionnalités
 
@@ -103,6 +117,8 @@ Le tableau de bord présente également le stock courant par catégorie et le po
 ### Évaluer les effets sans les inventer
 
 Red Collect aide à rendre visibles les stocks enregistrés, les collectes réalisées et les moments de forte sollicitation. Le projet n’a pas encore de référence avant/après vérifiée : il ne permet donc pas d’affirmer qu’il a déjà augmenté les dons, réduit les tournées urgentes ou répondu à l’évolution des besoins. Pour mesurer ces effets lors d’un pilote, une association pourra comparer des périodes équivalentes et consigner le poids collecté, les visites, les arrêts urgents, les ruptures de stock et les dons refusés ou non satisfaits. Les résultats devront préciser la période, la couverture des relevés et les changements d’organisation intervenus.
+
+<a id="installation"></a>
 
 ### Installation et lancement local
 
@@ -188,7 +204,9 @@ Les points fournis sont des exemples de Calais. Vérifiez et remplacez les adres
 
 Pour l’architecture et les évolutions possibles, voir [docs/EVOLUTIONS.md](docs/EVOLUTIONS.md).
 
-### Tests et développement
+<a id="contribuer"></a>
+
+### Contribuer et tester
 
 ```bash
 python3 -m unittest discover -s tests -v
@@ -203,9 +221,11 @@ Projet distribué sous licence [MIT](LICENSE). Les marques et emblèmes de la Cr
 
 ---
 
+<a id="english"></a>
+
 ## English
 
-### Description
+### Overview
 
 **RED** stands for **Réseau d’Entraide et de Dons** (Community Network for Donations); **Collect** describes the collection work the software helps organize. Red Collect is an open-source tool that brings relay points, stock, routes and volunteer missions into one interface. It is intended for association teams that need a clear workflow without maintaining spreadsheets or entering GPS coordinates. The interface is available in French and English. There is no hosted public instance; run the app locally from this repository. Screenshots and the silent walkthrough use sample data.
 
